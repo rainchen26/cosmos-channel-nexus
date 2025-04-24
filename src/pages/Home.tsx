@@ -58,10 +58,10 @@ const Home: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="w-full max-w-4xl rounded-xl overflow-hidden">
+        <div className="w-full max-w-5xl rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/4d01be85-8cd2-487a-913f-8620523f36e7.png" 
-            alt="Hero Image" 
+            src="/lovable-uploads/fb34e14e-ae7c-46e1-99c6-547bdf29c88d.png" 
+            alt="柴犬与女孩在富士山下的枫叶树下" 
             className="w-full h-auto object-cover"
           />
         </div>
