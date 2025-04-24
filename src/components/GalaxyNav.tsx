@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
@@ -49,11 +48,10 @@ const GalaxyNav: React.FC = () => {
               <div className="w-10 h-10 rounded-full bg-nebula-gradient flex items-center justify-center animate-glow-pulse">
                 <span className="text-cosmic-star font-bold">M</span>
               </div>
-              <span className="text-xl font-bold text-cosmic-star text-glow">梦微时空</span>
+              <span className="text-xl font-bold text-cosmic-star text-glow">萌尾时空</span>
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <NavItem 
@@ -68,7 +66,6 @@ const GalaxyNav: React.FC = () => {
           <div className="flex items-center space-x-4">
             <PetIP className="hidden sm:block" />
             
-            {/* Mobile menu button */}
             <Button 
               variant="ghost" 
               size="icon"
@@ -80,7 +77,6 @@ const GalaxyNav: React.FC = () => {
           </div>
         </div>
         
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="mt-4 pb-3 border-t border-cosmic-accent/20 md:hidden">
             <div className="flex flex-col space-y-3 pt-3">

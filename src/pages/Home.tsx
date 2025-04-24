@@ -9,7 +9,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center py-16">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-cosmic-star text-glow">
-          欢迎来到梦微时空
+          欢迎来到萌尾时空
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-cosmic-star/90 max-w-2xl">
           探索无边界的宇宙创意，用AI创造属于你的星际奇观
@@ -82,3 +82,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
