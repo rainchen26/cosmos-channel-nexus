@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
@@ -65,6 +66,11 @@ const GalaxyNav: React.FC = () => {
           
           <div className="flex items-center space-x-4">
             <PetIP className="hidden sm:block" />
+            <img 
+              src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
+              alt="Taily Logo" 
+              className="w-10 h-10 rounded-full object-cover hover:scale-110 transition-transform"
+            />
             
             <Button 
               variant="ghost" 
