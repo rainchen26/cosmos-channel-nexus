@@ -47,9 +47,9 @@ const GalaxyNav: React.FC = () => {
             <Link to="/" className="flex items-center space-x-2 relative group">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
+                  src="/lovable-uploads/96ed9bde-2974-4813-bc82-186e8ffe9458.png" 
                   alt="萌尾时空 Logo" 
-                  className="w-16 h-16 object-cover mix-blend-multiply animate-float"
+                  className="w-16 h-16 object-contain mix-blend-multiply animate-float"
                 />
                 {/* Blue light animation overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 animate-shimmer" />
