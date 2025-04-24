@@ -39,33 +39,30 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
-      <section 
-        className="relative min-h-[600px] flex flex-col justify-center items-center text-center"
-      >
-        <div className="relative z-10 text-white px-4 mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            萌尾时空｜以AI之名，让爱永生
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">
-            探索无边界的宇宙创意，用AI创造属于你的星际奇观
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button className="bg-cosmic-highlight hover:bg-cosmic-highlight/80 text-white">
-              开始探索
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/20">
-              了解更多
-            </Button>
-          </div>
-        </div>
-        <div className="w-full max-w-5xl rounded-xl overflow-hidden">
+      <section className="relative">
+        <div className="w-full max-w-5xl mx-auto rounded-xl overflow-hidden">
           <img 
             src="/lovable-uploads/fb34e14e-ae7c-46e1-99c6-547bdf29c88d.png" 
             alt="柴犬与女孩在富士山下的枫叶树下" 
             className="w-full h-auto object-cover"
           />
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              萌尾时空｜以AI之名，让爱永生
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">
+              探索无边界的宇宙创意，用AI创造属于你的星际奇观
+            </p>
+            <Button 
+              className="bg-cosmic-highlight hover:bg-cosmic-highlight/80 text-white"
+              size="lg"
+            >
+              进入时空
+            </Button>
+          </div>
         </div>
       </section>
+
       
       <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
         <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">AI创作展示</h2>
