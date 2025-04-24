@@ -39,7 +39,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
-      {/* Hero Section with Full-Width Background */}
       <section 
         className="relative min-h-[600px] flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat rounded-xl overflow-hidden"
         style={{
@@ -48,12 +47,11 @@ const Home: React.FC = () => {
           backgroundSize: 'cover'
         }}
       >
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
         <div className="relative z-10 text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-glow">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             萌尾时空｜以AI之名，让爱永生
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">
             探索无边界的宇宙创意，用AI创造属于你的星际奇观
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -67,7 +65,6 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Video Showcase Section */}
       <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
         <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">AI创作展示</h2>
         <Carousel className="max-w-4xl mx-auto">
@@ -97,7 +94,6 @@ const Home: React.FC = () => {
         </Carousel>
       </section>
       
-      {/* Featured Content */}
       <section className="space-y-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">宇宙精选</h2>
         
@@ -120,7 +116,6 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Features */}
       <section>
         <h2 className="text-3xl font-bold text-center mb-12 text-cosmic-star">梦微时空主要频道</h2>
         
