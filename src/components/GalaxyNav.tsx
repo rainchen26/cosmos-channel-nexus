@@ -43,7 +43,7 @@ const GalaxyNav: React.FC = () => {
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-2">
               <img 
                 src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
@@ -51,17 +51,17 @@ const GalaxyNav: React.FC = () => {
                 className="w-16 h-16 object-cover hover:scale-105 transition-transform"
               />
             </Link>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <NavItem 
-                key={item.path}
-                to={item.path}
-                label={item.label}
-                isActive={pathname === item.path}
-              />
-            ))}
+            
+            <div className="hidden md:flex items-center space-x-4">
+              {navItems.map((item) => (
+                <NavItem 
+                  key={item.path}
+                  to={item.path}
+                  label={item.label}
+                  isActive={pathname === item.path}
+                />
+              ))}
+            </div>
           </div>
           
           <Button 
