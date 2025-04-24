@@ -39,21 +39,31 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center text-center py-16">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-cosmic-star text-glow">
-          萌尾时空｜以AI之名，让爱永生
-        </h1>
-        <p className="text-xl md:text-2xl mb-8 text-cosmic-star/90 max-w-2xl">
-          探索无边界的宇宙创意，用AI创造属于你的星际奇观
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Button className="bg-cosmic-highlight hover:bg-cosmic-highlight/80">
-            开始探索
-          </Button>
-          <Button variant="outline" className="border-cosmic-accent text-cosmic-accent hover:text-cosmic-accent/80 hover:bg-cosmic-accent/10">
-            了解更多
-          </Button>
+      {/* Hero Section with Full-Width Background */}
+      <section 
+        className="relative min-h-[600px] flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat rounded-xl overflow-hidden"
+        style={{
+          backgroundImage: "url('/lovable-uploads/4d01be85-8cd2-487a-913f-8620523f36e7.png')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div className="relative z-10 text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-glow">
+            萌尾时空｜以AI之名，让爱永生
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+            探索无边界的宇宙创意，用AI创造属于你的星际奇观
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button className="bg-cosmic-highlight hover:bg-cosmic-highlight/80 text-white">
+              开始探索
+            </Button>
+            <Button variant="outline" className="border-white text-white hover:bg-white/20">
+              了解更多
+            </Button>
+          </div>
         </div>
       </section>
       
