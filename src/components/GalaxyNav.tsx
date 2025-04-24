@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Navigation } from "lucide-react";
-import PetIP from './PetIP';
 
 interface NavItemProps {
   to: string;
@@ -20,7 +19,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, label, isActive }) => {
         "px-4 py-2 rounded-full transition-all duration-300",
         isActive 
           ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow" 
-          : "hover:bg-cosmic-highlight/10 text-cosmic-star/80 hover:text-cosmic-star"
+          : "hover:bg-cosmic-highlight/10 text-gray-600 hover:text-cosmic-highlight"
       )}
     >
       {label}
@@ -33,23 +32,24 @@ const GalaxyNav: React.FC = () => {
   const pathname = window.location.pathname;
 
   const navItems = [
-    { path: '/', label: '首页' },
-    { path: '/ai-generate', label: 'AI创作' },
-    { path: '/shop', label: '星际商城' },
-    { path: '/community', label: '社区' },
-    { path: '/member', label: '会员中心' },
+    { path: '/', label: '萌尾时空' },
+    { path: '/ai-generate', label: '萌爱镜像' },
+    { path: '/shop', label: '萌趣定制' },
+    { path: '/community', label: '萌迹共享' },
+    { path: '/member', label: '萌星契约' },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-lg bg-cosmic-deep/40 cosmic-border">
+    <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full bg-nebula-gradient flex items-center justify-center animate-glow-pulse">
-                <span className="text-cosmic-star font-bold">M</span>
-              </div>
-              <span className="text-xl font-bold text-cosmic-star text-glow">萌尾时空</span>
+              <img 
+                src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
+                alt="萌尾时空 Logo" 
+                className="w-16 h-16 object-cover hover:scale-105 transition-transform"
+              />
             </Link>
           </div>
           
@@ -64,27 +64,18 @@ const GalaxyNav: React.FC = () => {
             ))}
           </div>
           
-          <div className="flex items-center space-x-4">
-            <PetIP className="hidden sm:block" />
-            <img 
-              src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
-              alt="Taily Logo" 
-              className="w-10 h-10 rounded-full object-cover hover:scale-110 transition-transform"
-            />
-            
-            <Button 
-              variant="ghost" 
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <Navigation className="h-6 w-6" />
-            </Button>
-          </div>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Navigation className="h-6 w-6" />
+          </Button>
         </div>
         
         {isMobileMenuOpen && (
-          <div className="mt-4 pb-3 border-t border-cosmic-accent/20 md:hidden">
+          <div className="mt-4 pb-3 border-t border-gray-100 md:hidden">
             <div className="flex flex-col space-y-3 pt-3">
               {navItems.map((item) => (
                 <Link 
@@ -95,15 +86,12 @@ const GalaxyNav: React.FC = () => {
                     "px-4 py-2 rounded-md",
                     pathname === item.path
                       ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow"
-                      : "text-cosmic-star/80 hover:bg-cosmic-highlight/10 hover:text-cosmic-star"
+                      : "text-gray-600 hover:bg-cosmic-highlight/10 hover:text-cosmic-highlight"
                   )}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="flex justify-center mt-2">
-                <PetIP />
-              </div>
             </div>
           </div>
         )}
