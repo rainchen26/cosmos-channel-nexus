@@ -48,7 +48,7 @@ const Home: React.FC = () => {
           backgroundSize: 'cover'
         }}
       >
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
         <div className="relative z-10 text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-glow">
             萌尾时空｜以AI之名，让爱永生
