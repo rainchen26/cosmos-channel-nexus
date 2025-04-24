@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -100,25 +99,31 @@ export default {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.3' }
 				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(0deg)' },
+					'50%': { transform: 'rotate(-5deg)' }
+				},
+				'wag': {
+					'0%, 100%': { transform: 'rotate(0deg)' },
+					'50%': { transform: 'rotate(10deg)' }
+				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'glow-pulse': {
-					'0%, 100%': { 
-						boxShadow: '0 0 5px #38bdf8, 0 0 10px #38bdf8' 
-					},
-					'50%': { 
-						boxShadow: '0 0 20px #38bdf8, 0 0 30px #38bdf8' 
-					}
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'twinkle': 'twinkle 3s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite',
-				'glow-pulse': 'glow-pulse 4s ease-in-out infinite'
+				'shimmer': 'shimmer 2s infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'wag': 'wag 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
 			},
 			backgroundImage: {
 				'star-field': 'url("/images/star-field.png")',

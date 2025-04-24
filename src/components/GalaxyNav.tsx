@@ -44,12 +44,21 @@ const GalaxyNav: React.FC = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <img 
-                src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
-                alt="萌尾时空 Logo" 
-                className="w-16 h-16 object-cover hover:scale-105 transition-transform"
-              />
+            <Link to="/" className="flex items-center space-x-2 relative group">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png" 
+                  alt="萌尾时空 Logo" 
+                  className="w-16 h-16 object-cover mix-blend-multiply animate-float"
+                />
+                {/* Blue light animation overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 animate-shimmer" />
+                {/* Ear animation */}
+                <div className="absolute top-1 left-2 w-3 h-3 origin-bottom animate-wiggle" />
+                <div className="absolute top-1 right-2 w-3 h-3 origin-bottom animate-wiggle [animation-delay:0.1s]" />
+                {/* Tail animation */}
+                <div className="absolute bottom-2 right-0 w-4 h-4 origin-top animate-wag" />
+              </div>
             </Link>
             
             <div className="hidden md:flex items-center space-x-4">
