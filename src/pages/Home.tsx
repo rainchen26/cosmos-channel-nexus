@@ -40,14 +40,9 @@ const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8 space-y-12">
       <section 
-        className="relative min-h-[600px] flex flex-col justify-center items-center text-center bg-cover bg-center bg-no-repeat rounded-xl overflow-hidden"
-        style={{
-          backgroundImage: "url('/lovable-uploads/4d01be85-8cd2-487a-913f-8620523f36e7.png')",
-          backgroundPosition: 'center',
-          backgroundSize: 'cover'
-        }}
+        className="relative min-h-[600px] flex flex-col justify-center items-center text-center"
       >
-        <div className="relative z-10 text-white px-4">
+        <div className="relative z-10 text-white px-4 mb-8">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             萌尾时空｜以AI之名，让爱永生
           </h1>
@@ -62,6 +57,13 @@ const Home: React.FC = () => {
               了解更多
             </Button>
           </div>
+        </div>
+        <div className="w-full max-w-4xl rounded-xl overflow-hidden">
+          <img 
+            src="/lovable-uploads/4d01be85-8cd2-487a-913f-8620523f36e7.png" 
+            alt="Hero Image" 
+            className="w-full h-auto object-cover"
+          />
         </div>
       </section>
       
