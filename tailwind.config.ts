@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cosmic theme colors
+				cosmic: {
+					DEFAULT: '#0f172a',
+					'deep': '#020617',
+					'highlight': '#8b5cf6',
+					'accent': '#06b6d4',
+					'glow': '#38bdf8',
+					'nebula': '#c084fc',
+					'star': '#f8fafc'
 				}
 			},
 			borderRadius: {
@@ -84,11 +95,34 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'twinkle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.3' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px #38bdf8, 0 0 10px #38bdf8' 
+					},
+					'50%': { 
+						boxShadow: '0 0 20px #38bdf8, 0 0 30px #38bdf8' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'twinkle': 'twinkle 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 4s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'star-field': 'url("/images/star-field.png")',
+				'nebula-gradient': 'linear-gradient(to right, #4338ca, #7e22ce, #a855f7)'
 			}
 		}
 	},

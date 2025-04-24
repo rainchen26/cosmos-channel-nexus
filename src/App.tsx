@@ -1,9 +1,15 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import GalaxyNav from "./components/GalaxyNav";
+import Home from "./pages/Home";
+import AIGenerate from "./pages/AIGenerate";
+import Shop from "./pages/Shop";
+import Community from "./pages/Community";
+import Member from "./pages/Member";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -14,11 +20,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="min-h-screen flex flex-col">
+          <GalaxyNav />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/ai-generate" element={<AIGenerate />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/member" element={<Member />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
