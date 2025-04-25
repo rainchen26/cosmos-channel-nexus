@@ -6,38 +6,18 @@ const Home: React.FC = () => {
   const aiScenes = [
     {
       id: 1,
-      title: "时空幻想",
-      src: "/lovable-uploads/d20a8cf8-0348-4400-8e0b-e3d715deca9d.png"
+      title: "星际奇幻猫",
+      src: "/lovable-uploads/8b666a29-bc5f-4646-8542-37b358076f96.png"
     },
     {
       id: 2,
-      title: "金色机械幻境",
-      src: "/lovable-uploads/f9ac93f8-c3d7-455a-8a6b-2d6d60165db8.png"
+      title: "白狼女王",
+      src: "/lovable-uploads/0853efba-10bf-4cd4-b461-30b5ffb28f3e.png"
     },
     {
       id: 3,
-      title: "彩色梦境",
-      src: "/lovable-uploads/6dbf0255-7eae-43ca-9524-5caf77885b81.png"
-    },
-    {
-      id: 4,
-      title: "花间淑女",
-      src: "/lovable-uploads/7db6b5df-5a87-4b77-8ebe-2f700f395829.png"
-    },
-    {
-      id: 5,
-      title: "天使幻想",
-      src: "/lovable-uploads/5db96fcc-8408-4154-9385-6e703953f42d.png"
-    },
-    {
-      id: 6,
-      title: "未来探险者",
-      src: "/lovable-uploads/f8c4e312-ae17-4f0a-a948-70f929c6aa18.png"
-    },
-    {
-      id: 7,
-      title: "星际勇士",
-      src: "/lovable-uploads/d470638f-a984-4330-90a7-89f48af9b488.png"
+      title: "樱花猫语",
+      src: "/lovable-uploads/c163dfdc-b455-48c6-8c0d-58a13acf4360.png"
     }
   ];
 
