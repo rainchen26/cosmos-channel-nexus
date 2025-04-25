@@ -19,6 +19,41 @@ const Home: React.FC = () => {
       id: 3,
       title: "樱花猫语",
       src: "/lovable-uploads/c163dfdc-b455-48c6-8c0d-58a13acf4360.png"
+    },
+    {
+      id: 4,
+      title: "废土边境",
+      src: "/lovable-uploads/2d08e2ea-29ef-4f7d-8b64-26f79e70e5c5.png"
+    },
+    {
+      id: 5,
+      title: "星际守护",
+      src: "/lovable-uploads/d4acc7fe-1790-4729-9061-d3d8fd36ddf4.png"
+    },
+    {
+      id: 6,
+      title: "机械梦境",
+      src: "/lovable-uploads/2c481a9d-04c5-44e6-90b6-59a4383d6dde.png"
+    },
+    {
+      id: 7,
+      title: "太空探险",
+      src: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
+    },
+    {
+      id: 8,
+      title: "赛博朋克",
+      src: "/lovable-uploads/4b0893f4-589c-4865-bad0-598de203396d.png"
+    },
+    {
+      id: 9,
+      title: "未来城市",
+      src: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png"
+    },
+    {
+      id: 10,
+      title: "星际港口",
+      src: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png"
     }
   ];
 
@@ -80,17 +115,17 @@ const Home: React.FC = () => {
           <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
         </div>
         <div className="overflow-x-auto pb-6">
-          <div className="flex gap-6 min-w-max px-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4">
             {aiScenes.map((scene) => (
-              <div key={scene.id} className="w-[400px] flex-shrink-0">
-                <div className="relative h-[500px] group">
+              <div key={scene.id} className="flex-shrink-0">
+                <div className="relative h-[300px] group">
                   <img
                     src={scene.src}
                     alt={scene.title}
                     className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-b-2xl">
-                    <h3 className="text-2xl font-bold text-white/90">{scene.title}</h3>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-b-2xl">
+                    <h3 className="text-xl font-bold text-white/90">{scene.title}</h3>
                   </div>
                 </div>
               </div>
