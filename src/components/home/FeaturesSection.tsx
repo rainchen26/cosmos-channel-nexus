@@ -1,10 +1,11 @@
-
 import { Button } from "@/components/ui/button";
 
 const FeaturesSection = () => {
   return (
     <section className="mb-8">
-      <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#7E69AB' }}>探索萌尾星际</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 tracking-tight text-title-purple font-playfair">
+        探索萌尾星际
+      </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -38,7 +37,7 @@ const AIGenerate: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-3 text-cosmic-star text-glow">
+        <h1 className="text-4xl font-bold mb-3 text-title-purple font-playfair">
           在数据星河里，为你和你的宠伴留一盏不灭的灯
         </h1>
         <p className="text-lg text-cosmic-star/80 max-w-2xl mx-auto">
@@ -133,4 +132,3 @@ const AIGenerate: React.FC = () => {
 };
 
 export default AIGenerate;
-
