@@ -192,6 +192,32 @@ const AIGenerate: React.FC = () => {
         
         {/* Step 1: Upload Photos */}
         <TabsContent value="upload" className="space-y-6">
+          <div className="mb-6 p-4 bg-muted rounded-lg">
+            <h3 className="text-lg font-semibold mb-3">📸 照片上传要求</h3>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2">
+                <span className="font-medium">尺寸要求：</span>
+                <span>建议分辨率至少 512×512 像素，最大支持 4096×4096 像素</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="font-medium">文件格式：</span>
+                <span>支持 JPG、PNG、WebP 格式</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="font-medium">文件大小：</span>
+                <span>单张图片不超过 5MB</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="font-medium">拍摄建议：</span>
+                <span>请确保光线充足，画面清晰，背景简单</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="font-medium">拍摄角度：</span>
+                <span>需要正面、左侧面、右侧面和背面四个视角，注意保持同样的拍摄距离</span>
+              </li>
+            </ul>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Owner Upload Section */}
             <Card className="cosmic-card overflow-hidden">
@@ -201,7 +227,7 @@ const AIGenerate: React.FC = () => {
                   <h3 className="text-xl font-semibold">主人/仆人照片</h3>
                 </div>
                 <p className="text-sm text-cosmic-star/70 mb-4">
-                  请上传四视图：正面、左侧面、右侧面和背面照片
+                  请按要求上传清晰的四视图照片，保持拍摄距离一致
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
@@ -209,24 +235,28 @@ const AIGenerate: React.FC = () => {
                     onClick={() => handleUploadImage("主人正面")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">正面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">建议正对拍摄</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("主人左侧")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">左侧面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">左侧90度角</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("主人右侧")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">右侧面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">右侧90度角</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("主人背面")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">背面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">背对拍摄</span>
                   </div>
                 </div>
               </CardContent>
@@ -240,7 +270,7 @@ const AIGenerate: React.FC = () => {
                   <h3 className="text-xl font-semibold">宠物照片</h3>
                 </div>
                 <p className="text-sm text-cosmic-star/70 mb-4">
-                  请上传四视图：正面、左侧面、右侧面和背面照片
+                  请确保宠物处于自然放松状态，拍摄环境光线充足
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
@@ -248,24 +278,28 @@ const AIGenerate: React.FC = () => {
                     onClick={() => handleUploadImage("宠物正面")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">正面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">正对拍摄</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("宠物左侧")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">左侧面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">左侧90度角</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("宠物右侧")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">右侧面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">右侧90度角</span>
                   </div>
                   
                   <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
                     onClick={() => handleUploadImage("宠物背面")}>
                     <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
                     <span className="text-sm text-cosmic-star/80">背面照</span>
+                    <span className="text-xs text-cosmic-star/60 mt-1">背对拍摄</span>
                   </div>
                 </div>
               </CardContent>
