@@ -59,7 +59,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-12">
+    <div className="container mx-auto px-4 py-8 space-y-16">
       <section className="relative">
         <div className="w-full max-w-5xl mx-auto rounded-xl overflow-hidden">
           <img 
@@ -68,10 +68,10 @@ const Home: React.FC = () => {
             className="w-full h-auto object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white text-center px-4">
               萌尾时空｜以AI之名，让爱永存
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white">
+            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white text-center px-4">
               探索无边界的宇宙创意，用AI创造属于你的星际奇观
             </p>
             <Button 
@@ -85,39 +85,43 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
-        <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">AI创意展示</h2>
-        <Carousel className="max-w-md mx-auto">
-          <CarouselContent>
-            {aiScenes.map((scene) => (
-              <CarouselItem key={scene.id}>
-                <div className="p-1">
-                  <Card className="cosmic-card overflow-hidden">
-                    <div className="relative aspect-[9/16]">
-                      <img
-                        src={scene.src}
-                        alt={scene.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                        <h3 className="text-xl font-bold text-white">{scene.title}</h3>
+        <h2 className="text-3xl font-bold text-center mb-12 text-cosmic-star">AI创意展示</h2>
+        <div className="max-w-sm md:max-w-md mx-auto pb-8">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {aiScenes.map((scene) => (
+                <CarouselItem key={scene.id}>
+                  <div className="p-1">
+                    <Card className="cosmic-card overflow-hidden border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
+                      <div className="relative aspect-[9/16] max-h-[70vh]">
+                        <img
+                          src={scene.src}
+                          alt={scene.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                          <h3 className="text-xl font-bold text-white">{scene.title}</h3>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
-          <CarouselNext className="text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
-        </Carousel>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-4 gap-4">
+              <CarouselPrevious className="static translate-y-0 text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
+              <CarouselNext className="static translate-y-0 text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
+            </div>
+          </Carousel>
+        </div>
       </section>
       
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">宇宙精选</h2>
+      <section className="space-y-8">
+        <h2 className="text-3xl font-bold text-center mb-12 text-cosmic-star">宇宙精选</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((item) => (
-            <Card key={item} className="cosmic-card overflow-hidden">
+            <Card key={item} className="cosmic-card overflow-hidden border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
               <div className="h-48 bg-gradient-to-br from-cosmic-nebula/30 to-cosmic-accent/30"></div>
               <CardHeader>
                 <CardTitle>星际探索 #{item}</CardTitle>
@@ -134,29 +138,29 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <section>
+      <section className="mb-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-cosmic-star">梦微时空主要频道</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="cosmic-card p-6 rounded-lg">
+          <div className="cosmic-card p-6 rounded-lg border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
             <h3 className="text-xl font-bold mb-4 text-cosmic-nebula">AI创作</h3>
             <p className="mb-4">使用先进的AI技术创造令人惊叹的图像、视频和文本内容。</p>
             <Button variant="link" className="text-cosmic-nebula p-0">前往创作 →</Button>
           </div>
           
-          <div className="cosmic-card p-6 rounded-lg">
+          <div className="cosmic-card p-6 rounded-lg border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
             <h3 className="text-xl font-bold mb-4 text-cosmic-accent">星际商城</h3>
             <p className="mb-4">探索和购买由创作者制作的独特数字产品和内容。</p>
             <Button variant="link" className="text-cosmic-accent p-0">去购物 →</Button>
           </div>
           
-          <div className="cosmic-card p-6 rounded-lg">
+          <div className="cosmic-card p-6 rounded-lg border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
             <h3 className="text-xl font-bold mb-4 text-cosmic-glow">创作社区</h3>
             <p className="mb-4">加入充满创意的社区，分享你的作品并与其他创作者交流。</p>
             <Button variant="link" className="text-cosmic-glow p-0">探索社区 →</Button>
           </div>
           
-          <div className="cosmic-card p-6 rounded-lg">
+          <div className="cosmic-card p-6 rounded-lg border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
             <h3 className="text-xl font-bold mb-4 text-cosmic-highlight">会员中心</h3>
             <p className="mb-4">解锁专属内容、高级功能和提升你的创作体验。</p>
             <Button variant="link" className="text-cosmic-highlight p-0">会员详情 →</Button>
