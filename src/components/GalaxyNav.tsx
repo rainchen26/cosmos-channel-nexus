@@ -31,7 +31,7 @@ const GalaxyNav: React.FC = () => {
   const pathname = window.location.pathname;
 
   const navItems = [
-    { path: '/', label: '萌尾时空' },
+    { path: '/', label: '萌尾星际' },
     { path: '/ai-generate', label: '萌爱镜像' },
     { path: '/shop', label: '萌趣定制' },
     { path: '/community', label: '萌迹共享' },
