@@ -271,15 +271,17 @@ const AIGenerate: React.FC = () => {
 场景氛围温馨浪漫，整体感觉略带梦幻，像是穿越银河的温柔瞬间。
 画面中可以有星际穿梭的飞船掠过，给人一种未来感与浪漫的结合。
 
-建议包含：场景描述、人物状态、宠物状态、整体氛围
-建议字数50-200字，精简表达更有力！`}
-                      className="aspect-square bg-secondary resize-none"
-                      value={prompt}
-                      onChange={(e) => setPrompt(e.target.value)}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
+建议字数50-200字，尽情发挥你的想象力！`}
+                  className="h-48 bg-secondary resize-none"
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                />
+                <div className="text-xs text-muted-foreground">
+                  建议包含：场景描述、人物状态、宠物状态、整体氛围
+                </div>
+              </div>
+            </CardContent>
+            </Card>
 
             <Card>
               <CardContent className="pt-6">
@@ -383,9 +385,9 @@ const AIGenerate: React.FC = () => {
                 {Array(8).fill(0).map((_, i) => (
                   <div key={i} className="aspect-square card flex items-center justify-center">
                     <p className="text-muted-foreground text-sm text-center px-2">
-                      {i < 2 ? "单人" : 
-                       i < 4 ? "单宠" : 
-                       "组合"}
+                      {i < 2 ? "主人/仆人单独照" : 
+                       i < 4 ? "宠物单独照" : 
+                       "合照"}
                     </p>
                   </div>
                 ))}
@@ -398,7 +400,7 @@ const AIGenerate: React.FC = () => {
                 <h4 className="text-xl font-semibold">视频记忆</h4>
               </div>
               <div className="aspect-video card flex items-center justify-center">
-                <p className="text-muted-foreground">生成的视频</p>
+                <p className="text-muted-foreground">AI生成的视频记忆</p>
               </div>
             </div>
             
@@ -410,7 +412,7 @@ const AIGenerate: React.FC = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(8).fill(0).map((_, i) => (
                   <div key={i} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground">{i+1}</p>
+                    <p className="text-muted-foreground">表情包 #{i+1}</p>
                   </div>
                 ))}
               </div>
