@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const Home: React.FC = () => {
   const aiScenes = [
@@ -24,24 +25,27 @@ const Home: React.FC = () => {
   const petStories = [
     {
       id: 1,
-      title: "相遇是最美的意外",
-      description: "那是个雨天，我在街角遇见了这只浑身湿透的小猫。当时她躲在纸箱里，怯生生地望着我。带她回家后，她很快适应了新环境，现在成了我生活中不可或缺的小天使。每天回家，她都会在门口等我。",
-      author: "晓月",
-      pet: "橘猫 KiKi"
+      title: "爱与勇气的奇遇",
+      description: "两年前，在一个寒冷的冬夜，我在地铁站遇见了这只瘸腿的小柴犬。它蜷缩在角落，眼神中透着害怕和期待。带它去医院检查后，才知道它的腿是被人为伤害的。经过半年的治疗和康复，现在的它活泼开朗，成为了我生命中最亮的那颗星。",
+      author: "小雨",
+      pet: "柴犬 勇气",
+      image: "/lovable-uploads/0382aeb1-1d69-4cad-8ef5-39b172da3e8c.png"
     },
     {
       id: 2,
-      title: "陪伴是最长情的告白",
-      description: "已经记不清和毛毛一起度过了多少个日日夜夜。从我高考备考的夜晚，到工作后的欢喜时光，这只忠诚的边牧一直陪在我身边。她现在已经12岁了，步伐虽然慢了，但每次看到我回家时摇尾巴的样子，依然那么温暖。",
-      author: "阿杰",
-      pet: "边牧 毛毛"
+      title: "命运的相遇",
+      description: "在流浪猫救助站做志愿者的时候，这只三花猫总是默默跟着我。每次我打扫她们的窝，她都会轻轻蹭我的手。那天下班时，她趴在门边，用那双水汪汪的大眼睛望着我。就这样，我们成为了彼此的家人。现在的她，是我生活中最温暖的存在。",
+      author: "阳阳",
+      pet: "三花猫 Lucky",
+      image: "/lovable-uploads/5db96fcc-8408-4154-9385-6e703953f42d.png"
     },
     {
       id: 3,
-      title: "生命中的小天使",
-      description: "豆豆是我在动物救助站领养的兔子。当时她因为受伤被送去救助，经过精心照料后康复了。第一次见到她时，她怯生生地躲在角落，但渐渐地，她开始信任我，现在每天早上都会蹦蹦跳跳地要求摸头。看着她开心的样子，我感觉生活充满了甜。",
-      author: "小林",
-      pet: "垂耳兔 豆豆"
+      title: "喵星来客",
+      description: "那是个下雪的夜晚，我在阳台发现了这只浑身发抖的英短。它大概是被遗弃的家猫，还带着项圈。等了很久没人认领后，我决定收养它。现在的它优雅又粘人，每天都要跟着我在房间里转悠，是我生活里最贴心的小棉袄。",
+      author: "木木",
+      pet: "英短 雪球",
+      image: "/lovable-uploads/f8c4e312-ae17-4f0a-a948-70f929c6aa18.png"
     }
   ];
 
@@ -100,30 +104,43 @@ const Home: React.FC = () => {
           你分享的每段故事，都在扩建萌尾宇宙
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {petStories.map((story) => (
-            <Card key={story.id} className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
-              <div className="h-52 bg-gradient-to-br from-cosmic-nebula/20 to-cosmic-accent/20"></div>
-              <CardHeader>
-                <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>{story.title}</CardTitle>
-                <CardDescription className="text-cosmic-star/70 text-base">
-                  {story.author} 与 {story.pet} 的故事
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-cosmic-star/80">{story.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Button 
-                  variant="ghost" 
-                  className="hover:text-[#7E69AB]/90 hover:bg-[#7E69AB]/10"
-                >
-                  阅读更多
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <Carousel className="w-full max-w-7xl mx-auto">
+          <CarouselContent className="-ml-4">
+            {petStories.map((story) => (
+              <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
+                  <div className="h-52 relative overflow-hidden">
+                    <img 
+                      src={story.image}
+                      alt={story.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>{story.title}</CardTitle>
+                    <CardDescription className="text-cosmic-star/70 text-base">
+                      {story.author} 与 {story.pet} 的故事
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-cosmic-star/80">{story.description}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button 
+                      variant="ghost" 
+                      className="hover:text-[#7E69AB]/90 hover:bg-[#7E69AB]/10"
+                    >
+                      阅读更多
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </section>
       
       <section className="mb-8">
