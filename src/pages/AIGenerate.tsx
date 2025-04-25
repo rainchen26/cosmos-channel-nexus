@@ -383,9 +383,9 @@ const AIGenerate: React.FC = () => {
                 {Array(8).fill(0).map((_, i) => (
                   <div key={i} className="aspect-square card flex items-center justify-center">
                     <p className="text-muted-foreground text-sm text-center px-2">
-                      {i < 2 ? "主人/仆人单独照" : 
-                       i < 4 ? "宠物单独照" : 
-                       "合照"}
+                      {i < 2 ? "单人" : 
+                       i < 4 ? "单宠" : 
+                       "组合"}
                     </p>
                   </div>
                 ))}
@@ -398,7 +398,7 @@ const AIGenerate: React.FC = () => {
                 <h4 className="text-xl font-semibold">视频记忆</h4>
               </div>
               <div className="aspect-video card flex items-center justify-center">
-                <p className="text-muted-foreground">AI生成的视频记忆</p>
+                <p className="text-muted-foreground">生成的视频</p>
               </div>
             </div>
             
@@ -410,7 +410,7 @@ const AIGenerate: React.FC = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(8).fill(0).map((_, i) => (
                   <div key={i} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground">表情包 #{i+1}</p>
+                    <p className="text-muted-foreground">{i+1}</p>
                   </div>
                 ))}
               </div>
