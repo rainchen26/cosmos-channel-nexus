@@ -93,7 +93,7 @@ const Home: React.FC = () => {
     {
       id: 5,
       title: "新纪元探索者",
-      description: "在这个充满未知的新纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
+      description: "在��个充满未知的新纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
       author: "探索队长 星辰",
       pet: "哈士奇 灰灰",
       image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
@@ -138,10 +138,10 @@ const Home: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
         </div>
-        <div className="overflow-x-auto pb-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4">
+        <Carousel className="w-full max-w-7xl mx-auto">
+          <CarouselContent className="-ml-4">
             {aiScenes.map((scene) => (
-              <div key={scene.id} className="flex-shrink-0">
+              <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                 <div className="relative h-[300px] group">
                   <img
                     src={scene.src}
@@ -152,10 +152,12 @@ const Home: React.FC = () => {
                     <h3 className="text-xl font-bold text-white/90">{scene.title}</h3>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </section>
       
       <section className="space-y-10">
