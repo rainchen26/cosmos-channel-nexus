@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -171,6 +172,11 @@ const AIGenerate: React.FC = () => {
       });
     }, 3000);
   };
+
+  const handleSelectSubStyle = (subStyle: string) => {
+    const mainSubStyle = subStyle.split(' - ')[0];
+    setSelectedSubStyle(mainSubStyle);
+  };
   
   return (
     <div className="container mx-auto px-4 py-8">
@@ -308,7 +314,7 @@ const AIGenerate: React.FC = () => {
           
           <div className="mt-4 text-center">
             <Button 
-              onClick={() => document.querySelector('[data-value="style"]')?.click()}
+              onClick={() => handleStyleTabClick("style")}
               className="bg-cosmic-highlight hover:bg-cosmic-highlight/80"
             >
               进入下一步：选择风格
@@ -351,25 +357,56 @@ const AIGenerate: React.FC = () => {
           <Card className="cosmic-card">
             <CardContent className="pt-6">
               <h3 className="text-xl font-semibold mb-6">记忆风格</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {styleCategories.map((category) => (
-                  <div 
-                    key={category.name}
-                    className="flex flex-col gap-2"
-                    onClick={() => setSelectedStyle(category.name)}
-                  >
-                    <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
-                      {/* Placeholder for style preview image */}
-                      <div className="w-full h-full flex items-center justify-center bg-cosmic/30">
-                        <Wand2 className="h-8 w-8 text-cosmic-accent/70" />
+              
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-3">选择主题风格</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {styleCategories.map((category) => (
+                    <div 
+                      key={category.name}
+                      className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedStyle === category.name ? 'bg-cosmic/30 ring-1 ring-cosmic-accent' : 'hover:bg-cosmic/10'}`}
+                      onClick={() => setSelectedStyle(category.name)}
+                    >
+                      <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
+                        {/* Placeholder for style preview image */}
+                        <div className="w-full h-full flex items-center justify-center bg-cosmic/30">
+                          <Wand2 className="h-8 w-8 text-cosmic-accent/70" />
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <h4 className="font-medium">{category.name}</h4>
+                        <p className="text-xs text-cosmic-star/80">{category.description}</p>
                       </div>
                     </div>
-                    <div className="text-center">
-                      <h4 className="font-medium">{category.name}</h4>
-                      <p className="text-xs text-cosmic-star/80">{category.description}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold mb-3">选择子风格 ({selectedStyle})</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {styleCategories.find(category => category.name === selectedStyle)?.subStyles.map((subStyle, index) => {
+                    const [name, description] = subStyle.split(' - ');
+                    return (
+                      <div 
+                        key={index}
+                        className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedSubStyle === name ? 'bg-cosmic/30 ring-1 ring-cosmic-accent' : 'hover:bg-cosmic/10'}`}
+                        onClick={() => handleSelectSubStyle(subStyle)}
+                      >
+                        <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
+                          {/* Placeholder for substyle preview image */}
+                          <div className="w-full h-full flex items-center justify-center bg-cosmic/20">
+                            <Wand2 className="h-6 w-6 text-cosmic-accent/60" />
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <h5 className="font-medium text-sm">{name}</h5>
+                          <p className="text-xs text-cosmic-star/70">{description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </CardContent>
           </Card>
