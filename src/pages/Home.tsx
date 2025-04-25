@@ -93,7 +93,7 @@ const Home: React.FC = () => {
     {
       id: 5,
       title: "新纪元探索者",
-      description: "在����个充满未知的新纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
+      description: "在����个充满未知的���纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
       author: "探索队长 星辰",
       pet: "哈士奇 灰灰",
       image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
@@ -109,9 +109,9 @@ const Home: React.FC = () => {
   ];
 
   const carouselOptions = {
-    align: "start",
+    align: "start" as const,
     dragFree: true,
-    containScroll: "trimSnaps",
+    containScroll: "trimSnaps" as const,
     draggable: true
   };
 
