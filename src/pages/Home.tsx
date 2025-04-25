@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white text-center px-4 tracking-tight">
-              萌尾时光｜用科技编织温暖故事
+              萌尾时空｜以AI
             </h1>
             <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-white/90 text-center px-4 font-light">
               让每一个AI创作都成为永恒的情感记忆
