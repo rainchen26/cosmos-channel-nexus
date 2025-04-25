@@ -196,32 +196,6 @@ const AIGenerate: React.FC = () => {
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
-          <div className="mb-6 p-4 bg-secondary rounded-lg">
-            <h3 className="text-lg font-semibold mb-3">📸 照片上传要求</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2">
-                <span className="font-medium">尺寸要求：</span>
-                <span>建议分辨率至少 512×512 像素，最大支持 4096×4096 像素</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="font-medium">文件格式：</span>
-                <span>支持 JPG、PNG、WebP 格式</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="font-medium">文件大小：</span>
-                <span>单张图片不超过 5MB</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="font-medium">拍摄建议：</span>
-                <span>请确保光线充足，画面清晰，背景简单</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="font-medium">拍摄角度：</span>
-                <span>需要正面、左侧面、右侧面和背面四个视角，注意保持同样的拍摄距离</span>
-              </li>
-            </ul>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardContent className="p-6">
@@ -229,9 +203,6 @@ const AIGenerate: React.FC = () => {
                   <User className="mr-2 text-primary" />
                   <h3 className="text-xl font-semibold">主人/仆人照片</h3>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  请按要求上传清晰的四视图照片，保持拍摄距离一致
-                </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   {['正面照', '左侧面照', '右侧面照', '背面照'].map((type, index) => (
@@ -240,8 +211,8 @@ const AIGenerate: React.FC = () => {
                       onClick={() => handleUploadImage(`主人${type}`)}>
                       <Upload className="h-8 w-8 text-primary/70 mb-2" />
                       <span className="text-sm">{type}</span>
-                      <span className="text-xs text-muted-foreground mt-1">
-                        {type === '正面照' ? '建议正对拍摄' : 
+                      <span className="text-xs text-muted-foreground mt-1 text-center">
+                        {type === '正面照' ? '清晰、光线充足、512×512px' : 
                          type === '左侧面照' ? '左侧90度角' :
                          type === '右侧面照' ? '右侧90度角' : '背对拍摄'}
                       </span>
@@ -292,7 +263,6 @@ const AIGenerate: React.FC = () => {
         
         <TabsContent value="style" className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {/* Text-to-Image Prompt Section */}
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4">记忆提示</h3>
@@ -305,7 +275,6 @@ const AIGenerate: React.FC = () => {
               </CardContent>
             </Card>
 
-            {/* Style Image Upload Section */}
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4">上传参考风格</h3>
@@ -320,7 +289,6 @@ const AIGenerate: React.FC = () => {
             </Card>
           </div>
 
-          {/* Memory Style Grid */}
           <Card>
             <CardContent className="pt-6">
               <h3 className="text-xl font-semibold mb-6">记忆风格</h3>
@@ -335,7 +303,6 @@ const AIGenerate: React.FC = () => {
                       onClick={() => setSelectedStyle(category.name)}
                     >
                       <div className="aspect-square bg-secondary rounded-md overflow-hidden">
-                        {/* Placeholder for style preview image */}
                         <div className="w-full h-full flex items-center justify-center bg-secondary/50">
                           <Wand2 className="h-8 w-8 text-primary/70" />
                         </div>
@@ -361,7 +328,6 @@ const AIGenerate: React.FC = () => {
                         onClick={() => handleSelectSubStyle(subStyle)}
                       >
                         <div className="aspect-square bg-secondary rounded-md overflow-hidden">
-                          {/* Placeholder for substyle preview image */}
                           <div className="w-full h-full flex items-center justify-center bg-secondary/50">
                             <Wand2 className="h-6 w-6 text-primary/60" />
                           </div>
@@ -415,7 +381,6 @@ const AIGenerate: React.FC = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-primary">已生成的记忆</h3>
             
-            {/* Photos Section */}
             <div>
               <div className="flex items-center mb-4">
                 <Image className="mr-2 text-primary" />
@@ -434,7 +399,6 @@ const AIGenerate: React.FC = () => {
               </div>
             </div>
             
-            {/* Video Section */}
             <div>
               <div className="flex items-center mb-4">
                 <Upload className="mr-2 text-primary" />
@@ -445,7 +409,6 @@ const AIGenerate: React.FC = () => {
               </div>
             </div>
             
-            {/* Emojis Section */}
             <div>
               <div className="flex items-center mb-4">
                 <Smile className="mr-2 text-primary" />
