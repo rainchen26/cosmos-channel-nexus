@@ -93,7 +93,7 @@ const Home: React.FC = () => {
     {
       id: 5,
       title: "新纪元探索者",
-      description: "在��个充满未知的新纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
+      description: "在����个充满未知的新纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
       author: "探索队长 星辰",
       pet: "哈士奇 灰灰",
       image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
@@ -107,6 +107,13 @@ const Home: React.FC = () => {
       image: "/lovable-uploads/d4acc7fe-1790-4729-9061-d3d8fd36ddf4.png"
     }
   ];
+
+  const carouselOptions = {
+    align: "start",
+    dragFree: true,
+    containScroll: "trimSnaps",
+    draggable: true
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-20">
@@ -138,15 +145,19 @@ const Home: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
         </div>
-        <Carousel className="w-full max-w-7xl mx-auto">
+        <Carousel 
+          className="w-full max-w-7xl mx-auto" 
+          opts={carouselOptions}
+        >
           <CarouselContent className="-ml-4">
             {aiScenes.map((scene) => (
               <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="relative h-[300px] group">
+                <div className="relative h-[300px] group cursor-grab active:cursor-grabbing">
                   <img
                     src={scene.src}
                     alt={scene.title}
                     className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                    draggable="false"
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-b-2xl">
                     <h3 className="text-xl font-bold text-white/90">{scene.title}</h3>
@@ -155,8 +166,6 @@ const Home: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
         </Carousel>
       </section>
       
@@ -165,16 +174,20 @@ const Home: React.FC = () => {
           你分享的每段故事，都在扩建萌尾宇宙
         </h2>
         
-        <Carousel className="w-full max-w-7xl mx-auto">
+        <Carousel 
+          className="w-full max-w-7xl mx-auto" 
+          opts={carouselOptions}
+        >
           <CarouselContent className="-ml-4">
             {petStories.map((story) => (
               <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
+                <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10 cursor-grab active:cursor-grabbing">
                   <div className="h-52 relative overflow-hidden">
                     <img 
                       src={story.image}
                       alt={story.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      draggable="false"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   </div>
@@ -199,8 +212,6 @@ const Home: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
         </Carousel>
       </section>
       
