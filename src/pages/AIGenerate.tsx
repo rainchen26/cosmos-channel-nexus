@@ -162,7 +162,7 @@ const AIGenerate: React.FC = () => {
         <TabsList className="grid grid-cols-3 mb-6">
           <TabsTrigger value="upload">1. 上传照片</TabsTrigger>
           <TabsTrigger value="style">2. 选择风格</TabsTrigger>
-          <TabsTrigger value="generate">3. 生成记忆</TabsTrigger>
+          <TabsTrigger value="generate">生成记忆</TabsTrigger>
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
@@ -368,7 +368,7 @@ const AIGenerate: React.FC = () => {
         
         <TabsContent value="generate" className="space-y-6">
           <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">3. 生成记忆</h2>
+            <h2 className="text-xl font-semibold text-primary">生成记忆</h2>
           </div>
           
           <div className="space-y-6">
