@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -19,6 +18,30 @@ const Home: React.FC = () => {
       id: 3,
       title: "樱花猫语",
       src: "/lovable-uploads/c163dfdc-b455-48c6-8c0d-58a13acf4360.png"
+    }
+  ];
+
+  const petStories = [
+    {
+      id: 1,
+      title: "相遇是最美的意外",
+      description: "那是个雨天，我在街角遇见了这只浑身湿透的小猫。当时她躲在纸箱里，怯生生地望着我。带她回家后，她很快适应了新环境，现在成了我生活中不可或缺的小天使。每天回家，她都会在门口等我。",
+      author: "晓月",
+      pet: "橘猫 KiKi"
+    },
+    {
+      id: 2,
+      title: "陪伴是最长情的告白",
+      description: "已经记不清和毛毛一起度过了多少个日日夜夜。从我高考备考的夜晚，到工作后的欢喜时光，这只忠诚的边牧一直陪在我身边。她现在已经12岁了，步伐虽然慢了，但每次看到我回家时摇尾巴的样子，依然那么温暖。",
+      author: "阿杰",
+      pet: "边牧 毛毛"
+    },
+    {
+      id: 3,
+      title: "生命中的小天使",
+      description: "豆豆是我在动物救助站领养的兔子。当时她因为受伤被送去救助，经过精心照料后康复了。第一次见到她时，她怯生生地躲在角落，但渐渐地，她开始信任我，现在每天早上都会蹦蹦跳跳地要求摸头。看着她开心的样子，我感觉生活充满了甜。",
+      author: "小林",
+      pet: "垂耳兔 豆豆"
     }
   ];
 
@@ -73,25 +96,29 @@ const Home: React.FC = () => {
       </section>
       
       <section className="space-y-10">
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#7E69AB' }}>你分享的每段故事，都在扩建萌尾宇宙</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#7E69AB' }}>
+          你分享的每段故事，都在扩建萌尾宇宙
+        </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
-            <Card key={item} className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
+          {petStories.map((story) => (
+            <Card key={story.id} className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
               <div className="h-52 bg-gradient-to-br from-cosmic-nebula/20 to-cosmic-accent/20"></div>
               <CardHeader>
-                <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>创意空间 #{item}</CardTitle>
-                <CardDescription className="text-cosmic-star/70 text-base">将来要截取的用户分享的和宠物的日常故事</CardDescription>
+                <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>{story.title}</CardTitle>
+                <CardDescription className="text-cosmic-star/70 text-base">
+                  {story.author} 与 {story.pet} 的故事
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-cosmic-star/80">探索AI创作的无限边界，让想象力自由翱翔。</p>
+                <p className="text-cosmic-star/80">{story.description}</p>
               </CardContent>
               <CardFooter>
                 <Button 
                   variant="ghost" 
                   className="hover:text-[#7E69AB]/90 hover:bg-[#7E69AB]/10"
                 >
-                  开始探索
+                  阅读更多
                 </Button>
               </CardFooter>
             </Card>
