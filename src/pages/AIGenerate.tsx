@@ -295,7 +295,7 @@ const AIGenerate: React.FC = () => {
 整体氛围温馨浪漫，画面略带梦幻感。
 
 (建议字数50-200字)`}
-                    className="h-28 bg-secondary resize-none"
+                    className="h-24 bg-secondary resize-none"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                   />
@@ -316,7 +316,7 @@ const AIGenerate: React.FC = () => {
                   className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                   onClick={() => handleUploadImage("风格参考")}
                 >
-                  <Upload className="h-10 w-10 text-primary/70 mb-2" />
+                  <Upload className="h-8 w-8 text-primary/70 mb-2" />
                   <div className="text-sm text-center px-4">
                     <p className="mb-1">上传你喜欢的风格图片</p>
                     <p className="text-xs text-muted-foreground">支持jpg、png格式</p>
