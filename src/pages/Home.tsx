@@ -61,37 +61,37 @@ const Home: React.FC = () => {
   const petStories = [
     {
       id: 1,
-      title: "星际港口巡逻队",
-      description: "在这座繁忙的星际港口，我和小白已经执勤五年了。每天清晨，确保各个星系的旅客都能安全抵达。",
-      image: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png",
+      title: "云端精灵",
+      description: "在这个梦幻般的云端世界，我的波斯猫小白就像一朵飘逸的云，它那双蓝宝石般的眼睛里藏着整个宇宙的神秘。",
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png",
       link: "/story/1"
     },
     {
       id: 2,
-      title: "废土探险家",
-      description: "在荒芜的废土上，我和黑豹穿越废弃的城市，寻找文明的遗迹，感受这片土地曾经的辉煌。",
-      image: "/lovable-uploads/4b0893f4-589c-4865-bad0-598de203396d.png",
+      title: "星际探险家",
+      description: "作为深空探索队的一员，我和我忠实的伙伴雪花一起穿梭在浩瀚的宇宙中，探索未知的星际奥秘。",
+      image: "/lovable-uploads/44b44d6f-c53a-419f-943b-b2e1117b3bf6.png",
       link: "/story/2"
     },
     {
       id: 3,
-      title: "机械之心",
-      description: "在高度机械化的世界里，萌萌是我最特别的伙伴。它的机械心脏里跳动着最真实的情感。",
-      image: "/lovable-uploads/2c481a9d-04c5-44e6-90b6-59a4383d6dde.png",
+      title: "机甲战士",
+      description: "在这个高科技的世界里，我和我的搭档小黑一起守护着城市的和平，用我们的勇气对抗每一个威胁。",
+      image: "/lovable-uploads/b6c3fe70-186c-4130-bbc3-d88f8a176b41.png",
       link: "/story/3"
     },
     {
       id: 4,
-      title: "太空守望者",
-      description: "作为空间站的驻守员，我和小橘负责监测这片星域。在浩瀚的宇宙中，有它陪伴的时光最珍贵。",
-      image: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png",
+      title: "花语物语",
+      description: "在这个充满浪漫的花园中，我和我的马尔济斯犬珍珠共同谱写着一个关于爱与美的童话故事。",
+      image: "/lovable-uploads/48d2f256-62cb-4196-85c6-3b60fcfd80db.png",
       link: "/story/4"
     },
     {
       id: 5,
-      title: "新纪元探索者",
-      description: "我和灰灰踏上了寻找人类新家园的旅程。在每一颗陌生的星球上，书写着属于我们的传奇。",
-      image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png",
+      title: "太空守望者",
+      description: "作为空间站的驻守员，我和小橘负责监测这片星域。在浩瀚的宇宙中，有它陪伴的时光最珍贵。",
+      image: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png",
       link: "/story/5"
     },
     {
@@ -107,10 +107,9 @@ const Home: React.FC = () => {
     align: "start" as const,
     dragFree: true,
     containScroll: "trimSnaps" as const,
-    draggable: true,
-    dragThreshold: 0.01, // Very low threshold for easy swiping
+    dragThreshold: 0.01,
     inViewThreshold: 0.6,
-    skipSnaps: true, // For smooth scrolling like Apple's site
+    skipSnaps: true,
   };
 
   return (
