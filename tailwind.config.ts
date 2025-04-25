@@ -20,6 +20,19 @@ export default {
     extend: {
       fontFamily: {
         'playfair': ['Playfair Display', 'serif'],
+        'sans': [
+          'PingFang SC', 
+          'Hiragino Sans GB', 
+          'Microsoft YaHei', 
+          'Segoe UI', 
+          'system-ui', 
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          'Roboto', 
+          'Helvetica Neue', 
+          'Arial', 
+          'sans-serif'
+        ]
       },
       colors: {
         border: 'hsl(var(--border))',
