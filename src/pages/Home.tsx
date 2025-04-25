@@ -115,9 +115,9 @@ const Home: React.FC = () => {
     dragFree: true,
     containScroll: "trimSnaps" as const,
     draggable: true,
-    dragThreshold: 0.1, // Even lower threshold for easier drag initiation, more like Apple's site
-    inViewThreshold: 0.5, // How much of the item should be in view
-    skipSnaps: true, // Allows more smooth free-scrolling like Apple's site
+    dragThreshold: 0.05, // Make it even more sensitive
+    inViewThreshold: 0.5,
+    skipSnaps: true,
   };
 
   return (
