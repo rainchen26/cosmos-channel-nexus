@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -85,34 +84,26 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
-        <h2 className="text-3xl font-bold text-center mb-12 text-cosmic-star">AI创意展示</h2>
-        <div className="max-w-sm md:max-w-md mx-auto pb-8">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {aiScenes.map((scene) => (
-                <CarouselItem key={scene.id}>
-                  <div className="p-1">
-                    <Card className="cosmic-card overflow-hidden border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
-                      <div className="relative aspect-[9/16] max-h-[70vh]">
-                        <img
-                          src={scene.src}
-                          alt={scene.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                          <h3 className="text-xl font-bold text-white">{scene.title}</h3>
-                        </div>
-                      </div>
-                    </Card>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-cosmic-star mb-2">每一帧画面，都是AI</h2>
+        </div>
+        <div className="overflow-x-auto pb-6">
+          <div className="flex gap-4 min-w-max px-4">
+            {aiScenes.map((scene) => (
+              <div key={scene.id} className="w-[400px] flex-shrink-0">
+                <div className="relative h-[500px] overflow-hidden">
+                  <img
+                    src={scene.src}
+                    alt={scene.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                    <h3 className="text-xl font-bold text-white">{scene.title}</h3>
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-4 gap-4">
-              <CarouselPrevious className="static translate-y-0 text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
-              <CarouselNext className="static translate-y-0 text-cosmic-star border-cosmic-star hover:bg-cosmic-star/10" />
-            </div>
-          </Carousel>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       
@@ -156,7 +147,7 @@ const Home: React.FC = () => {
           
           <div className="cosmic-card p-6 rounded-lg border-cosmic-accent/30 shadow-lg shadow-cosmic-accent/10">
             <h3 className="text-xl font-bold mb-4 text-cosmic-glow">创作社区</h3>
-            <p className="mb-4">加入充满创意的社区，分享你的作品并与其他创作者交流。</p>
+            <p className="mb-4">加入充满创意的���区，分享你的作品并与其他创作者交流。</p>
             <Button variant="link" className="text-cosmic-glow p-0">探索社区 →</Button>
           </div>
           
