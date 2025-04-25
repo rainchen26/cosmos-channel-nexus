@@ -80,7 +80,7 @@ const Home: React.FC = () => {
               <div className="h-52 bg-gradient-to-br from-cosmic-nebula/20 to-cosmic-accent/20"></div>
               <CardHeader>
                 <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>创意空间 #{item}</CardTitle>
-                <CardDescription className="text-cosmic-star/70 text-base">在这里发现无限可能</CardDescription>
+                <CardDescription className="text-cosmic-star/70 text-base">将来要截取的用户分享的和宠物的日常故事</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-cosmic-star/80">探索AI创作的无限边界，让想象力自由翱翔。</p>
