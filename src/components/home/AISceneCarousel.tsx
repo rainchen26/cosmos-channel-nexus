@@ -30,7 +30,7 @@ const AISceneCarousel = ({ scenes, carouselOptions }: AISceneCarouselProps) => {
         <CarouselContent className="-ml-4">
           {scenes.map((scene) => (
             <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/4">
-              <div className="relative h-[300px] cursor-grab active:cursor-grabbing touch-pan-x">
+              <div className="relative h-[300px] select-none touch-pan-x">
                 <img
                   src={scene.src}
                   alt={scene.title}

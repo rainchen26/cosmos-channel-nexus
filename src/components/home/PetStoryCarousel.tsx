@@ -36,7 +36,7 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
         <CarouselContent className="-ml-4">
           {stories.map((story) => (
             <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-              <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10 cursor-grab active:cursor-grabbing">
+              <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10 select-none">
                 <div className="h-52 relative overflow-hidden touch-pan-x">
                   <img 
                     src={story.image}
