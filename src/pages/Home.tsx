@@ -1,4 +1,3 @@
-
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import AISceneCarousel from '@/components/home/AISceneCarousel';
@@ -63,50 +62,44 @@ const Home: React.FC = () => {
     {
       id: 1,
       title: "星际港口巡逻队",
-      description: "在这座繁忙的星际港口，我和小白已经执勤五年了。每天清晨，我都会在这片霓虹闪烁的街道上巡逻，确保来自各个星系的旅客都能安全抵达。小白那敏锐的嗅觉总能察觉到可疑的气息，它不仅是我的搭档，更是这座港口的守护者。",
-      author: "港口安全官 阿辰",
-      pet: "白色柯基 小白",
-      image: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png"
+      description: "在这座繁忙的星际港口，我和小白已经执勤五年了。每天清晨，确保各个星系的旅客都能安全抵达。",
+      image: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png",
+      link: "/story/1"
     },
     {
       id: 2,
       title: "废土探险家",
-      description: "在这片荒芜的废土上，我和黑豹是最好的搭档。穿越废弃的城市，寻找文明的遗迹，感受这片土地曾经的辉煌。黑豹的夜视能力帮我们躲过了无数危险，它机敏的步伐在月光下格外优雅。每一次探险，都让我们离真相更近一步。",
-      author: "遗迹考古员 夜影",
-      pet: "黑猫 黑豹",
-      image: "/lovable-uploads/4b0893f4-589c-4865-bad0-598de203396d.png"
+      description: "在荒芜的废土上，我和黑豹穿越废弃的城市，寻找文明的遗迹，感受这片土地曾经的辉煌。",
+      image: "/lovable-uploads/4b0893f4-589c-4865-bad0-598de203396d.png",
+      link: "/story/2"
     },
     {
       id: 3,
       title: "机械之心",
-      description: "在这个高度机械化的世界里，萌萌是我最特别的伙伴。它的机械心脏里跳动着最真实的情感，那双闪烁着微光的眼睛总能让我感受到温暖。虽然外表看起来冰冷，但它对我的爱护比任何高科技都要真实动人。",
-      author: "机械工程师 星野",
-      pet: "机械猫 萌萌",
-      image: "/lovable-uploads/2c481a9d-04c5-44e6-90b6-59a4383d6dde.png"
+      description: "在高度机械化的世界里，萌萌是我最特别的伙伴。它的机械心脏里跳动着最真实的情感。",
+      image: "/lovable-uploads/2c481a9d-04c5-44e6-90b6-59a4383d6dde.png",
+      link: "/story/3"
     },
     {
       id: 4,
       title: "太空守望者",
-      description: "作为空间站的驻守员，我和小橘负责监测这片星域的异常。每当我工作到深夜，它总会轻轻跳上控制台，用温暖的身体提醒我该休息了。在这浩瀚的宇宙中，有它陪伴的时光是最珍贵的。",
-      author: "空间站技师 云枫",
-      pet: "橘猫 小橘",
-      image: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png"
+      description: "作为空间站的驻守员，我和小橘负责监测这片星域。在浩瀚的宇宙中，有它陪伴的时光最珍贵。",
+      image: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png",
+      link: "/story/4"
     },
     {
       id: 5,
       title: "新纪元探索者",
-      description: "在����个充满未知�������纪元��我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
-      author: "探索队长 星辰",
-      pet: "哈士奇 灰灰",
-      image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
+      description: "我和灰灰踏上了寻找人类新家园的旅程。在每一颗陌生的星球上，书写着属于我们的传奇。",
+      image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png",
+      link: "/story/5"
     },
     {
       id: 6,
       title: "星际科研员",
-      description: "在这座漂浮的科研站里，暖暖是我最忠实的研究助手。每当我在进行星际能源研究时，它总会安静地趴在实验台旁，用那双充满智慧的眼睛注视着我的工作。它不仅是我的伙伴，更是这个孤独太空站里最温暖的存在。",
-      author: "首席研究员 月华",
-      pet: "布偶猫 暖暖",
-      image: "/lovable-uploads/d4acc7fe-1790-4729-9061-d3d8fd36ddf4.png"
+      description: "在漂浮的科研站里，暖暖是我最忠实的助手。它不仅是伙伴，更是这个孤独太空站里最温暖的存在。",
+      image: "/lovable-uploads/d4acc7fe-1790-4729-9061-d3d8fd36ddf4.png",
+      link: "/story/6"
     }
   ];
 
