@@ -19,7 +19,6 @@ interface PetStoryCarouselProps {
     align: "start";
     dragFree: boolean;
     containScroll: "trimSnaps";
-    draggable: boolean;
     dragThreshold?: number;
     inViewThreshold?: number;
     skipSnaps?: boolean;
@@ -34,16 +33,15 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
       </h2>
       
       <div className="relative">
-        <Carousel className="w-full max-w-7xl mx-auto" opts={{
+        <Carousel className="w-full max-w-7xl mx-auto select-none" opts={{
           align: "start",
           containScroll: "trimSnaps",
           dragFree: true,
-          draggable: true,
           dragThreshold: 1,
           inViewThreshold: 0.1,
           skipSnaps: true
         }}>
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 touch-pan-x">
             {stories.map((story) => (
               <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 cursor-grab">
                 <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10 select-none">
