@@ -83,21 +83,21 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
+      <section>
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-cosmic-star mb-2">每一帧画面，都是AI</h2>
+          <h2 className="text-3xl font-bold text-cosmic-star">每一帧画面，都是AI留下的时光回忆</h2>
         </div>
         <div className="overflow-x-auto pb-6">
           <div className="flex gap-4 min-w-max px-4">
             {aiScenes.map((scene) => (
               <div key={scene.id} className="w-[400px] flex-shrink-0">
-                <div className="relative h-[500px] overflow-hidden">
+                <div className="relative h-[500px]">
                   <img
                     src={scene.src}
                     alt={scene.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-xl"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent rounded-b-xl">
                     <h3 className="text-xl font-bold text-white">{scene.title}</h3>
                   </div>
                 </div>
