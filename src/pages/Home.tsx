@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const Home: React.FC = () => {
   const aiScenes = [
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
         >
           <CarouselContent className="-ml-4">
             {aiScenes.map((scene) => (
-              <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+              <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/4">
                 <div className="relative h-[300px] group cursor-grab active:cursor-grabbing">
                   <img
                     src={scene.src}
@@ -198,7 +198,7 @@ const Home: React.FC = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-cosmic-star/80">{story.description}</p>
+                    <p className="text-cosmic-star/80 line-clamp-3">{story.description}</p>
                   </CardContent>
                   <CardFooter>
                     <Button 
