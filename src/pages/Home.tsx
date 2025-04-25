@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -50,7 +49,7 @@ const Home: React.FC = () => {
 
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>让AI为你描绘心中最美的画面</h2>
+          <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
         </div>
         <div className="overflow-x-auto pb-6">
           <div className="flex gap-6 min-w-max px-4">
