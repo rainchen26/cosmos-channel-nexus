@@ -1,5 +1,5 @@
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight } from "lucide-react";
 
 interface AIScene {
@@ -28,10 +28,18 @@ const AISceneCarousel = ({ scenes, carouselOptions }: AISceneCarouselProps) => {
         <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
       </div>
       <div className="relative">
-        <Carousel className="w-full max-w-7xl mx-auto select-none" opts={carouselOptions}>
-          <CarouselContent className="-ml-4 touch-pan-x">
+        <Carousel className="w-full max-w-7xl mx-auto" opts={{
+          align: "start",
+          containScroll: "trimSnaps",
+          dragFree: true,
+          draggable: true,
+          dragThreshold: 1,
+          inViewThreshold: 0.1,
+          skipSnaps: true
+        }}>
+          <CarouselContent className="-ml-4">
             {scenes.map((scene) => (
-              <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/4">
+              <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/4 cursor-grab">
                 <div className="relative h-[300px] select-none">
                   <img
                     src={scene.src}
