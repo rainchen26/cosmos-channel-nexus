@@ -49,7 +49,7 @@ const Home: React.FC = () => {
 
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#9b87f5' }}>每一帧画面，都是AI留下的时光回忆</h2>
+          <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留下的时光回忆</h2>
         </div>
         <div className="overflow-x-auto pb-6">
           <div className="flex gap-6 min-w-max px-4">
@@ -72,14 +72,14 @@ const Home: React.FC = () => {
       </section>
       
       <section className="space-y-10">
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#9b87f5' }}>宇宙精选</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#7E69AB' }}>你分享的每段故事，都在扩建萌尾宇宙</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((item) => (
             <Card key={item} className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
               <div className="h-52 bg-gradient-to-br from-cosmic-nebula/20 to-cosmic-accent/20"></div>
               <CardHeader>
-                <CardTitle className="text-2xl text-cosmic-star/90">星际探索 #{item}</CardTitle>
+                <CardTitle className="text-2xl" style={{ color: '#7E69AB' }}>星际探索 #{item}</CardTitle>
                 <CardDescription className="text-cosmic-star/70 text-base">探索宇宙的奥秘和未知领域</CardDescription>
               </CardHeader>
               <CardContent>
@@ -88,7 +88,7 @@ const Home: React.FC = () => {
               <CardFooter>
                 <Button 
                   variant="ghost" 
-                  className="text-cosmic-accent hover:text-cosmic-accent/90 hover:bg-cosmic-accent/10"
+                  className="hover:text-[#7E69AB]/90 hover:bg-[#7E69AB]/10"
                 >
                   查看详情
                 </Button>
@@ -99,31 +99,31 @@ const Home: React.FC = () => {
       </section>
       
       <section className="mb-8">
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#9b87f5' }}>梦微时空主要频道</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#7E69AB' }}>梦微时空主要频道</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">
-            <h3 className="text-2xl font-bold mb-4 text-cosmic-nebula">AI创作</h3>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#7E69AB' }}>AI创作</h3>
             <p className="mb-6 text-cosmic-star/80 text-lg">使用先进的AI技术创造令人惊叹的图像、视频和文本内容。</p>
-            <Button variant="link" className="text-cosmic-nebula hover:text-cosmic-nebula/90 p-0 text-lg">前往创作 →</Button>
+            <Button variant="link" className="hover:text-[#7E69AB]/90 p-0 text-lg" style={{ color: '#7E69AB' }}>前往创作 →</Button>
           </div>
           
           <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">
-            <h3 className="text-2xl font-bold mb-4 text-cosmic-accent">星际商城</h3>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#7E69AB' }}>星际商城</h3>
             <p className="mb-6 text-cosmic-star/80 text-lg">探索和购买由创作者制作的独特数字产品和内容。</p>
-            <Button variant="link" className="text-cosmic-accent hover:text-cosmic-accent/90 p-0 text-lg">去购物 →</Button>
+            <Button variant="link" className="hover:text-[#7E69AB]/90 p-0 text-lg" style={{ color: '#7E69AB' }}>去购物 →</Button>
           </div>
           
           <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">
-            <h3 className="text-2xl font-bold mb-4 text-cosmic-glow">创作社区</h3>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#7E69AB' }}>创作社区</h3>
             <p className="mb-6 text-cosmic-star/80 text-lg">加入充满创意的社区，分享你的作品并与其他创作者交流。</p>
-            <Button variant="link" className="text-cosmic-glow hover:text-cosmic-glow/90 p-0 text-lg">探索社区 →</Button>
+            <Button variant="link" className="hover:text-[#7E69AB]/90 p-0 text-lg" style={{ color: '#7E69AB' }}>探索社区 →</Button>
           </div>
           
           <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">
-            <h3 className="text-2xl font-bold mb-4 text-cosmic-highlight">会员中心</h3>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#7E69AB' }}>会员中心</h3>
             <p className="mb-6 text-cosmic-star/80 text-lg">解锁专属内容、高级功能和提升你的创作体验。</p>
-            <Button variant="link" className="text-cosmic-highlight hover:text-cosmic-highlight/90 p-0 text-lg">会员详情 →</Button>
+            <Button variant="link" className="hover:text-[#7E69AB]/90 p-0 text-lg" style={{ color: '#7E69AB' }}>会员详情 →</Button>
           </div>
         </div>
       </section>
