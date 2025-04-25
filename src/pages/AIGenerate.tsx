@@ -95,7 +95,7 @@ const AIGenerate: React.FC = () => {
     },
     {
       name: '梦境代码',
-      description: '潜意识深处的数����花园',
+      description: '潜意识深处的������花园',
       subStyles: [
         '递归蹭脸 - 无限镜像的撒娇循环',
         '内存午睡 - 堆栈溢出式打呼',
@@ -190,14 +190,14 @@ const AIGenerate: React.FC = () => {
       
       <Tabs defaultValue="upload" className="w-full">
         <TabsList className="grid grid-cols-3 mb-6">
-          <TabsTrigger value="upload">A. 上传照片</TabsTrigger>
-          <TabsTrigger value="style">B. 选择风格</TabsTrigger>
-          <TabsTrigger value="generate">C. 生成记忆</TabsTrigger>
+          <TabsTrigger value="upload">1. 上传照片</TabsTrigger>
+          <TabsTrigger value="style">2. 选择风格</TabsTrigger>
+          <TabsTrigger value="generate">3. 生成记忆</TabsTrigger>
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
           <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">A. 上传照片</h2>
+            <h2 className="text-xl font-semibold text-primary">1. 上传照片</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
@@ -283,14 +283,14 @@ const AIGenerate: React.FC = () => {
         
         <TabsContent value="style" className="space-y-6">
           <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">B. 选择风格</h2>
+            <h2 className="text-xl font-semibold text-primary">2. 选择风格</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4 flex items-center">
                   <Wand2 className="mr-2 h-5 w-5 text-primary" />
-                  记忆提示
+                  A. 记忆提示
                 </h3>
                 <div className="space-y-4">
                   <Textarea
@@ -316,7 +316,7 @@ const AIGenerate: React.FC = () => {
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4 flex items-center">
                   <Image className="mr-2 h-5 w-5 text-primary" />
-                  上传参考风格
+                  B. 上传参考风格
                 </h3>
                 <div 
                   className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
@@ -334,7 +334,7 @@ const AIGenerate: React.FC = () => {
 
           <Card>
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-6">记忆风格</h3>
+              <h3 className="text-xl font-semibold mb-4">C. 记忆风格</h3>
               
               <div className="mb-6">
                 <h4 className="text-lg font-semibold mb-3">选择主题风格</h4>
@@ -399,7 +399,7 @@ const AIGenerate: React.FC = () => {
         
         <TabsContent value="generate" className="space-y-6">
           <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">C. 生成记忆</h2>
+            <h2 className="text-xl font-semibold text-primary">3. 生成记忆</h2>
           </div>
           <Card>
             <CardContent className="pt-6">
