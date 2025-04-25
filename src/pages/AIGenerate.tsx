@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
@@ -21,7 +19,6 @@ import {
 const AIGenerate: React.FC = () => {
   const [prompt, setPrompt] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
-  const [creativity, setCreativity] = useState([50]);
   const [selectedStyle, setSelectedStyle] = useState('星际穿梭');
   const [selectedSubStyle, setSelectedSubStyle] = useState('星尘牧歌');
   
@@ -140,29 +137,18 @@ const AIGenerate: React.FC = () => {
     }
   ];
 
-  const getCurrentSubStyles = () => {
-    const category = styleCategories.find(cat => cat.name === selectedStyle);
-    return category ? category.subStyles : [];
-  };
-  
-  const handleStyleChange = (value: string) => {
-    setSelectedStyle(value);
-    // Reset sub-style when main style changes
-    const category = styleCategories.find(cat => cat.name === value);
-    if (category && category.subStyles.length > 0) {
-      setSelectedSubStyle(category.subStyles[0].split(' - ')[0]);
-    }
-  };
-  
-  const handleSubStyleChange = (value: string) => {
-    setSelectedSubStyle(value);
-  };
-  
   const handleUploadImage = (type: string) => {
     toast({
       title: "上传功能",
       description: `${type}图片上传功能即将推出！`,
     });
+  };
+
+  const handleStyleTabClick = (tab: string) => {
+    const element = document.querySelector(`[data-value="${tab}"]`);
+    if (element instanceof HTMLElement) {
+      element.click();
+    }
   };
   
   const handleGenerate = () => {
@@ -177,7 +163,6 @@ const AIGenerate: React.FC = () => {
     
     setIsGenerating(true);
     
-    // Simulate AI generation process
     setTimeout(() => {
       setIsGenerating(false);
       toast({
@@ -299,78 +284,70 @@ const AIGenerate: React.FC = () => {
         
         {/* Step 2: Style Selection */}
         <TabsContent value="style" className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Text-to-Image Prompt Section */}
+            <Card className="cosmic-card">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-semibold mb-4">记忆提示</h3>
+                <Textarea
+                  placeholder="描述你想要的场景和氛围..."
+                  className="h-32 bg-cosmic/50 mb-4"
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                />
+              </CardContent>
+            </Card>
+
+            {/* Style Image Upload Section */}
+            <Card className="cosmic-card">
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-semibold mb-4">上传参考风格</h3>
+                <div 
+                  className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
+                  onClick={() => handleUploadImage("风格参考")}
+                >
+                  <Upload className="h-12 w-12 text-cosmic-accent/70 mb-2" />
+                  <span className="text-sm text-cosmic-star/80">上传你喜欢的风格图片</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Memory Style Grid */}
           <Card className="cosmic-card">
             <CardContent className="pt-6">
-              <div className="mb-6">
-                <Label htmlFor="style-category" className="text-lg mb-2 block">选择风格分类</Label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-6">
-                  {styleCategories.map((category) => (
-                    <Button
-                      key={category.name}
-                      variant={selectedStyle === category.name ? "default" : "outline"}
-                      onClick={() => handleStyleChange(category.name)}
-                      className={`border-cosmic-accent/50 hover:border-cosmic-accent ${
-                        selectedStyle === category.name ? 'bg-cosmic-highlight text-white' : 'hover:bg-cosmic-accent/10'
-                      }`}
-                    >
-                      {category.name}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-3">
-                  <Label htmlFor="sub-style" className="text-lg">风格子类</Label>
-                  <span className="text-sm text-cosmic-accent/90 italic">
-                    {styleCategories.find(c => c.name === selectedStyle)?.description}
-                  </span>
-                </div>
-                
-                <div className="grid grid-cols-1 gap-2">
-                  {getCurrentSubStyles().map((subStyle, index) => {
-                    const subStyleName = subStyle.split(' - ')[0];
-                    const subStyleDesc = subStyle.split(' - ')[1];
-                    return (
-                      <div 
-                        key={index}
-                        className={`p-3 rounded-md cursor-pointer transition-all border ${
-                          selectedSubStyle === subStyleName 
-                            ? 'border-cosmic-highlight bg-cosmic-highlight/10' 
-                            : 'border-cosmic-accent/30 hover:border-cosmic-accent/60 hover:bg-cosmic/10'
-                        }`}
-                        onClick={() => handleSubStyleChange(subStyleName)}
-                      >
-                        <div className="font-medium">{subStyleName}</div>
-                        <div className="text-sm text-cosmic-star/80">{subStyleDesc}</div>
+              <h3 className="text-xl font-semibold mb-6">记忆风格</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {styleCategories.map((category) => (
+                  <div 
+                    key={category.name}
+                    className="flex flex-col gap-2"
+                    onClick={() => setSelectedStyle(category.name)}
+                  >
+                    <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
+                      {/* Placeholder for style preview image */}
+                      <div className="w-full h-full flex items-center justify-center bg-cosmic/30">
+                        <Wand2 className="h-8 w-8 text-cosmic-accent/70" />
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <Label htmlFor="creativity" className="text-lg mb-2 block">创意度: {creativity}%</Label>
-                <Slider
-                  id="creativity"
-                  defaultValue={[50]}
-                  max={100}
-                  step={1}
-                  value={creativity}
-                  onValueChange={setCreativity}
-                />
-              </div>
-              
-              <div className="mt-4 text-center">
-                <Button 
-                  onClick={() => document.querySelector('[data-value="generate"]')?.click()}
-                  className="bg-cosmic-highlight hover:bg-cosmic-highlight/80"
-                >
-                  进入下一步：生成记忆
-                </Button>
+                    </div>
+                    <div className="text-center">
+                      <h4 className="font-medium">{category.name}</h4>
+                      <p className="text-xs text-cosmic-star/80">{category.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
+
+          <div className="mt-4 text-center">
+            <Button 
+              onClick={() => handleStyleTabClick("generate")}
+              className="bg-cosmic-highlight hover:bg-cosmic-highlight/80"
+            >
+              进入下一步：生成记忆
+            </Button>
+          </div>
         </TabsContent>
         
         {/* Step 3: Generate Memories */}
