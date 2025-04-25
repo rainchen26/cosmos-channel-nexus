@@ -282,25 +282,45 @@ const AIGenerate: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-4">记忆提示</h3>
-                <Textarea
-                  placeholder="描述你想要的场景和氛围..."
-                  className="h-32 bg-secondary mb-4"
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                />
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <Wand2 className="mr-2 h-5 w-5 text-primary" />
+                  记忆提示
+                </h3>
+                <div className="space-y-4">
+                  <Textarea
+                    placeholder={`描述你想要的场景和氛围...
+
+示例：我和我家的柴犬在星空下漫步，四周点缀着点点星光。
+我穿着休闲服装，柴犬活泼可爱，正在对我撒娇。
+整体氛围温馨浪漫，画面略带梦幻感。
+
+(建议字数50-200字)`}
+                    className="h-28 bg-secondary resize-none"
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value)}
+                  />
+                  <div className="text-xs text-muted-foreground">
+                    建议包含：场景描述、人物状态、宠物状态、整体氛围
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-4">上传参考风格</h3>
+                <h3 className="text-xl font-semibold mb-4 flex items-center">
+                  <Image className="mr-2 h-5 w-5 text-primary" />
+                  上传参考风格
+                </h3>
                 <div 
                   className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                   onClick={() => handleUploadImage("风格参考")}
                 >
-                  <Upload className="h-12 w-12 text-primary/70 mb-2" />
-                  <span className="text-sm">上传你喜欢的风格图片</span>
+                  <Upload className="h-10 w-10 text-primary/70 mb-2" />
+                  <div className="text-sm text-center px-4">
+                    <p className="mb-1">上传你喜欢的风格图片</p>
+                    <p className="text-xs text-muted-foreground">支持jpg、png格式</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
