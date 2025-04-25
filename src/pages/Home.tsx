@@ -1,40 +1,59 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Home: React.FC = () => {
-  const videoScenes = [
+  const aiScenes = [
     {
       id: 1,
-      title: "星空漫游",
-      src: "/lovable-uploads/photo-1470813740244-df37b8c1edcb",
-      description: "探索浩瀚星空"
+      title: "节日限定主题",
+      src: "/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
     },
     {
       id: 2,
-      title: "森林奇遇",
-      src: "/lovable-uploads/photo-1500673922987-e212871fec22",
-      description: "奇幻森林冒险"
+      title: "童话奇幻世界",
+      src: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png"
     },
     {
       id: 3,
-      title: "湖畔幻境",
-      src: "/lovable-uploads/photo-1506744038136-46273834b3fb",
-      description: "宁静湖畔时光"
+      title: "复古时光机",
+      src: "/lovable-uploads/88474e3d-f6ec-46a6-bb31-6e1f51ac52e6.png"
     },
     {
       id: 4,
-      title: "温馨时刻",
-      src: "/lovable-uploads/photo-1721322800607-8c38375eef04",
-      description: "温暖生活瞬间"
+      title: "潮流玩酷风",
+      src: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png"
     },
     {
       id: 5,
-      title: "萌宠乐园",
-      src: "/lovable-uploads/photo-1582562124811-c09040d0a901",
-      description: "可爱萌宠陪伴"
+      title: "自然治愈系",
+      src: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
+    },
+    {
+      id: 6,
+      title: "家庭温馨日常",
+      src: "/lovable-uploads/2bd9e07b-35b6-4fc6-a365-a0fec31e770b.png"
+    },
+    {
+      id: 7,
+      title: "运动活力派",
+      src: "/lovable-uploads/ccd389c1-a51d-4dde-98f7-51d87e5e516e.png"
+    },
+    {
+      id: 8,
+      title: "职业扮演剧场",
+      src: "/lovable-uploads/9e8a150e-1874-4d7c-8818-efc25da76cf3.png"
+    },
+    {
+      id: 9,
+      title: "艺术创意脑洞",
+      src: "/lovable-uploads/a9d32d7a-46c7-473b-a8e8-6cc3f1ce7e69.png"
+    },
+    {
+      id: 10,
+      title: "异国风情之旅",
+      src: "/lovable-uploads/4b0893f4-589c-4865-bad0-598de203396d.png"
     }
   ];
 
@@ -64,16 +83,15 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      
       <section className="py-12 bg-cosmic-deep/30 rounded-xl backdrop-blur-sm">
-        <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">AI创作展示</h2>
-        <Carousel className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-8 text-cosmic-star">AI创意展示</h2>
+        <Carousel className="max-w-md mx-auto">
           <CarouselContent>
-            {videoScenes.map((scene) => (
+            {aiScenes.map((scene) => (
               <CarouselItem key={scene.id}>
-                <div className="p-4">
+                <div className="p-1">
                   <Card className="cosmic-card overflow-hidden">
-                    <div className="relative h-[400px]">
+                    <div className="relative aspect-[9/16]">
                       <img
                         src={scene.src}
                         alt={scene.title}
@@ -81,7 +99,6 @@ const Home: React.FC = () => {
                       />
                       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
                         <h3 className="text-xl font-bold text-white">{scene.title}</h3>
-                        <p className="text-white/80">{scene.description}</p>
                       </div>
                     </div>
                   </Card>
