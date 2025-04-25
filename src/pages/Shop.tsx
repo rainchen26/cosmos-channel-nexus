@@ -51,7 +51,7 @@ const Shop: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-title-purple font-playfair text-glow">
+      <h1 className="text-3xl font-bold mb-6 text-primary">
         星际商城
       </h1>
       
@@ -99,8 +99,8 @@ interface Product {
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
-    <Card className="cosmic-card overflow-hidden">
-      <div className="h-48 bg-gradient-to-br from-cosmic-nebula/30 to-cosmic-accent/30 flex items-center justify-center">
+    <Card className="bg-white border border-primary/20 overflow-hidden hover:border-primary/40 transition-colors">
+      <div className="h-48 bg-secondary/30 flex items-center justify-center">
         <span className="text-4xl">🌌</span>
       </div>
       <CardHeader>
@@ -108,10 +108,10 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
       </CardHeader>
       <CardContent>
         <p className="mb-4">{product.description}</p>
-        <p className="text-xl font-bold text-cosmic-accent">{product.price} 星币</p>
+        <p className="text-xl font-bold text-primary">{product.price} 星币</p>
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-cosmic-accent hover:bg-cosmic-accent/80">
+        <Button className="w-full bg-primary/90 hover:bg-primary text-white">
           加入购物车
         </Button>
       </CardFooter>

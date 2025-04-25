@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -62,8 +61,8 @@ const Community: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h1 className="text-3xl font-bold text-cosmic-star text-glow mb-4 md:mb-0">创作社区</h1>
-        <Button className="bg-cosmic-highlight hover:bg-cosmic-highlight/80">
+        <h1 className="text-3xl font-bold text-primary mb-4 md:mb-0">创作社区</h1>
+        <Button className="bg-primary/90 hover:bg-primary text-white">
           发布新内容
         </Button>
       </div>
@@ -113,7 +112,7 @@ interface Post {
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   return (
-    <Card className="cosmic-card overflow-hidden">
+    <Card className="bg-white border border-primary/20 overflow-hidden hover:border-primary/40 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">

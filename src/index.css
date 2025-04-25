@@ -22,8 +22,8 @@
     --muted: 271 23% 95%;
     --muted-foreground: 271 10% 50%;
 
-    --accent: 271 43% 54%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 271 23% 95%;
+    --accent-foreground: 271 23% 23%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -31,15 +31,6 @@
     --border: 271 23% 90%;
     --input: 271 23% 90%;
     --ring: 271 43% 54%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 271 23% 23%;
-    --sidebar-primary: 271 43% 54%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 271 23% 95%;
-    --sidebar-accent-foreground: 271 23% 23%;
-    --sidebar-border: 271 23% 90%;
-    --sidebar-ring: 271 43% 54%;
 
     --radius: 0.5rem;
   }

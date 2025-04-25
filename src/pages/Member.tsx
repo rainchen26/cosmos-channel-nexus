@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,10 +10,10 @@ const Member: React.FC = () => {
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-cosmic-star text-glow">会员中心</h1>
+      <h1 className="text-3xl font-bold mb-6 text-primary">会员中心</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <Card className="cosmic-card col-span-1">
+        <Card className="bg-white border border-primary/20">
           <CardHeader>
             <CardTitle>个人资料</CardTitle>
           </CardHeader>
@@ -39,7 +38,7 @@ const Member: React.FC = () => {
           </CardContent>
         </Card>
         
-        <Card className="cosmic-card col-span-1 lg:col-span-2">
+        <Card className="bg-white border border-primary/20 col-span-1 lg:col-span-2">
           <CardHeader>
             <CardTitle>会员数据</CardTitle>
           </CardHeader>
