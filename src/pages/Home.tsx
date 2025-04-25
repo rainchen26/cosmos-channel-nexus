@@ -48,13 +48,13 @@ const Home: React.FC = () => {
     },
     {
       id: 9,
-      title: "未来城市",
-      src: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png"
+      title: "皇家守护",
+      src: "/lovable-uploads/b0a80f38-41c9-4d42-8fd4-af9168bd331a.png"
     },
     {
       id: 10,
-      title: "星际港口",
-      src: "/lovable-uploads/590c094c-2856-4801-b8e9-3dd5b451f36b.png"
+      title: "魔法森林",
+      src: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
     }
   ];
 
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
     {
       id: 5,
       title: "新纪元探索者",
-      description: "在����个充满未知�������纪元，我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
+      description: "在����个充满未知�������纪元��我和灰灰踏上了寻找人类新家园的旅程。它总是第一个冲向陌生的土地，那勇敢的样子给了我无限的力量。在每一颗陌生的星球上，我们都在书写着属于自己的传奇。",
       author: "探索队长 星辰",
       pet: "哈士奇 灰灰",
       image: "/lovable-uploads/0e4ae471-092f-4727-a4ac-ed29b5276dd6.png"
