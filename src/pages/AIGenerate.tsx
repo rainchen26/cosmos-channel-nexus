@@ -37,7 +37,14 @@ const AIGenerate: React.FC = () => {
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-cosmic-star text-glow">AI创作中心</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-3 text-cosmic-star text-glow">
+          在数据星河里，为你和你的宠伴留一盏不灭的灯
+        </h1>
+        <p className="text-lg text-cosmic-star/80 max-w-2xl mx-auto">
+          在这里，每一个数据都是温暖的记忆，每一帧画面都是永恒的陪伴
+        </p>
+      </div>
       
       <Tabs defaultValue="image" className="w-full">
         <TabsList className="grid grid-cols-3 mb-6">
@@ -126,3 +133,4 @@ const AIGenerate: React.FC = () => {
 };
 
 export default AIGenerate;
+
