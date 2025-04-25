@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -181,10 +180,10 @@ const AIGenerate: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-3 text-title-purple font-playfair">
+        <h1 className="text-4xl font-bold mb-3 text-primary">
           在数据星河里，为你和你的宠伴留一盏不灭的灯
         </h1>
-        <p className="text-lg text-cosmic-star/80 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           在这里，每一个数据都是温暖的记忆，每一帧画面都是永恒的陪伴
         </p>
       </div>
@@ -196,9 +195,8 @@ const AIGenerate: React.FC = () => {
           <TabsTrigger value="generate">3. 生成记忆</TabsTrigger>
         </TabsList>
         
-        {/* Step 1: Upload Photos */}
         <TabsContent value="upload" className="space-y-6">
-          <div className="mb-6 p-4 bg-muted rounded-lg">
+          <div className="mb-6 p-4 bg-secondary rounded-lg">
             <h3 className="text-lg font-semibold mb-3">📸 照片上传要求</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2">
@@ -225,88 +223,58 @@ const AIGenerate: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Owner Upload Section */}
-            <Card className="cosmic-card overflow-hidden">
+            <Card>
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <User className="mr-2 text-cosmic-highlight" />
+                  <User className="mr-2 text-primary" />
                   <h3 className="text-xl font-semibold">主人/仆人照片</h3>
                 </div>
-                <p className="text-sm text-cosmic-star/70 mb-4">
+                <p className="text-sm text-muted-foreground mb-4">
                   请按要求上传清晰的四视图照片，保持拍摄距离一致
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("主人正面")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">正面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">建议正对拍摄</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("主人左侧")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">左侧面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">左侧90度角</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("主人右侧")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">右侧面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">右侧90度角</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("主人背面")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">背面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">背对拍摄</span>
-                  </div>
+                  {['正面照', '左侧面照', '右侧面照', '背面照'].map((type, index) => (
+                    <div key={index}
+                      className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                      onClick={() => handleUploadImage(`主人${type}`)}>
+                      <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                      <span className="text-sm">{type}</span>
+                      <span className="text-xs text-muted-foreground mt-1">
+                        {type === '正面照' ? '建议正对拍摄' : 
+                         type === '左侧面照' ? '左侧90度角' :
+                         type === '右侧面照' ? '右侧90度角' : '背对拍摄'}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
-            
-            {/* Pet Upload Section */}
-            <Card className="cosmic-card overflow-hidden">
+
+            <Card>
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Dog className="mr-2 text-cosmic-highlight" />
+                  <Dog className="mr-2 text-primary" />
                   <h3 className="text-xl font-semibold">宠物照片</h3>
                 </div>
-                <p className="text-sm text-cosmic-star/70 mb-4">
+                <p className="text-sm text-muted-foreground mb-4">
                   请确保宠物处于自然放松状态，拍摄环境光线充足
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("宠物正面")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">正面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">正对拍摄</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("宠物左侧")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">左侧面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">左侧90度角</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("宠物右侧")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">右侧面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">右侧90度角</span>
-                  </div>
-                  
-                  <div className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
-                    onClick={() => handleUploadImage("宠物背面")}>
-                    <Upload className="h-8 w-8 text-cosmic-accent/70 mb-2" />
-                    <span className="text-sm text-cosmic-star/80">背面照</span>
-                    <span className="text-xs text-cosmic-star/60 mt-1">背对拍摄</span>
-                  </div>
+                  {['正面照', '左侧面照', '右侧面照', '背面照'].map((type, index) => (
+                    <div key={index}
+                      className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                      onClick={() => handleUploadImage(`宠物${type}`)}>
+                      <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                      <span className="text-sm">{type}</span>
+                      <span className="text-xs text-muted-foreground mt-1">
+                        {type === '正面照' ? '正对拍摄' : 
+                         type === '左侧面照' ? '左侧90度角' :
+                         type === '右侧面照' ? '右侧90度角' : '背对拍摄'}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -315,23 +283,22 @@ const AIGenerate: React.FC = () => {
           <div className="mt-4 text-center">
             <Button 
               onClick={() => handleStyleTabClick("style")}
-              className="bg-cosmic-highlight hover:bg-cosmic-highlight/80"
+              className="bg-primary hover:bg-primary/90"
             >
               进入下一步：选择风格
             </Button>
           </div>
         </TabsContent>
         
-        {/* Step 2: Style Selection */}
         <TabsContent value="style" className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {/* Text-to-Image Prompt Section */}
-            <Card className="cosmic-card">
+            <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4">记忆提示</h3>
                 <Textarea
                   placeholder="描述你想要的场景和氛围..."
-                  className="h-32 bg-cosmic/50 mb-4"
+                  className="h-32 bg-secondary mb-4"
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
                 />
@@ -339,22 +306,22 @@ const AIGenerate: React.FC = () => {
             </Card>
 
             {/* Style Image Upload Section */}
-            <Card className="cosmic-card">
+            <Card>
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4">上传参考风格</h3>
                 <div 
-                  className="aspect-square bg-cosmic/20 rounded-md border border-dashed border-cosmic-accent/50 flex flex-col items-center justify-center cursor-pointer hover:bg-cosmic/30 transition-colors"
+                  className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                   onClick={() => handleUploadImage("风格参考")}
                 >
-                  <Upload className="h-12 w-12 text-cosmic-accent/70 mb-2" />
-                  <span className="text-sm text-cosmic-star/80">上传你喜欢的风格图片</span>
+                  <Upload className="h-12 w-12 text-primary/70 mb-2" />
+                  <span className="text-sm">上传你喜欢的风格图片</span>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Memory Style Grid */}
-          <Card className="cosmic-card">
+          <Card>
             <CardContent className="pt-6">
               <h3 className="text-xl font-semibold mb-6">记忆风格</h3>
               
@@ -364,18 +331,18 @@ const AIGenerate: React.FC = () => {
                   {styleCategories.map((category) => (
                     <div 
                       key={category.name}
-                      className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedStyle === category.name ? 'bg-cosmic/30 ring-1 ring-cosmic-accent' : 'hover:bg-cosmic/10'}`}
+                      className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedStyle === category.name ? 'bg-secondary/80 ring-1 ring-primary' : 'hover:bg-secondary/50'}`}
                       onClick={() => setSelectedStyle(category.name)}
                     >
-                      <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
+                      <div className="aspect-square bg-secondary rounded-md overflow-hidden">
                         {/* Placeholder for style preview image */}
-                        <div className="w-full h-full flex items-center justify-center bg-cosmic/30">
-                          <Wand2 className="h-8 w-8 text-cosmic-accent/70" />
+                        <div className="w-full h-full flex items-center justify-center bg-secondary/50">
+                          <Wand2 className="h-8 w-8 text-primary/70" />
                         </div>
                       </div>
                       <div className="text-center">
                         <h4 className="font-medium">{category.name}</h4>
-                        <p className="text-xs text-cosmic-star/80">{category.description}</p>
+                        <p className="text-xs text-muted-foreground">{category.description}</p>
                       </div>
                     </div>
                   ))}
@@ -390,18 +357,18 @@ const AIGenerate: React.FC = () => {
                     return (
                       <div 
                         key={index}
-                        className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedSubStyle === name ? 'bg-cosmic/30 ring-1 ring-cosmic-accent' : 'hover:bg-cosmic/10'}`}
+                        className={`flex flex-col gap-2 p-2 rounded-md cursor-pointer ${selectedSubStyle === name ? 'bg-secondary/80 ring-1 ring-primary' : 'hover:bg-secondary/50'}`}
                         onClick={() => handleSelectSubStyle(subStyle)}
                       >
-                        <div className="aspect-square bg-cosmic/20 rounded-md overflow-hidden">
+                        <div className="aspect-square bg-secondary rounded-md overflow-hidden">
                           {/* Placeholder for substyle preview image */}
-                          <div className="w-full h-full flex items-center justify-center bg-cosmic/20">
-                            <Wand2 className="h-6 w-6 text-cosmic-accent/60" />
+                          <div className="w-full h-full flex items-center justify-center bg-secondary/50">
+                            <Wand2 className="h-6 w-6 text-primary/60" />
                           </div>
                         </div>
                         <div className="text-center">
                           <h5 className="font-medium text-sm">{name}</h5>
-                          <p className="text-xs text-cosmic-star/70">{description}</p>
+                          <p className="text-xs text-muted-foreground">{description}</p>
                         </div>
                       </div>
                     );
@@ -414,23 +381,22 @@ const AIGenerate: React.FC = () => {
           <div className="mt-4 text-center">
             <Button 
               onClick={() => handleStyleTabClick("generate")}
-              className="bg-cosmic-highlight hover:bg-cosmic-highlight/80"
+              className="bg-primary hover:bg-primary/90"
             >
               进入下一步：生成记忆
             </Button>
           </div>
         </TabsContent>
         
-        {/* Step 3: Generate Memories */}
         <TabsContent value="generate" className="space-y-6">
-          <Card className="cosmic-card">
+          <Card>
             <CardContent className="pt-6">
               <div className="mb-6">
                 <Label htmlFor="image-prompt" className="text-lg mb-2 block">创作提示</Label>
                 <Textarea
                   id="image-prompt"
                   placeholder={`描述你想要生成的场景，例如："我和我的柴犬在${selectedSubStyle}的场景中，充满温馨的氛围。"`}
-                  className="h-24 bg-cosmic/50"
+                  className="h-24 bg-secondary"
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
                 />
@@ -439,7 +405,7 @@ const AIGenerate: React.FC = () => {
               <Button 
                 onClick={handleGenerate}
                 disabled={isGenerating}
-                className="w-full bg-cosmic-highlight hover:bg-cosmic-highlight/80"
+                className="w-full bg-primary hover:bg-primary/90"
               >
                 {isGenerating ? "生成中..." : "开始生成记忆"}
               </Button>
@@ -447,18 +413,18 @@ const AIGenerate: React.FC = () => {
           </Card>
           
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-title-purple font-playfair">已生成的记忆</h3>
+            <h3 className="text-2xl font-bold text-primary">已生成的记忆</h3>
             
             {/* Photos Section */}
             <div>
               <div className="flex items-center mb-4">
-                <Image className="mr-2 text-cosmic-highlight" />
+                <Image className="mr-2 text-primary" />
                 <h4 className="text-xl font-semibold">照片记忆</h4>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square cosmic-card flex items-center justify-center">
-                    <p className="text-cosmic-star/70 text-sm text-center px-2">
+                  <div key={i} className="aspect-square card flex items-center justify-center">
+                    <p className="text-muted-foreground text-sm text-center px-2">
                       {i < 2 ? "主人/仆人单独照" : 
                        i < 4 ? "宠物单独照" : 
                        "合照"}
@@ -471,24 +437,24 @@ const AIGenerate: React.FC = () => {
             {/* Video Section */}
             <div>
               <div className="flex items-center mb-4">
-                <Upload className="mr-2 text-cosmic-highlight" />
+                <Upload className="mr-2 text-primary" />
                 <h4 className="text-xl font-semibold">视频记忆</h4>
               </div>
-              <div className="aspect-video cosmic-card flex items-center justify-center">
-                <p className="text-cosmic-star/70">AI生成的视频记忆</p>
+              <div className="aspect-video card flex items-center justify-center">
+                <p className="text-muted-foreground">AI生成的视频记忆</p>
               </div>
             </div>
             
             {/* Emojis Section */}
             <div>
               <div className="flex items-center mb-4">
-                <Smile className="mr-2 text-cosmic-highlight" />
+                <Smile className="mr-2 text-primary" />
                 <h4 className="text-xl font-semibold">表情包记忆</h4>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square cosmic-card flex items-center justify-center">
-                    <p className="text-cosmic-star/70">表情包 #{i+1}</p>
+                  <div key={i} className="aspect-square card flex items-center justify-center">
+                    <p className="text-muted-foreground">表情包 #{i+1}</p>
                   </div>
                 ))}
               </div>
