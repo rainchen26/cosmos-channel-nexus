@@ -95,7 +95,7 @@ const AIGenerate: React.FC = () => {
     },
     {
       name: '梦境代码',
-      description: '潜意识深处的数据花园',
+      description: '潜意识深处的数��花园',
       subStyles: [
         '递归蹭脸 - 无限镜像的撒娇循环',
         '内存午睡 - 堆栈溢出式打呼',
@@ -205,16 +205,26 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  {['正面照', '左侧面照', '右侧面照', '背面照'].map((type, index) => (
+                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                    onClick={() => handleUploadImage('主人正面照')}>
+                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                    <span className="text-sm mb-1">正面照</span>
+                    <div className="text-xs text-muted-foreground px-3 text-center">
+                      <p>拍摄要求：</p>
+                      <p>• 脸部清晰、光线充足</p>
+                      <p>• 建议尺寸：512×512px</p>
+                      <p>• 正面自然表情</p>
+                    </div>
+                  </div>
+                  {['左侧面照', '右侧面照', '背面照'].map((type, index) => (
                     <div key={index}
                       className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                       onClick={() => handleUploadImage(`主人${type}`)}>
                       <Upload className="h-8 w-8 text-primary/70 mb-2" />
                       <span className="text-sm">{type}</span>
                       <span className="text-xs text-muted-foreground mt-1 text-center">
-                        {type === '正面照' ? '清晰、光线充足、512×512px' : 
-                         type === '左侧面照' ? '左侧90度角' :
-                         type === '右侧面照' ? '右侧90度角' : '背对拍摄'}
+                        {type === '左侧面照' ? '左侧90度角拍摄' :
+                         type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
                       </span>
                     </div>
                   ))}
@@ -228,21 +238,28 @@ const AIGenerate: React.FC = () => {
                   <Dog className="mr-2 text-primary" />
                   <h3 className="text-xl font-semibold">宠物照片</h3>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  请确保宠物处于自然放松状态，拍摄环境光线充足
-                </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  {['正面照', '左侧面照', '右侧面照', '背面照'].map((type, index) => (
+                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                    onClick={() => handleUploadImage('宠物正面照')}>
+                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                    <span className="text-sm mb-1">正面照</span>
+                    <div className="text-xs text-muted-foreground px-3 text-center">
+                      <p>拍摄要求：</p>
+                      <p>• 姿态自然、光线充足</p>
+                      <p>• 建议尺寸：512×512px</p>
+                      <p>• 面部特征清晰可见</p>
+                    </div>
+                  </div>
+                  {['左侧面照', '右侧面照', '背面照'].map((type, index) => (
                     <div key={index}
                       className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                       onClick={() => handleUploadImage(`宠物${type}`)}>
                       <Upload className="h-8 w-8 text-primary/70 mb-2" />
                       <span className="text-sm">{type}</span>
                       <span className="text-xs text-muted-foreground mt-1">
-                        {type === '正面照' ? '正对拍摄' : 
-                         type === '左侧面照' ? '左侧90度角' :
-                         type === '右侧面照' ? '右侧90度角' : '背对拍摄'}
+                        {type === '左侧面照' ? '左侧90度角拍摄' :
+                         type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
                       </span>
                     </div>
                   ))}
