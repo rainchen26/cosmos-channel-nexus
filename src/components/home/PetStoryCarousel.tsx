@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useCallback } from "react";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
@@ -64,18 +65,14 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
       
       <div className="relative">
         <Carousel 
-          className="w-full max-w-7xl mx-auto" 
-          opts={{
-            ...carouselOptions,
-            dragFree: true,
-            containScroll: "trimSnaps",
-          }}
+          className="w-full max-w-7xl mx-auto cursor-grab active:cursor-grabbing" 
+          opts={carouselOptions}
           setApi={setApi}
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 touch-pan-x">
             {stories.map((story) => (
               <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 select-none">
-                <Link to={story.link}>
+                <Link to={story.link} onClick={(e) => e.stopPropagation()} className="block">
                   <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10">
                     <div className="h-80 relative overflow-hidden">
                       <img 
