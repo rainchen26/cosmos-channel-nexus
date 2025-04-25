@@ -52,14 +52,10 @@
 
   body {
     @apply bg-white text-foreground;
-    font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1; /* 改善字体连字和替代字形 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1, h2, h3, .tech-font {
-    font-family: 'Orbitron', sans-serif;
   }
 }
 

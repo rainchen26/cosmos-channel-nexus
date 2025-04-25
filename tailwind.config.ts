@@ -19,9 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
         'sans': [
-          'Noto Sans SC', 
           'PingFang SC', 
           'Hiragino Sans GB', 
           'Microsoft YaHei', 
@@ -33,8 +31,7 @@ export default {
           'Helvetica Neue', 
           'Arial', 
           'sans-serif'
-        ],
-        'tech': ['Orbitron', 'sans-serif']
+        ]
       },
       colors: {
         border: 'hsl(var(--border))',
