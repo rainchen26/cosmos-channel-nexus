@@ -95,7 +95,7 @@ const AIGenerate: React.FC = () => {
     },
     {
       name: '梦境代码',
-      description: '潜意识深处的������花园',
+      description: '潜意识深处的花园',
       subStyles: [
         '递归蹭脸 - 无限镜像的撒娇循环',
         '内存午睡 - 堆栈溢出式打呼',
@@ -403,16 +403,6 @@ const AIGenerate: React.FC = () => {
           </div>
           <Card>
             <CardContent className="pt-6">
-              <div className="mb-6">
-                <Label htmlFor="image-prompt" className="text-lg mb-2 block">创作提示</Label>
-                <Textarea
-                  id="image-prompt"
-                  placeholder={`描述你想要生成的场景，例如："我和我的柴犬在${selectedSubStyle}的场景中，充满温馨的氛围。"`}
-                  className="h-24 bg-secondary"
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                />
-              </div>
               
               <Button 
                 onClick={handleGenerate}
