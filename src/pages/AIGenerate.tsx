@@ -213,29 +213,34 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('宠物正面照')}>
-                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm mb-1">正面照</span>
-                    <div className="text-xs text-muted-foreground px-3 text-center">
-                      <p>拍摄要求：</p>
-                      <p>• 姿态自然、光线充足</p>
-                      <p>• 建议尺寸：512×512px</p>
-                      <p>• 面部特征清晰可见</p>
-                    </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                    <img 
+                      src="/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png"
+                      alt="Sample pet photo 1"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  {['左侧面照', '右侧面照', '背面照'].map((type, index) => (
-                    <div key={index}
-                      className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                      onClick={() => handleUploadImage(`宠物${type}`)}>
-                      <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                      <span className="text-sm">{type}</span>
-                      <span className="text-xs text-muted-foreground mt-1">
-                        {type === '左侧面照' ? '左侧90度角拍摄' :
-                         type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
-                      </span>
-                    </div>
-                  ))}
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                    <img 
+                      src="/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
+                      alt="Sample pet photo 2"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                    <img 
+                      src="/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
+                      alt="Sample pet photo 3"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                    <img 
+                      src="/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png"
+                      alt="Sample pet photo 4"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
