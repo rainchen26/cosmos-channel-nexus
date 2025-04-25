@@ -18,7 +18,6 @@ import {
 
 const AIGenerate: React.FC = () => {
   const [prompt, setPrompt] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
   const [selectedStyle, setSelectedStyle] = useState('星际穿梭');
   const [selectedSubStyle, setSelectedSubStyle] = useState('星尘牧歌');
   
@@ -150,27 +149,6 @@ const AIGenerate: React.FC = () => {
       element.click();
     }
   };
-  
-  const handleGenerate = () => {
-    if (!prompt.trim()) {
-      toast({
-        title: "提示不能为空",
-        description: "请输入创作提示才能生成内容",
-        variant: "destructive",
-      });
-      return;
-    }
-    
-    setIsGenerating(true);
-    
-    setTimeout(() => {
-      setIsGenerating(false);
-      toast({
-        title: "生成完成",
-        description: "你的AI创作已生成完毕！",
-      });
-    }, 3000);
-  };
 
   const handleSelectSubStyle = (subStyle: string) => {
     const mainSubStyle = subStyle.split(' - ')[0];
@@ -189,10 +167,9 @@ const AIGenerate: React.FC = () => {
       </div>
       
       <Tabs defaultValue="upload" className="w-full">
-        <TabsList className="grid grid-cols-3 mb-6">
+        <TabsList className="grid grid-cols-2 mb-6">
           <TabsTrigger value="upload">1. 上传照片</TabsTrigger>
           <TabsTrigger value="style">2. 选择风格</TabsTrigger>
-          <TabsTrigger value="generate">3. 生成记忆</TabsTrigger>
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
@@ -394,70 +371,6 @@ const AIGenerate: React.FC = () => {
             >
               进入下一步：生成记忆
             </Button>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="generate" className="space-y-6">
-          <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">3. 生成记忆</h2>
-          </div>
-          <Card>
-            <CardContent className="pt-6">
-              
-              <Button 
-                onClick={handleGenerate}
-                disabled={isGenerating}
-                className="w-full bg-primary hover:bg-primary/90"
-              >
-                {isGenerating ? "生成中..." : "开始生成记忆"}
-              </Button>
-            </CardContent>
-          </Card>
-          
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary">已生成的记忆</h3>
-            
-            <div>
-              <div className="flex items-center mb-4">
-                <Image className="mr-2 text-primary" />
-                <h4 className="text-xl font-semibold">照片记忆</h4>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm text-center px-2">
-                      {i < 2 ? "主人/仆人单独照" : 
-                       i < 4 ? "宠物单独照" : 
-                       "合照"}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex items-center mb-4">
-                <Upload className="mr-2 text-primary" />
-                <h4 className="text-xl font-semibold">视频记忆</h4>
-              </div>
-              <div className="aspect-video card flex items-center justify-center">
-                <p className="text-muted-foreground">AI生成的视频记忆</p>
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex items-center mb-4">
-                <Smile className="mr-2 text-primary" />
-                <h4 className="text-xl font-semibold">表情包记忆</h4>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground">表情包 #{i+1}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </TabsContent>
       </Tabs>
