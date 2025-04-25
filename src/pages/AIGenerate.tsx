@@ -271,17 +271,15 @@ const AIGenerate: React.FC = () => {
 场景氛围温馨浪漫，整体感觉略带梦幻，像是穿越银河的温柔瞬间。
 画面中可以有星际穿梭的飞船掠过，给人一种未来感与浪漫的结合。
 
-建议字数50-200字，尽情发挥你的想象力！`}
-                  className="h-48 bg-secondary resize-none"
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                />
-                <div className="text-xs text-muted-foreground">
-                  建议包含：场景描述、人物状态、宠物状态、整体氛围
-                </div>
-              </div>
-            </CardContent>
-            </Card>
+建议包含：场景描述、人物状态、宠物状态、整体氛围
+建议字数50-200字，精简表达更有力！`}
+                      className="aspect-square bg-secondary resize-none"
+                      value={prompt}
+                      onChange={(e) => setPrompt(e.target.value)}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
 
             <Card>
               <CardContent className="pt-6">
