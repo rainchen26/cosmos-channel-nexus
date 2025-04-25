@@ -49,7 +49,7 @@ const Home: React.FC = () => {
 
       <section>
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-cosmic-star tracking-tight">每一帧画面，都是AI留下的时光回忆</h2>
+          <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#9b87f5' }}>每一帧画面，都是AI留下的时光回忆</h2>
         </div>
         <div className="overflow-x-auto pb-6">
           <div className="flex gap-6 min-w-max px-4">
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
       </section>
       
       <section className="space-y-10">
-        <h2 className="text-4xl font-bold text-center mb-12 text-cosmic-star tracking-tight">宇宙精选</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#9b87f5' }}>宇宙精选</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((item) => (
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
       </section>
       
       <section className="mb-8">
-        <h2 className="text-4xl font-bold text-center mb-12 text-cosmic-star tracking-tight">梦微时空主要频道</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight" style={{ color: '#9b87f5' }}>梦微时空主要频道</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="cosmic-card p-8 rounded-2xl border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30">
