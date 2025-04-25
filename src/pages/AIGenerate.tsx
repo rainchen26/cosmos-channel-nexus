@@ -55,7 +55,7 @@ const AIGenerate: React.FC = () => {
       name: '幻兽纪元',
       description: '神话生物混搭毛茸基因',
       subStyles: [
-        '麒麟踏云 - 祥云纹机械爪腾空',
+        '麒麟踏云 - 神祥云纹机械爪腾空',
         '青丘团宠 - 九尾卷成窝打呼噜',
         '鲲鹏零食 - 巨鹏羽翼藏冻干宝藏',
         '貔貅存粮 - 招财嘴吐零食山',
@@ -95,7 +95,7 @@ const AIGenerate: React.FC = () => {
     },
     {
       name: '梦境代码',
-      description: '潜意识深处的数��花园',
+      description: '潜意识深处的数����花园',
       subStyles: [
         '递归蹭脸 - 无限镜像的撒娇循环',
         '内存午睡 - 堆栈溢出式打呼',
@@ -190,12 +190,15 @@ const AIGenerate: React.FC = () => {
       
       <Tabs defaultValue="upload" className="w-full">
         <TabsList className="grid grid-cols-3 mb-6">
-          <TabsTrigger value="upload">1. 上传照片</TabsTrigger>
-          <TabsTrigger value="style">2. 选择风格</TabsTrigger>
-          <TabsTrigger value="generate">3. 生成记忆</TabsTrigger>
+          <TabsTrigger value="upload">A. 上传照片</TabsTrigger>
+          <TabsTrigger value="style">B. 选择风格</TabsTrigger>
+          <TabsTrigger value="generate">C. 生成记忆</TabsTrigger>
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
+          <div className="text-left mb-4">
+            <h2 className="text-xl font-semibold text-primary">A. 上传照片</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardContent className="p-6">
@@ -222,7 +225,7 @@ const AIGenerate: React.FC = () => {
                       onClick={() => handleUploadImage(`主人${type}`)}>
                       <Upload className="h-8 w-8 text-primary/70 mb-2" />
                       <span className="text-sm">{type}</span>
-                      <span className="text-xs text-muted-foreground mt-1 text-center">
+                      <span className="text-xs text-muted-foreground mt-1">
                         {type === '左侧面照' ? '左侧90度角拍摄' :
                          type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
                       </span>
@@ -279,6 +282,9 @@ const AIGenerate: React.FC = () => {
         </TabsContent>
         
         <TabsContent value="style" className="space-y-6">
+          <div className="text-left mb-4">
+            <h2 className="text-xl font-semibold text-primary">B. 选择风格</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card>
               <CardContent className="pt-6">
@@ -392,6 +398,9 @@ const AIGenerate: React.FC = () => {
         </TabsContent>
         
         <TabsContent value="generate" className="space-y-6">
+          <div className="text-left mb-4">
+            <h2 className="text-xl font-semibold text-primary">C. 生成记忆</h2>
+          </div>
           <Card>
             <CardContent className="pt-6">
               <div className="mb-6">
