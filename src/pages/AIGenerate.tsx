@@ -213,32 +213,32 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png"
                       alt="Sample pet photo 1"
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
-                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
                       alt="Sample pet photo 2"
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
-                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
                       alt="Sample pet photo 3"
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
-                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary">
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png"
                       alt="Sample pet photo 4"
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
                 </div>
