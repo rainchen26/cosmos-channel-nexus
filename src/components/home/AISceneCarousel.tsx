@@ -14,6 +14,9 @@ interface AISceneCarouselProps {
     dragFree: boolean;
     containScroll: "trimSnaps";
     draggable: boolean;
+    dragThreshold?: number;
+    inViewThreshold?: number;
+    skipSnaps?: boolean;
   };
 }
 
@@ -23,11 +26,11 @@ const AISceneCarousel = ({ scenes, carouselOptions }: AISceneCarouselProps) => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
       </div>
-      <Carousel className="w-full max-w-7xl mx-auto" opts={carouselOptions}>
+      <Carousel className="w-full max-w-7xl mx-auto select-none" opts={carouselOptions}>
         <CarouselContent className="-ml-4">
           {scenes.map((scene) => (
             <CarouselItem key={scene.id} className="pl-4 basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/4">
-              <div className="relative h-[300px] group cursor-grab active:cursor-grabbing">
+              <div className="relative h-[300px] cursor-grab active:cursor-grabbing touch-pan-x">
                 <img
                   src={scene.src}
                   alt={scene.title}

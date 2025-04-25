@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import AISceneCarousel from '@/components/home/AISceneCarousel';
@@ -113,7 +114,10 @@ const Home: React.FC = () => {
     align: "start" as const,
     dragFree: true,
     containScroll: "trimSnaps" as const,
-    draggable: true
+    draggable: true,
+    dragThreshold: 1, // Lower threshold for easier drag initiation
+    inViewThreshold: 0.7, // How much of the item should be in view
+    skipSnaps: false, // Smoother scrolling
   };
 
   return (

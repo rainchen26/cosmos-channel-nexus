@@ -19,6 +19,9 @@ interface PetStoryCarouselProps {
     dragFree: boolean;
     containScroll: "trimSnaps";
     draggable: boolean;
+    dragThreshold?: number;
+    inViewThreshold?: number;
+    skipSnaps?: boolean;
   };
 }
 
@@ -29,12 +32,12 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
         你分享的每段故事，都在扩建萌尾宇宙
       </h2>
       
-      <Carousel className="w-full max-w-7xl mx-auto" opts={carouselOptions}>
+      <Carousel className="w-full max-w-7xl mx-auto select-none" opts={carouselOptions}>
         <CarouselContent className="-ml-4">
           {stories.map((story) => (
             <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
               <Card className="cosmic-card overflow-hidden border-cosmic-accent/20 shadow-lg shadow-cosmic-accent/5 transition-all duration-300 hover:border-cosmic-accent/30 hover:shadow-cosmic-accent/10 cursor-grab active:cursor-grabbing">
-                <div className="h-52 relative overflow-hidden">
+                <div className="h-52 relative overflow-hidden touch-pan-x">
                   <img 
                     src={story.image}
                     alt={story.title}
