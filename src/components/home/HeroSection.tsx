@@ -18,8 +18,7 @@ const HeroSection = () => {
             让每一个AI创作都成为跨越数字与情感的桥梁
           </p>
           <Button 
-            className="bg-cyan-500 hover:bg-cyan-600 text-white text-lg px-10 py-5 h-auto rounded-xl transition-all duration-300 shadow-lg shadow-cyan-500/30"
-            size="lg"
+            className="text-lg px-10 py-5 h-auto rounded-xl transition-all duration-300 shadow-lg"
           >
             进入时空
           </Button>
