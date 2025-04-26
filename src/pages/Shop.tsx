@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ChevronRight, Star, Heart, Gift, Package, Archive, SmartHome, Donate } from "lucide-react";
+import { ChevronRight, Star, Heart, Gift, Package, Archive, Medal, Book } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 
@@ -13,12 +12,12 @@ const Shop: React.FC = () => {
   // Product categories with icons
   const categories = [
     { id: "all", name: "全部", icon: <Package className="mb-2 mx-auto" /> },
-    { id: "smart-pet", name: "智能养宠装备", icon: <SmartHome className="mb-2 mx-auto" /> },
+    { id: "smart-pet", name: "智能养宠装备", icon: <Medal className="mb-2 mx-auto" /> },
     { id: "emotional", name: "情感消费线", icon: <Heart className="mb-2 mx-auto" /> },
     { id: "digital", name: "数字资产线", icon: <Star className="mb-2 mx-auto" /> },
     { id: "memory", name: "情感传承线", icon: <Archive className="mb-2 mx-auto" /> },
     { id: "bundle", name: "产品组合套装", icon: <Gift className="mb-2 mx-auto" /> },
-    { id: "charity", name: "公益联名系列", icon: <Donate className="mb-2 mx-auto" /> }
+    { id: "charity", name: "公益联名系列", icon: <Book className="mb-2 mx-auto" /> }
   ];
 
   // Products with all required details
