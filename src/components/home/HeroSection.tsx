@@ -12,7 +12,7 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-end pb-20">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white text-center px-4 tracking-tight drop-shadow-lg">
-            萌尾时空｜数字世界的心灵伴侣
+            萌尾时空｜以AI之名，让爱永存
           </h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/90 text-center px-4 font-light drop-shadow-md">
             让每一个AI创作都成为跨越数字与情感的桥梁
