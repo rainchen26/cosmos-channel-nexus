@@ -5,8 +5,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Package, Image, Video, Smile, Smartphone, CreditCard, Check } from "lucide-react";
+import { Package, Image, Video, Smile, Smartphone, CreditCard, Check, WalletCards } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/use-toast";
 
 interface PaymentDialogProps {
   open: boolean;
@@ -22,6 +24,7 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
   const [selectedPackage, setSelectedPackage] = useState<'basic' | 'pro' | null>(null);
   const [selectedPayment, setSelectedPayment] = useState<number | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [showPaymentPage, setShowPaymentPage] = useState(false);
 
   const handlePurchase = (amount: number) => {
     setSelectedPayment(amount);
@@ -29,13 +32,65 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
 
   const handleColorSelect = (color: string) => {
     setSelectedColor(color);
+    setShowPaymentPage(true);
+  };
+
+  const handlePaymentConfirm = () => {
+    toast({
+      title: "支付成功",
+      description: "您已成功完成支付",
+    });
     onConfirm();
+    setShowPaymentPage(false);
   };
 
   const colorOptions = [
     { name: '星空紫', color: '#9b87f5' },
     { name: '晨曦粉', color: '#FFDEE2' },
   ];
+
+  if (showPaymentPage) {
+    return (
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="sm:max-w-[520px]">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <WalletCards className="h-5 w-5 text-primary" />
+              确认支付
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="space-y-6 my-4">
+            <div className="p-4 border rounded-lg">
+              <div className="flex justify-between items-center mb-2">
+                <div className="text-lg font-medium">支付金额</div>
+                <div className="text-primary font-medium">RMB {selectedPayment! / 10}元</div>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                将获得 {selectedPayment} 个萌爱尾波币
+              </div>
+            </div>
+            
+            <div className="flex flex-col gap-3">
+              <Button
+                onClick={handlePaymentConfirm}
+                className="w-full bg-primary hover:bg-primary/90"
+              >
+                确认支付
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => setShowPaymentPage(false)}
+                className="w-full"
+              >
+                返回修改
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
