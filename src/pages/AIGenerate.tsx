@@ -44,8 +44,8 @@ const AIGenerate: React.FC = () => {
       element.click();
     }
     toast({
-      title: "支付成功",
-      description: "您已成功购买萌爱镜像基础套装，开始生成您的专属记忆吧！",
+      title: "购买成功",
+      description: "您已成功购买萌爱尾波币，开始生成您的专属记忆吧！",
     });
   };
 
