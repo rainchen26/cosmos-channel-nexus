@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -160,7 +161,7 @@ const AIGenerate: React.FC = () => {
       
       <Tabs defaultValue="upload" className="w-full">
         <TabsList className="grid grid-cols-3 mb-6">
-          <TabsTrigger value="upload">1. 上传照片</TabsTrigger>
+          <TabsTrigger value="upload">记忆主角</TabsTrigger>
           <TabsTrigger value="style">选择风格</TabsTrigger>
           <TabsTrigger value="generate">生成记忆</TabsTrigger>
         </TabsList>
