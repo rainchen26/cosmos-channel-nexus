@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Dialog,
@@ -36,8 +35,6 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
   const colorOptions = [
     { name: '星空紫', color: '#9b87f5' },
     { name: '晨曦粉', color: '#FFDEE2' },
-    { name: '海洋蓝', color: '#0EA5E9' },
-    { name: '暖阳橙', color: '#F97316' },
   ];
 
   return (
@@ -148,18 +145,18 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
                     key={color.name}
                     onClick={() => handleColorSelect(color.color)}
                     className={cn(
-                      "p-4 rounded-lg border transition-all flex items-center justify-between",
+                      "p-3 rounded-lg border transition-all flex items-center justify-between",
                       selectedColor === color.color && "border-primary"
                     )}
                     style={{ backgroundColor: color.color + '20' }}
                   >
-                    <span className="font-medium">{color.name}</span>
+                    <span className="font-medium text-sm">{color.name}</span>
                     <div 
-                      className="w-6 h-6 rounded-full flex items-center justify-center"
+                      className="w-5 h-5 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: color.color }}
                     >
                       {selectedColor === color.color && (
-                        <Check className="h-4 w-4 text-white" />
+                        <Check className="h-3 w-3 text-white" />
                       )}
                     </div>
                   </button>
