@@ -175,20 +175,34 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/8bf4834d-53b7-4b8e-9954-1aff4798c20d.png"
+                      alt="Woman in white ornate dress with futuristic design"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
+                  </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/125220c7-cf4b-4f1f-b23d-200f9d32baae.png"
+                      alt="Woman with curly hair in white dress with golden ornaments"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
+                  </div>
                   <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('主人正面照')}>
+                    onClick={() => handleUploadImage('主人左侧面照')}>
                     <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">正面照</span>
+                    <span className="text-sm">左侧面照</span>
                     <span className="text-xs text-muted-foreground mt-1">
-                      面向镜头拍摄
+                      左侧90度角拍摄
                     </span>
                   </div>
                   <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('主人右侧面照')}>
+                    onClick={() => handleUploadImage('主人背面照')}>
                     <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">右侧面照</span>
+                    <span className="text-sm">背面照</span>
                     <span className="text-xs text-muted-foreground mt-1">
-                      右侧90度角拍摄
+                      背对拍摄
                     </span>
                   </div>
                 </div>
@@ -203,21 +217,33 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('宠物正面照')}>
-                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">正面照</span>
-                    <span className="text-xs text-muted-foreground mt-1">
-                      面向镜头拍摄
-                    </span>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png"
+                      alt="Sample pet photo 1"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
                   </div>
-                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('宠物右侧面照')}>
-                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">右侧面照</span>
-                    <span className="text-xs text-muted-foreground mt-1">
-                      右侧90度角拍摄
-                    </span>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
+                      alt="Sample pet photo 2"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
+                  </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/645fb8ae-5d1e-49ef-bcee-41c31f772073.png"
+                      alt="White cat in golden armor"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
+                  </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/91b7a86f-e994-47e7-8721-cef7367f39e8.png"
+                      alt="White cat in space attire"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
                   </div>
                 </div>
               </CardContent>
@@ -249,7 +275,7 @@ const AIGenerate: React.FC = () => {
 示例：我和我家的柴犬在星空下漫步，四周点缀着点点星光。
 我穿着休闲服装，柴犬活泼可爱，正在对我撒娇。
 场景氛围温馨浪漫，整体感觉略带梦幻，像是穿越银河的温柔瞬间。
-画面中可以有星际穿梭的飞船掠过，给人一种未来感与���漫的结合。
+画面中可以有星际穿梭的飞船掠过，给人一种未来感与浪漫的结合。
 
 建议包含：场景描述、人物状态、宠物状态、整体氛围
 建议字数50-200字，精简表达更有力！`}
@@ -356,37 +382,13 @@ const AIGenerate: React.FC = () => {
                 <h4 className="text-xl font-semibold">照片记忆</h4>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/8bf4834d-53b7-4b8e-9954-1aff4798c20d.png"
-                    alt="Woman in white ornate dress with futuristic design"
-                    className="max-w-full max-h-full w-auto h-auto object-contain"
-                  />
-                </div>
-                <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/125220c7-cf4b-4f1f-b23d-200f9d32baae.png"
-                    alt="Woman with curly hair in white dress with golden ornaments"
-                    className="max-w-full max-h-full w-auto h-auto object-contain"
-                  />
-                </div>
-                <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/645fb8ae-5d1e-49ef-bcee-41c31f772073.png"
-                    alt="White cat in golden armor"
-                    className="max-w-full max-h-full w-auto h-auto object-contain"
-                  />
-                </div>
-                <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/91b7a86f-e994-47e7-8721-cef7367f39e8.png"
-                    alt="White cat in space attire"
-                    className="max-w-full max-h-full w-auto h-auto object-contain"
-                  />
-                </div>
-                {Array(4).fill(0).map((_, i) => (
-                  <div key={i + 4} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm text-center px-2">合照</p>
+                {Array(8).fill(0).map((_, i) => (
+                  <div key={i} className="aspect-square card flex items-center justify-center">
+                    <p className="text-muted-foreground text-sm text-center px-2">
+                      {i < 2 ? "主人/仆人单独照" : 
+                       i < 4 ? "宠物单独照" : 
+                       "合照"}
+                    </p>
                   </div>
                 ))}
               </div>
