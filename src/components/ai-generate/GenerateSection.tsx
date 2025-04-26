@@ -15,7 +15,7 @@ const GenerateSection: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png",
-            "/lovable-uploads/3f6a05a7-aa77-4d4d-869e-af1491118cc9.png",
+            "/lovable-uploads/20ec4314-b67e-489c-adf0-e156a891625e.png",
             "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
             "/lovable-uploads/ae92c6a1-e83e-4b8c-af6e-310edd81bd9c.png",
             "/lovable-uploads/51d5771e-e6ab-4115-a2df-e92c06153433.png",
@@ -79,3 +79,4 @@ const GenerateSection: React.FC = () => {
 };
 
 export default GenerateSection;
+
