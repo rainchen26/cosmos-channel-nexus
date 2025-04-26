@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative">
       <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden">
         <img 
-          src="/lovable-uploads/208e8c2b-76fe-4bdb-9d1a-86e0c20fa212.png" 
+          src="/lovable-uploads/77e20f33-02ed-47ca-aa72-16fe689dd6ad.png" 
           alt="赛博空间中女孩与数字猫的科技幻想" 
           className="w-full h-auto object-cover"
         />

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import AISceneCarousel from '@/components/home/AISceneCarousel';
@@ -10,7 +9,7 @@ const Home: React.FC = () => {
     {
       id: 1,
       title: "星际奇幻猫",
-      src: "/lovable-uploads/8b666a29-bc5f-4646-8542-37b358076f96.png"
+      src: "/lovable-uploads/77e20f33-02ed-47ca-aa72-16fe689dd6ad.png"
     },
     {
       id: 2,

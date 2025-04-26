@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Image, Upload, Smile } from "lucide-react";
 
@@ -14,7 +13,7 @@ const GenerateSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/lovable-uploads/fd236397-8a74-42fa-b4fd-ebf2140ed39e.png",
+            "/lovable-uploads/e713d4c2-8ba6-4587-9087-840b0cdebede.png",
             "/lovable-uploads/02843cfa-3fc6-4987-b74c-cbdfcbfe393e.png",
             "/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png",
             "/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png",
@@ -79,4 +78,3 @@ const GenerateSection: React.FC = () => {
 };
 
 export default GenerateSection;
-
