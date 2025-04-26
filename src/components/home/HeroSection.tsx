@@ -10,7 +10,7 @@ const HeroSection = () => {
           alt="科技感女孩与数字猫的太空幻想场景" 
           className="w-full h-auto object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white text-center px-4 tracking-tight drop-shadow-lg">
             萌尾时空｜以AI之名，让爱永存
           </h1>
