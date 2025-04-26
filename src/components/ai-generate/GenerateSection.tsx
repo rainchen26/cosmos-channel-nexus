@@ -14,12 +14,12 @@ const GenerateSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
+            "/lovable-uploads/b8a60727-980e-4ddd-a5bd-37e238fc0f9d.png",
+            "/lovable-uploads/b2920a1c-845f-4c97-ba7a-bdf75675e56c.png",
             "/lovable-uploads/0d56e295-4a6c-4c22-976f-e7ae357f9166.png",
             "/lovable-uploads/0853efba-10bf-4cd4-b461-30b5ffb28f3e.png",
             "/lovable-uploads/edc9b090-f86c-48b7-af30-a5d1c5dc63ae.png",
-            "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png",
-            "/lovable-uploads/2eef6958-1c27-4ab2-92ab-651343bb2954.png",
-            "/lovable-uploads/68d102c3-94bc-4d40-9eee-3fdf65f884fc.png"
+            "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
           ].map((imageSrc, i) => (
             <div 
               key={i} 
@@ -28,13 +28,19 @@ const GenerateSection: React.FC = () => {
               {i < 2 ? (
                 <img 
                   src={imageSrc} 
-                  alt={`宠物照片 ${i + 1}`} 
+                  alt={`宠物单独照 ${i + 1}`} 
+                  className="w-full h-full object-cover"
+                />
+              ) : i < 4 ? (
+                <img 
+                  src={imageSrc} 
+                  alt={`宠物互动照 ${i - 1}`} 
                   className="w-full h-full object-cover"
                 />
               ) : (
                 <img 
                   src={imageSrc} 
-                  alt={`宠物互动照 ${i - 1}`} 
+                  alt={`宠物互动照 ${i - 3}`} 
                   className="w-full h-full object-cover"
                 />
               )}
