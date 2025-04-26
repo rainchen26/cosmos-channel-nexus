@@ -6,8 +6,8 @@ const HeroSection = () => {
     <section className="relative">
       <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden">
         <img 
-          src="/lovable-uploads/fb34e14e-ae7c-46e1-99c6-547bdf29c88d.png" 
-          alt="柴犬与女孩在富士山下的枫叶树下" 
+          src="/lovable-uploads/0d56e295-4a6c-4c22-976f-e7ae357f9166.png" 
+          alt="科技感女孩与数字猫的太空幻想场景" 
           className="w-full h-auto object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm">
