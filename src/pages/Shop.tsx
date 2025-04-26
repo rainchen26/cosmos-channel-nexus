@@ -98,7 +98,7 @@ const Shop: React.FC = () => {
       id: 8,
       name: "赛博机械翼NFT时装",
       category: "digital",
-      subcategory: "NFT虚拟",
+      subcategory: "NFT虚��",
       description: "提升社群互动收益 + 跨平台元宇宙通用",
       price: 29,
       highPrice: 299,
@@ -113,7 +113,7 @@ const Shop: React.FC = () => {
       description: "萌尾宇宙飞行特效 + 爪印尾迹云",
       price: 499,
       priceRange: false,
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
     {
       id: 10,
@@ -124,7 +124,7 @@ const Shop: React.FC = () => {
       price: 999,
       highPrice: 9999,
       priceRange: true,
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
 
     {
@@ -136,7 +136,7 @@ const Shop: React.FC = () => {
       price: 5999,
       premium: true,
       priceRange: false,
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
     {
       id: 12,
@@ -197,7 +197,7 @@ const Shop: React.FC = () => {
       price: 1999,
       savings: 500,
       scenario: "数字资产投资者",
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
     {
       id: 18,
@@ -251,7 +251,7 @@ const Shop: React.FC = () => {
       price: 299,
       highPrice: 899,
       priceRange: true,
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
     {
       id: 23,
