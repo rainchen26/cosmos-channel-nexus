@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,12 +5,14 @@ import { toast } from "@/components/ui/use-toast";
 import UploadSection from '@/components/ai-generate/UploadSection';
 import StyleSection from '@/components/ai-generate/StyleSection';
 import GenerateSection from '@/components/ai-generate/GenerateSection';
+import PaymentDialog from '@/components/ai-generate/PaymentDialog';
 import { styleCategories } from '@/components/ai-generate/styleCategories';
 
 const AIGenerate: React.FC = () => {
   const [prompt, setPrompt] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('星际穿梭');
   const [selectedSubStyle, setSelectedSubStyle] = useState('星尘牧歌');
+  const [showPaymentDialog, setShowPaymentDialog] = useState(false);
 
   const handleUploadImage = (type: string) => {
     toast({
@@ -31,7 +32,23 @@ const AIGenerate: React.FC = () => {
     const mainSubStyle = subStyle.split(' - ')[0];
     setSelectedSubStyle(mainSubStyle);
   };
-  
+
+  const handleGenerateClick = () => {
+    setShowPaymentDialog(true);
+  };
+
+  const handlePaymentConfirm = () => {
+    setShowPaymentDialog(false);
+    const element = document.querySelector(`[data-value="generate"]`);
+    if (element instanceof HTMLElement) {
+      element.click();
+    }
+    toast({
+      title: "支付成功",
+      description: "您已成功购买萌爱镜像基础套装，开始生成您的专属记忆吧！",
+    });
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
@@ -80,7 +97,7 @@ const AIGenerate: React.FC = () => {
           
           <div className="mt-4 text-center">
             <Button 
-              onClick={() => handleStyleTabClick("generate")}
+              onClick={handleGenerateClick}
               className="bg-primary hover:bg-primary/90"
             >
               进入下一步：生成记忆
@@ -92,6 +109,12 @@ const AIGenerate: React.FC = () => {
           <GenerateSection />
         </TabsContent>
       </Tabs>
+
+      <PaymentDialog 
+        open={showPaymentDialog}
+        onOpenChange={setShowPaymentDialog}
+        onConfirm={handlePaymentConfirm}
+      />
     </div>
   );
 };
