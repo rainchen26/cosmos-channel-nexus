@@ -14,14 +14,14 @@ const GenerateSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png",
-            "/lovable-uploads/20ec4314-b67e-489c-adf0-e156a891625e.png",
-            "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
-            "/lovable-uploads/ae92c6a1-e83e-4b8c-af6e-310edd81bd9c.png",
-            "/lovable-uploads/51d5771e-e6ab-4115-a2df-e92c06153433.png",
-            "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png",
-            "/lovable-uploads/30bab329-a530-481d-98c6-1d24d0e16978.png",
-            "/lovable-uploads/dece4934-93f3-41c2-a501-04e43248c26a.png"
+            "/lovable-uploads/30fda8f8-de88-49cd-8037-ec3458a096c6.png",
+            "/lovable-uploads/fd236397-8a74-42fa-b4fd-ebf2140ed39e.png",
+            "/lovable-uploads/02843cfa-3fc6-4987-b74c-cbdfcbfe393e.png",
+            "/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png",
+            "/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png",
+            "/lovable-uploads/edc9b090-f86c-48b7-af30-a5d1c5dc63ae.png",
+            "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png",
+            "/lovable-uploads/2eef6958-1c27-4ab2-92ab-651343bb2954.png"
           ].map((imageSrc, i) => (
             <div 
               key={i} 
@@ -30,7 +30,7 @@ const GenerateSection: React.FC = () => {
               {i < 2 ? (
                 <img 
                   src={imageSrc} 
-                  alt={`主人/仆人单独照 ${i + 1}`} 
+                  alt={`主人单独照 ${i + 1}`} 
                   className="w-full h-full object-cover"
                 />
               ) : i < 4 ? (
