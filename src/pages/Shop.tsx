@@ -29,7 +29,7 @@ const Shop: React.FC = () => {
       price: 199,
       highPrice: 599,
       priceRange: true,
-      image: "/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 2,
@@ -113,7 +113,7 @@ const Shop: React.FC = () => {
       description: "萌尾宇宙飞行特效 + 爪印尾迹云",
       price: 499,
       priceRange: false,
-      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 10,
@@ -124,7 +124,7 @@ const Shop: React.FC = () => {
       price: 999,
       highPrice: 9999,
       priceRange: true,
-      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
 
     {
@@ -136,7 +136,7 @@ const Shop: React.FC = () => {
       price: 5999,
       premium: true,
       priceRange: false,
-      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 12,
@@ -197,7 +197,7 @@ const Shop: React.FC = () => {
       price: 1999,
       savings: 500,
       scenario: "数字资产投资者",
-      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 18,
@@ -251,7 +251,7 @@ const Shop: React.FC = () => {
       price: 299,
       highPrice: 899,
       priceRange: true,
-      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 23,
