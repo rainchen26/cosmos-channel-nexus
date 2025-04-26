@@ -240,8 +240,9 @@ const Shop: React.FC = () => {
       price: 399,
       highPrice: 1299,
       priceRange: true,
-      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
+
     {
       id: 22,
       name: "次元牵引绳",
