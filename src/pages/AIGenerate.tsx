@@ -166,9 +166,6 @@ const AIGenerate: React.FC = () => {
         </TabsList>
         
         <TabsContent value="upload" className="space-y-6">
-          <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">1. 上传照片</h2>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardContent className="p-6">
