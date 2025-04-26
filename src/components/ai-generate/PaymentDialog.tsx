@@ -6,7 +6,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Package, Image, Video, Smile, Smartphone, CreditCard } from "lucide-react";
+import { Package, Image, Video, Smile, Smartphone, CreditCard, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PaymentDialogProps {
@@ -21,10 +21,24 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
   onConfirm,
 }) => {
   const [selectedPackage, setSelectedPackage] = useState<'basic' | 'pro' | null>(null);
+  const [selectedPayment, setSelectedPayment] = useState<number | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
   const handlePurchase = (amount: number) => {
+    setSelectedPayment(amount);
+  };
+
+  const handleColorSelect = (color: string) => {
+    setSelectedColor(color);
     onConfirm();
   };
+
+  const colorOptions = [
+    { name: '星空紫', color: '#9b87f5' },
+    { name: '晨曦粉', color: '#FFDEE2' },
+    { name: '海洋蓝', color: '#0EA5E9' },
+    { name: '暖阳橙', color: '#F97316' },
+  ];
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -107,7 +121,10 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
                 <button
                   key={option.coins}
                   onClick={() => handlePurchase(option.coins)}
-                  className="w-full p-4 border rounded-lg hover:bg-accent transition-colors flex items-center justify-between group"
+                  className={cn(
+                    "w-full p-4 border rounded-lg hover:bg-accent transition-colors flex items-center justify-between group",
+                    selectedPayment === option.coins && "border-primary bg-accent"
+                  )}
                 >
                   <div className="flex items-center gap-3">
                     <div className="text-lg font-medium">{option.coins}尾波币</div>
@@ -119,6 +136,37 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
               ))}
             </div>
           </div>
+
+          {selectedPayment && (
+            <div className="border-t pt-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="text-lg font-medium">选择您喜欢的主题色</div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {colorOptions.map((color) => (
+                  <button
+                    key={color.name}
+                    onClick={() => handleColorSelect(color.color)}
+                    className={cn(
+                      "p-4 rounded-lg border transition-all flex items-center justify-between",
+                      selectedColor === color.color && "border-primary"
+                    )}
+                    style={{ backgroundColor: color.color + '20' }}
+                  >
+                    <span className="font-medium">{color.name}</span>
+                    <div 
+                      className="w-6 h-6 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: color.color }}
+                    >
+                      {selectedColor === color.color && (
+                        <Check className="h-4 w-4 text-white" />
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
