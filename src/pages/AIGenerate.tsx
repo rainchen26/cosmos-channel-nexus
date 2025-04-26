@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "@/components/ui/use-toast";
+import { Progress } from "@/components/ui/progress";
 import UploadSection from '@/components/ai-generate/UploadSection';
 import StyleSection from '@/components/ai-generate/StyleSection';
 import GenerateSection from '@/components/ai-generate/GenerateSection';
@@ -13,6 +14,24 @@ const AIGenerate: React.FC = () => {
   const [selectedStyle, setSelectedStyle] = useState('星际穿梭');
   const [selectedSubStyle, setSelectedSubStyle] = useState('星尘牧歌');
   const [showPaymentDialog, setShowPaymentDialog] = useState(false);
+  const [currentTab, setCurrentTab] = useState('upload');
+
+  const getProgressValue = (currentTab: string) => {
+    switch (currentTab) {
+      case 'upload':
+        return 33;
+      case 'style':
+        return 66;
+      case 'generate':
+        return 100;
+      default:
+        return 0;
+    }
+  };
+
+  const handleTabChange = (value: string) => {
+    setCurrentTab(value);
+  };
 
   const handleUploadImage = (type: string) => {
     toast({
@@ -60,7 +79,16 @@ const AIGenerate: React.FC = () => {
         </p>
       </div>
       
-      <Tabs defaultValue="upload" className="w-full">
+      <Tabs defaultValue="upload" className="w-full" onValueChange={handleTabChange}>
+        <div className="mb-6 space-y-2">
+          <Progress value={getProgressValue(currentTab)} className="w-full h-2" />
+          <div className="text-sm text-right text-muted-foreground">
+            {currentTab === 'upload' && '正在上传记忆主角...'}
+            {currentTab === 'style' && '正在选择记忆风格...'}
+            {currentTab === 'generate' && '准备生成专属记忆...'}
+          </div>
+        </div>
+        
         <TabsList className="grid grid-cols-3 mb-6">
           <TabsTrigger value="upload">记忆主角</TabsTrigger>
           <TabsTrigger value="style">选择风格</TabsTrigger>
