@@ -175,29 +175,36 @@ const AIGenerate: React.FC = () => {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('主人正面照')}>
-                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm mb-1">正面照</span>
-                    <div className="text-xs text-muted-foreground px-3 text-center">
-                      <p>拍摄要求：</p>
-                      <p>• 脸部清晰、光线充足</p>
-                      <p>• 建议尺寸：512×512px</p>
-                      <p>• 正面自然表情</p>
-                    </div>
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/8bf4834d-53b7-4b8e-9954-1aff4798c20d.png"
+                      alt="Woman in white ornate dress with futuristic design"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
                   </div>
-                  {['左侧面照', '右侧面照', '背面照'].map((type, index) => (
-                    <div key={index}
-                      className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                      onClick={() => handleUploadImage(`主人${type}`)}>
-                      <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                      <span className="text-sm">{type}</span>
-                      <span className="text-xs text-muted-foreground mt-1">
-                        {type === '左侧面照' ? '左侧90度角拍摄' :
-                         type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
-                      </span>
-                    </div>
-                  ))}
+                  <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/125220c7-cf4b-4f1f-b23d-200f9d32baae.png"
+                      alt="Woman with curly hair in white dress with golden ornaments"
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                    />
+                  </div>
+                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                    onClick={() => handleUploadImage('主人左侧面照')}>
+                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                    <span className="text-sm">左侧面照</span>
+                    <span className="text-xs text-muted-foreground mt-1">
+                      左侧90度角拍摄
+                    </span>
+                  </div>
+                  <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                    onClick={() => handleUploadImage('主人背面照')}>
+                    <Upload className="h-8 w-8 text-primary/70 mb-2" />
+                    <span className="text-sm">背面照</span>
+                    <span className="text-xs text-muted-foreground mt-1">
+                      背对拍摄
+                    </span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
