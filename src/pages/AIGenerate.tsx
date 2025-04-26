@@ -78,7 +78,7 @@ const AIGenerate: React.FC = () => {
               onClick={() => handleStyleTabClick("style")}
               className="bg-primary hover:bg-primary/90"
             >
-              进入下一步：选择风格
+              点击选择风格
             </Button>
           </div>
         </TabsContent>
