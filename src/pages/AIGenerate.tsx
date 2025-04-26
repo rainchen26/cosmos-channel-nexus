@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -93,7 +92,7 @@ const AIGenerate: React.FC = () => {
         '内存午睡 - 堆栈溢出式打呼',
         '异常卖萌 - 弹窗警告时的歪头',
         '缓存零食 - 突然吐出昨天藏的冻干',
-        '多态睡姿 - 随机切换形态的困倦',
+        '多态睡��� - 随机切换形态的困倦',
         '死锁拥抱 - 互相等待导致的黏人',
         '哈希拆家 - 不可逆的家具重组',
         '线程追逐 - 并行运行的逗猫现场'
@@ -376,13 +375,31 @@ const AIGenerate: React.FC = () => {
                 <h4 className="text-xl font-semibold">照片记忆</h4>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {Array(8).fill(0).map((_, i) => (
-                  <div key={i} className="aspect-square card flex items-center justify-center">
-                    <p className="text-muted-foreground text-sm text-center px-2">
-                      {i < 2 ? "主人/仆人单独照" : 
-                       i < 4 ? "宠物单独照" : 
-                       "合照"}
-                    </p>
+                {[
+                  "/lovable-uploads/e1396faf-7584-4809-9509-28c71f909468.png",
+                  "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
+                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png",
+                  "/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png",
+                  "/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png",
+                  "/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png",
+                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png",
+                  "/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
+                ].map((imageSrc, i) => (
+                  <div 
+                    key={i} 
+                    className="aspect-square card flex items-center justify-center overflow-hidden"
+                  >
+                    {i < 2 ? (
+                      <img 
+                        src={imageSrc} 
+                        alt={`主人/仆人单独照 ${i + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <p className="text-muted-foreground text-sm text-center px-2">
+                        {i < 4 ? "宠物单独照" : "合照"}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
