@@ -257,9 +257,6 @@ const AIGenerate: React.FC = () => {
         </TabsContent>
         
         <TabsContent value="style" className="space-y-6">
-          <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">2. 选择风格</h2>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card>
               <CardContent className="pt-6">
