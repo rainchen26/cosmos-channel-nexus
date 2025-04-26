@@ -92,7 +92,7 @@ const AIGenerate: React.FC = () => {
         '内存午睡 - 堆栈溢出式打呼',
         '异常卖萌 - 弹窗警告时的歪头',
         '缓存零食 - 突然吐出昨天藏的冻干',
-        '多态睡��� - 随机切换形态的困倦',
+        '多态睡����� - 随机切换形态的困倦',
         '死锁拥抱 - 互相等待导致的黏人',
         '哈希拆家 - 不可逆的家具重组',
         '线程追逐 - 并行运行的逗猫现场'
@@ -380,10 +380,10 @@ const AIGenerate: React.FC = () => {
                   "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
                   "/lovable-uploads/ae92c6a1-e83e-4b8c-af6e-310edd81bd9c.png",
                   "/lovable-uploads/51d5771e-e6ab-4115-a2df-e92c06153433.png",
+                  "/lovable-uploads/c51842e3-3306-46f4-af89-09baf971c5ff.png",
                   "/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png",
                   "/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png",
-                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png",
-                  "/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
+                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
                 ].map((imageSrc, i) => (
                   <div 
                     key={i} 
