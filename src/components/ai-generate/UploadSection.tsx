@@ -57,28 +57,28 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
               <img 
-                src="/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png"
+                src="/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
                 alt="Sample pet photo 1"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
             <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
               <img 
-                src="/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
+                src="/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
                 alt="Sample pet photo 2"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
             <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
               <img 
-                src="/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
+                src="/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png"
                 alt="Sample pet photo 3"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
             <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
               <img 
-                src="/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png"
+                src="/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png"
                 alt="Sample pet photo 4"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
