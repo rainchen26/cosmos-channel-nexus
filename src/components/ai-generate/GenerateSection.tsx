@@ -14,14 +14,14 @@ const GenerateSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/lovable-uploads/30fda8f8-de88-49cd-8037-ec3458a096c6.png",
             "/lovable-uploads/fd236397-8a74-42fa-b4fd-ebf2140ed39e.png",
             "/lovable-uploads/02843cfa-3fc6-4987-b74c-cbdfcbfe393e.png",
             "/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png",
             "/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png",
             "/lovable-uploads/edc9b090-f86c-48b7-af30-a5d1c5dc63ae.png",
             "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png",
-            "/lovable-uploads/2eef6958-1c27-4ab2-92ab-651343bb2954.png"
+            "/lovable-uploads/2eef6958-1c27-4ab2-92ab-651343bb2954.png",
+            "/lovable-uploads/68d102c3-94bc-4d40-9eee-3fdf65f884fc.png"
           ].map((imageSrc, i) => (
             <div 
               key={i} 
