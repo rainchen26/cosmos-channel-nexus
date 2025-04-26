@@ -105,6 +105,26 @@ const Shop: React.FC = () => {
       priceRange: false,
       image: "/lovable-uploads/8b666a29-bc5f-4646-8542-37b358076f96.png"
     },
+    {
+      id: 18,
+      name: "萌爪记忆相框",
+      category: "emotional",
+      subcategory: "家居饰品",
+      description: "动态投影照片 + AI场景重现",
+      price: 259,
+      priceRange: false,
+      image: "/lovable-uploads/5749ff65-040c-4fd8-8a30-463beedb1d12.png"
+    },
+    {
+      id: 19,
+      name: "星光宠物抱枕",
+      category: "emotional",
+      subcategory: "家居饰品",
+      description: "柔光夜灯 + 心跳模拟震动",
+      price: 159,
+      priceRange: false,
+      image: "/lovable-uploads/68d102c3-94bc-4d40-9eee-3fdf65f884fc.png"
+    },
     
     {
       id: 9,
