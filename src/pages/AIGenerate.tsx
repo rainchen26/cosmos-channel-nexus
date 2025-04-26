@@ -100,7 +100,7 @@ const AIGenerate: React.FC = () => {
               onClick={handleGenerateClick}
               className="bg-primary hover:bg-primary/90"
             >
-              进入下一步：生成记忆
+              点击生成记忆
             </Button>
           </div>
         </TabsContent>
