@@ -176,19 +176,19 @@ const AIGenerate: React.FC = () => {
                 
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('主人左侧面照')}>
+                    onClick={() => handleUploadImage('主人正面照')}>
                     <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">左侧面照</span>
+                    <span className="text-sm">正面照</span>
                     <span className="text-xs text-muted-foreground mt-1">
-                      左侧90度角拍摄
+                      面向镜头拍摄
                     </span>
                   </div>
                   <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('主人背面照')}>
+                    onClick={() => handleUploadImage('主人右侧面照')}>
                     <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">背面照</span>
+                    <span className="text-sm">右侧面照</span>
                     <span className="text-xs text-muted-foreground mt-1">
-                      背对拍摄
+                      右侧90度角拍摄
                     </span>
                   </div>
                 </div>
@@ -212,11 +212,11 @@ const AIGenerate: React.FC = () => {
                     </span>
                   </div>
                   <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                    onClick={() => handleUploadImage('宠物侧面照')}>
+                    onClick={() => handleUploadImage('宠物右侧面照')}>
                     <Upload className="h-8 w-8 text-primary/70 mb-2" />
-                    <span className="text-sm">侧面照</span>
+                    <span className="text-sm">右侧面照</span>
                     <span className="text-xs text-muted-foreground mt-1">
-                      侧面拍摄
+                      右侧90度角拍摄
                     </span>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ const AIGenerate: React.FC = () => {
 示例：我和我家的柴犬在星空下漫步，四周点缀着点点星光。
 我穿着休闲服装，柴犬活泼可爱，正在对我撒娇。
 场景氛围温馨浪漫，整体感觉略带梦幻，像是穿越银河的温柔瞬间。
-画面中可以有星际穿梭的飞船掠过，给人一种未来感与浪漫的结合。
+画面中可以有星际穿梭的飞船掠过，给人一种未来感与���漫的结合。
 
 建议包含：场景描述、人物状态、宠物状态、整体氛围
 建议字数50-200字，精简表达更有力！`}
