@@ -8,7 +8,7 @@ const HeroSection = () => {
         <img 
           src="/lovable-uploads/fb34e14e-ae7c-46e1-99c6-547bdf29c88d.png" 
           alt="柴犬与女孩在富士山下的枫叶树下" 
-          className="w-full h-auto object-cover"  // Removed brightness-75
+          className="w-full h-auto object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white text-center px-4 tracking-tight drop-shadow-lg">
