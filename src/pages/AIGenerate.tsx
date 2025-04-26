@@ -378,8 +378,8 @@ const AIGenerate: React.FC = () => {
                 {[
                   "/lovable-uploads/e1396faf-7584-4809-9509-28c71f909468.png",
                   "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
-                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png",
-                  "/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png",
+                  "/lovable-uploads/ae92c6a1-e83e-4b8c-af6e-310edd81bd9c.png",
+                  "/lovable-uploads/51d5771e-e6ab-4115-a2df-e92c06153433.png",
                   "/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png",
                   "/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png",
                   "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png",
@@ -395,9 +395,15 @@ const AIGenerate: React.FC = () => {
                         alt={`主人/仆人单独照 ${i + 1}`} 
                         className="w-full h-full object-cover"
                       />
+                    ) : i < 4 ? (
+                      <img 
+                        src={imageSrc} 
+                        alt={`宠物单独照 ${i - 1}`} 
+                        className="w-full h-full object-cover"
+                      />
                     ) : (
                       <p className="text-muted-foreground text-sm text-center px-2">
-                        {i < 4 ? "宠物单独照" : "合照"}
+                        {"合照"}
                       </p>
                     )}
                   </div>
