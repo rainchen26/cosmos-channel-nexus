@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Package, Image, Video, Smile, Smartphone, CreditCard, Check, WalletCards } from "lucide-react";
+import { Package, Image, Video, Smile, Smartphone, CreditCard, WalletCards } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
@@ -23,16 +23,10 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
 }) => {
   const [selectedPackage, setSelectedPackage] = useState<'basic' | 'pro' | null>(null);
   const [selectedPayment, setSelectedPayment] = useState<number | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [showPaymentPage, setShowPaymentPage] = useState(false);
 
   const handlePurchase = (amount: number) => {
     setSelectedPayment(amount);
-  };
-
-  const handleColorSelect = (color: string) => {
-    setSelectedColor(color);
-    setShowPaymentPage(true);
   };
 
   const handlePaymentConfirm = () => {
@@ -43,11 +37,6 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
     onConfirm();
     setShowPaymentPage(false);
   };
-
-  const colorOptions = [
-    { name: '星空紫', color: '#9b87f5' },
-    { name: '晨曦粉', color: '#FFDEE2' },
-  ];
 
   if (showPaymentPage) {
     return (
@@ -190,33 +179,13 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
           </div>
 
           {selectedPayment && (
-            <div className="border-t pt-6">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="text-lg font-medium">选择您喜欢的主题色</div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                {colorOptions.map((color) => (
-                  <button
-                    key={color.name}
-                    onClick={() => handleColorSelect(color.color)}
-                    className={cn(
-                      "p-3 rounded-lg border transition-all flex items-center justify-between",
-                      selectedColor === color.color && "border-primary"
-                    )}
-                    style={{ backgroundColor: color.color + '20' }}
-                  >
-                    <span className="font-medium text-sm">{color.name}</span>
-                    <div 
-                      className="w-5 h-5 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: color.color }}
-                    >
-                      {selectedColor === color.color && (
-                        <Check className="h-3 w-3 text-white" />
-                      )}
-                    </div>
-                  </button>
-                ))}
-              </div>
+            <div className="flex justify-center">
+              <Button 
+                onClick={() => setShowPaymentPage(true)}
+                className="w-full max-w-sm bg-primary hover:bg-primary/90"
+              >
+                点击充值
+              </Button>
             </div>
           )}
         </div>
