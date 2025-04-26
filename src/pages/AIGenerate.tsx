@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -227,15 +226,15 @@ const AIGenerate: React.FC = () => {
                   </div>
                   <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/8607dd72-afb7-4a8f-b347-ef5b39c95a4d.png"
-                      alt="Sample pet photo 3"
+                      src="/lovable-uploads/645fb8ae-5d1e-49ef-bcee-41c31f772073.png"
+                      alt="White cat in golden armor"
                       className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
                   <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png"
-                      alt="Sample pet photo 4"
+                      src="/lovable-uploads/91b7a86f-e994-47e7-8721-cef7367f39e8.png"
+                      alt="White cat in space attire"
                       className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
