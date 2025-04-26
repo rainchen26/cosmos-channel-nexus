@@ -234,7 +234,61 @@ const Shop: React.FC = () => {
       price: 39,
       donation: "每10包资助1次绝育手术",
       image: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
-    }
+    },
+    // 智能养宠装备
+    {
+      id: 21,
+      name: "AI镜像项圈",
+      category: "smart-pet",
+      subcategory: "智能穿戴",
+      description: "全息投影宠物形象 + 健康数据萌爪指示灯",
+      price: 399,
+      highPrice: 1299,
+      priceRange: true,
+      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+    },
+    {
+      id: 22,
+      name: "次元牵引绳",
+      category: "smart-pet",
+      subcategory: "智能穿戴",
+      description: "实时心情表情包 + 防丢投影定位",
+      price: 299,
+      highPrice: 899,
+      priceRange: true,
+      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+    },
+    {
+      id: 23,
+      name: "量子踩奶猫垫",
+      category: "smart-pet",  
+      subcategory: "居家用品",
+      description: "AI生成图案 + 睡姿压力传感记录",
+      price: 199,
+      highPrice: 599,
+      priceRange: true,
+      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+    },
+    {
+      id: 24,
+      name: "萌爪卫生袋（10枚装）",
+      category: "smart-pet",
+      subcategory: "居家用品",
+      description: "可降解漫画印花 + AI语音夸夸除臭",
+      price: 39,
+      priceRange: false,
+      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+    },
+    {
+      id: 25,
+      name: "星云体温贴",
+      category: "smart-pet",
+      subcategory: "健康监测",
+      description: "24小时测温 + 异常预警萌爪震动",
+      price: 159,
+      priceRange: false,
+      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+    },
   ];
 
   const filteredProducts = activeCategory === 'all' 
