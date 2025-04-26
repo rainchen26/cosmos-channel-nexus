@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ChevronRight, Star, Heart, Gift, Package, Archive, Medal, SmartHome, Cat, Dog, Box, Shirt, BatteryCharging, NftIcon, LandPlot, Donate } from "lucide-react";
+import { ChevronRight, Star, Heart, Gift, Package, Archive, SmartHome, Donate } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 
@@ -117,7 +117,7 @@ const Shop: React.FC = () => {
       name: "动态表情包订阅包",
       category: "digital",
       subcategory: "数字内容",
-      description: "每月8款AI梗图 + 声控触发（说"汪"出图）",
+      description: "每月8款AI梗图 + 声控触发（说'汪'出图）",
       price: 15,
       priceRange: false,
       subscription: true,
