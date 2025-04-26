@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import {
   Dialog,
@@ -30,12 +31,18 @@ const PaymentDialog: React.FC<PaymentDialogProps> = ({
   };
 
   const handlePaymentConfirm = () => {
+    // Close payment dialog first
+    onOpenChange(false);
+    setShowPaymentPage(false);
+    
+    // Show success toast
     toast({
       title: "支付成功",
       description: "您已成功完成支付",
     });
+    
+    // Call onConfirm which will handle the tab navigation
     onConfirm();
-    setShowPaymentPage(false);
   };
 
   if (showPaymentPage) {
