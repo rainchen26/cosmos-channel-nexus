@@ -99,7 +99,7 @@ const Shop: React.FC = () => {
       id: 8,
       name: "拆家现场盲盒",
       category: "emotional",
-      subcategory: "趣味周边",
+      subcategory: "���味周边",
       description: "3D打印家具残骸模型 + 限量虚拟复活卡",
       price: 89,
       priceRange: false,
@@ -138,7 +138,18 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png"
     },
     {
-      id: 10,
+      id: 20,
+      name: "全息屏保工坊",
+      category: "digital",
+      subcategory: "数字内容",
+      description: "互动光粒宠物 + 天气联动躲雨动画",
+      price: 29,
+      highPrice: 99,
+      priceRange: true,
+      image: "/lovable-uploads/d20a8cf8-0348-4400-8e0b-e3d715deca9d.png"
+    },
+    {
+      id: 21,
       name: "赛博机械翼NFT时装",
       category: "digital",
       subcategory: "NFT虚拟",
@@ -147,6 +158,27 @@ const Shop: React.FC = () => {
       highPrice: 299,
       priceRange: true,
       image: "/lovable-uploads/d20a8cf8-0348-4400-8e0b-e3d715deca9d.png"
+    },
+    {
+      id: 22,
+      name: "肉垫星舰载具",
+      category: "digital",
+      subcategory: "NFT虚拟",
+      description: "萌尾宇宙飞行特效 + 爪印尾迹云",
+      price: 499,
+      priceRange: false,
+      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+    },
+    {
+      id: 23,
+      name: "萌爪星云（虚拟土地）",
+      category: "digital",
+      subcategory: "虚拟地产",
+      description: "建造专属宠物乐园 + 收租赚取爪能粒子",
+      price: 999,
+      highPrice: 9999,
+      priceRange: true,
+      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
     },
     
     {
