@@ -366,10 +366,6 @@ const AIGenerate: React.FC = () => {
         </TabsContent>
         
         <TabsContent value="generate" className="space-y-6">
-          <div className="text-left mb-4">
-            <h2 className="text-xl font-semibold text-primary">生成记忆</h2>
-          </div>
-          
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-primary">已生成的记忆</h3>
             
