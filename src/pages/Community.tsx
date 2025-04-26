@@ -1,8 +1,10 @@
+
 import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Community: React.FC = () => {
   const posts = [
@@ -14,7 +16,8 @@ const Community: React.FC = () => {
       avatar: "SM",
       likes: 245,
       comments: 56,
-      category: "showcase"
+      category: "showcase",
+      image: "/lovable-uploads/d20a8cf8-0348-4400-8e0b-e3d715deca9d.png"
     },
     {
       id: 2,
@@ -24,7 +27,8 @@ const Community: React.FC = () => {
       avatar: "PD",
       likes: 189,
       comments: 43,
-      category: "tutorial"
+      category: "tutorial",
+      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
     },
     {
       id: 3,
@@ -34,7 +38,8 @@ const Community: React.FC = () => {
       avatar: "GD",
       likes: 78,
       comments: 34,
-      category: "collaboration"
+      category: "collaboration",
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
     },
     {
       id: 4,
@@ -44,7 +49,8 @@ const Community: React.FC = () => {
       avatar: "DE",
       likes: 312,
       comments: 87,
-      category: "showcase"
+      category: "showcase",
+      image: "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png"
     },
     {
       id: 5,
@@ -54,7 +60,8 @@ const Community: React.FC = () => {
       avatar: "LM",
       likes: 265,
       comments: 59,
-      category: "tutorial"
+      category: "tutorial",
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     }
   ];
 
@@ -76,7 +83,7 @@ const Community: React.FC = () => {
         </TabsList>
         
         <TabsContent value="all">
-          <div className="space-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {posts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
@@ -85,7 +92,7 @@ const Community: React.FC = () => {
         
         {["showcase", "tutorial", "collaboration"].map((category) => (
           <TabsContent key={category} value={category}>
-            <div className="space-y-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {posts
                 .filter(post => post.category === category)
                 .map((post) => (
@@ -108,42 +115,38 @@ interface Post {
   likes: number;
   comments: number;
   category: string;
+  image: string;
 }
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   return (
-    <Card className="bg-white border border-primary/20 overflow-hidden hover:border-primary/40 transition-colors">
-      <CardHeader>
+    <Card className="group cursor-pointer hover:shadow-md transition-shadow duration-300">
+      <div className="relative">
+        <AspectRatio ratio={1}>
+          <img 
+            src={post.image} 
+            alt={post.title}
+            className="object-cover w-full h-full rounded-t-lg"
+          />
+        </AspectRatio>
+      </div>
+      <CardContent className="p-3">
+        <h3 className="font-medium text-sm mb-1 line-clamp-2">{post.title}</h3>
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{post.content}</p>
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Avatar>
+          <div className="flex items-center gap-2">
+            <Avatar className="h-6 w-6">
               <AvatarImage src={`/avatar-${post.id}.png`} />
-              <AvatarFallback className="bg-cosmic-nebula/50">{post.avatar}</AvatarFallback>
+              <AvatarFallback className="text-xs">{post.avatar}</AvatarFallback>
             </Avatar>
-            <div>
-              <CardTitle className="text-lg">{post.title}</CardTitle>
-              <p className="text-sm text-cosmic-star/70">作者: {post.author}</p>
-            </div>
+            <span className="text-xs text-muted-foreground">{post.author}</span>
           </div>
-          <div className="text-sm text-cosmic-star/70">
-            {post.category === "showcase" && "作品展示"}
-            {post.category === "tutorial" && "教程分享"}
-            {post.category === "collaboration" && "寻找合作"}
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-muted-foreground">👍 {post.likes}</span>
+            <span className="text-xs text-muted-foreground">💬 {post.comments}</span>
           </div>
         </div>
-      </CardHeader>
-      <CardContent>
-        <p>{post.content}</p>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <div className="flex space-x-4">
-          <Button variant="ghost" size="sm">👍 {post.likes}</Button>
-          <Button variant="ghost" size="sm">💬 {post.comments}</Button>
-        </div>
-        <Button variant="outline" size="sm" className="border-cosmic-accent text-cosmic-accent">
-          查看详情
-        </Button>
-      </CardFooter>
     </Card>
   );
 };
