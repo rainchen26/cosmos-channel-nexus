@@ -380,10 +380,10 @@ const AIGenerate: React.FC = () => {
                   "/lovable-uploads/ef34d07f-9afe-4316-ba6b-67bbbe0a8d9c.png",
                   "/lovable-uploads/ae92c6a1-e83e-4b8c-af6e-310edd81bd9c.png",
                   "/lovable-uploads/51d5771e-e6ab-4115-a2df-e92c06153433.png",
-                  "/lovable-uploads/c51842e3-3306-46f4-af89-09baf971c5ff.png",
-                  "/lovable-uploads/f960fd84-cebf-4f63-8a14-9e7631299236.png",
-                  "/lovable-uploads/ef18555b-40cd-4f87-a225-c42fb4f45bd7.png",
-                  "/lovable-uploads/9fac5e38-6838-42d2-9338-b84a15bb45a1.png"
+                  "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png",
+                  "/lovable-uploads/8942cfe2-f2d4-4139-8889-ae92bc2c5c52.png",
+                  "/lovable-uploads/30bab329-a530-481d-98c6-1d24d0e16978.png",
+                  "/lovable-uploads/dece4934-93f3-41c2-a501-04e43248c26a.png"
                 ].map((imageSrc, i) => (
                   <div 
                     key={i} 
@@ -402,9 +402,11 @@ const AIGenerate: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <p className="text-muted-foreground text-sm text-center px-2">
-                        {"合照"}
-                      </p>
+                      <img 
+                        src={imageSrc} 
+                        alt={`主人与宠物合照 ${i - 3}`} 
+                        className="w-full h-full object-cover"
+                      />
                     )}
                   </div>
                 ))}
