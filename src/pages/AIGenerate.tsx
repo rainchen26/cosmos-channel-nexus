@@ -177,15 +177,15 @@ const AIGenerate: React.FC = () => {
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/8bf4834d-53b7-4b8e-9954-1aff4798c20d.png"
-                      alt="Woman in white ornate dress with futuristic design"
+                      src="/lovable-uploads/125220c7-cf4b-4f1f-b23d-200f9d32baae.png"
+                      alt="Woman with curly hair in white dress with golden ornaments"
                       className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
                   <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/125220c7-cf4b-4f1f-b23d-200f9d32baae.png"
-                      alt="Woman with curly hair in white dress with golden ornaments"
+                      src="/lovable-uploads/8bf4834d-53b7-4b8e-9954-1aff4798c20d.png"
+                      alt="Woman in white ornate dress with futuristic design"
                       className="max-w-full max-h-full w-auto h-auto object-contain"
                     />
                   </div>
