@@ -20,7 +20,6 @@ const Shop: React.FC = () => {
   ];
 
   const products = [
-    // 情感消费线 - 潮流服饰
     {
       id: 1,
       name: "全息投影亲子T恤",
@@ -73,7 +72,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/8b666a29-bc5f-4646-8542-37b358076f96.png"
     },
 
-    // 数字资产线
     {
       id: 6,
       name: "动态表情包订阅包",
@@ -129,7 +127,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
     },
 
-    // 情感传承线
     {
       id: 11,
       name: "机械宠物复苏计划",
@@ -172,7 +169,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
     },
 
-    // 产品组合套装
     {
       id: 15,
       name: "萌新守护者套装",
@@ -214,7 +210,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
 
-    // 公益联名系列
     {
       id: 19,
       name: "流浪星火粮包",
@@ -235,7 +230,7 @@ const Shop: React.FC = () => {
       donation: "每10包资助1次绝育手术",
       image: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
     },
-    // 智能养宠装备
+
     {
       id: 21,
       name: "AI镜像项圈",
@@ -256,7 +251,7 @@ const Shop: React.FC = () => {
       price: 299,
       highPrice: 899,
       priceRange: true,
-      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
     },
     {
       id: 23,
@@ -267,7 +262,7 @@ const Shop: React.FC = () => {
       price: 199,
       highPrice: 599,
       priceRange: true,
-      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+      image: "/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
     },
     {
       id: 24,
@@ -277,7 +272,7 @@ const Shop: React.FC = () => {
       description: "可降解漫画印花 + AI语音夸夸除臭",
       price: 39,
       priceRange: false,
-      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+      image: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
     },
     {
       id: 25,
@@ -287,7 +282,7 @@ const Shop: React.FC = () => {
       description: "24小时测温 + 异常预警萌爪震动",
       price: 159,
       priceRange: false,
-      image: "/lovable-uploads/aa8f2ee4-b1e6-448c-8e07-4f167ff02b16.png"
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
   ];
 
