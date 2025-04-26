@@ -11,12 +11,12 @@ const Shop: React.FC = () => {
   
   const categories = [
     { id: "all", name: "全部", icon: <Package className="mb-2 mx-auto" /> },
-    { id: "smart-pet", name: "智能养宠装备", icon: <Medal className="mb-2 mx-auto" /> },
-    { id: "emotional", name: "情感消费线", icon: <Heart className="mb-2 mx-auto" /> },
-    { id: "digital", name: "数字资产线", icon: <Star className="mb-2 mx-auto" /> },
-    { id: "memory", name: "情感传承线", icon: <Archive className="mb-2 mx-auto" /> },
-    { id: "bundle", name: "产品组合套装", icon: <Gift className="mb-2 mx-auto" /> },
-    { id: "charity", name: "公益联名系列", icon: <Book className="mb-2 mx-auto" /> }
+    { id: "smart-pet", name: "智能设备", icon: <Medal className="mb-2 mx-auto" /> },
+    { id: "emotional", name: "情感产品", icon: <Heart className="mb-2 mx-auto" /> },
+    { id: "digital", name: "数字资产", icon: <Star className="mb-2 mx-auto" /> },
+    { id: "memory", name: "情感传承", icon: <Archive className="mb-2 mx-auto" /> },
+    { id: "bundle", name: "产品组合", icon: <Gift className="mb-2 mx-auto" /> },
+    { id: "charity", name: "公益联名", icon: <Book className="mb-2 mx-auto" /> }
   ];
 
   const products = [
@@ -98,7 +98,7 @@ const Shop: React.FC = () => {
       id: 8,
       name: "赛博机械翼NFT时装",
       category: "digital",
-      subcategory: "NFT虚��",
+      subcategory: "NFT虚����",
       description: "提升社群互动收益 + 跨平台元宇宙通用",
       price: 29,
       highPrice: 299,
