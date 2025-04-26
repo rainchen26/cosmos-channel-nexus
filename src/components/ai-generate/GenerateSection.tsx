@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Image, Upload, Smile } from "lucide-react";
 
@@ -15,7 +14,6 @@ const GenerateSection: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             "/lovable-uploads/b8a60727-980e-4ddd-a5bd-37e238fc0f9d.png",
-            "/lovable-uploads/b2920a1c-845f-4c97-ba7a-bdf75675e56c.png",
             "/lovable-uploads/0d56e295-4a6c-4c22-976f-e7ae357f9166.png",
             "/lovable-uploads/0853efba-10bf-4cd4-b461-30b5ffb28f3e.png",
             "/lovable-uploads/edc9b090-f86c-48b7-af30-a5d1c5dc63ae.png",
@@ -25,13 +23,13 @@ const GenerateSection: React.FC = () => {
               key={i} 
               className="aspect-square card flex items-center justify-center overflow-hidden"
             >
-              {i < 2 ? (
+              {i < 1 ? (
                 <img 
                   src={imageSrc} 
                   alt={`宠物单独照 ${i + 1}`} 
                   className="w-full h-full object-cover"
                 />
-              ) : i < 4 ? (
+              ) : i < 3 ? (
                 <img 
                   src={imageSrc} 
                   alt={`宠物互动照 ${i - 1}`} 
@@ -40,7 +38,7 @@ const GenerateSection: React.FC = () => {
               ) : (
                 <img 
                   src={imageSrc} 
-                  alt={`宠物互动照 ${i - 3}`} 
+                  alt={`宠物互动照 ${i - 2}`} 
                   className="w-full h-full object-cover"
                 />
               )}
