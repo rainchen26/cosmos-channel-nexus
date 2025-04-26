@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Image, Upload, Smile } from "lucide-react";
 
@@ -13,8 +14,8 @@ const GenerateSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/lovable-uploads/e713d4c2-8ba6-4587-9087-840b0cdebede.png",
-            "/lovable-uploads/02843cfa-3fc6-4987-b74c-cbdfcbfe393e.png",
+            "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png",
+            "/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png",
             "/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png",
             "/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png",
             "/lovable-uploads/edc9b090-f86c-48b7-af30-a5d1c5dc63ae.png",
@@ -29,19 +30,19 @@ const GenerateSection: React.FC = () => {
               {i < 2 ? (
                 <img 
                   src={imageSrc} 
-                  alt={`主人单独照 ${i + 1}`} 
+                  alt={`宠物单独照 ${i + 1}`} 
                   className="w-full h-full object-cover"
                 />
               ) : i < 4 ? (
                 <img 
                   src={imageSrc} 
-                  alt={`宠物单独照 ${i - 1}`} 
+                  alt={`主人与宠物合照 ${i - 1}`} 
                   className="w-full h-full object-cover"
                 />
               ) : (
                 <img 
                   src={imageSrc} 
-                  alt={`主人与宠物合照 ${i - 3}`} 
+                  alt={`宠物互动照 ${i - 3}`} 
                   className="w-full h-full object-cover"
                 />
               )}
@@ -78,3 +79,4 @@ const GenerateSection: React.FC = () => {
 };
 
 export default GenerateSection;
+
