@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "@/components/ui/use-toast";
 import UploadSection from '@/components/ai-generate/UploadSection';
 import StyleSection from '@/components/ai-generate/StyleSection';
 import GenerateSection from '@/components/ai-generate/GenerateSection';
 import PaymentDialog from '@/components/ai-generate/PaymentDialog';
+import PackageSelection from '@/components/packages/PackageSelection';
 import { styleCategories } from '@/components/ai-generate/styleCategories';
 
 const AIGenerate: React.FC = () => {
@@ -60,61 +60,7 @@ const AIGenerate: React.FC = () => {
         </p>
       </div>
       
-      <Tabs defaultValue="upload" className="w-full">
-        <TabsList className="grid grid-cols-3 mb-6">
-          <TabsTrigger value="upload">记忆主角</TabsTrigger>
-          <TabsTrigger value="style">选择风格</TabsTrigger>
-          <TabsTrigger value="generate">生成记忆</TabsTrigger>
-        </TabsList>
-        
-        <TabsContent value="upload">
-          <UploadSection 
-            handleUploadImage={handleUploadImage}
-            handleStyleTabClick={handleStyleTabClick}
-          />
-          
-          <div className="mt-4 text-center">
-            <Button 
-              onClick={() => handleStyleTabClick("style")}
-              className="bg-primary hover:bg-primary/90"
-            >
-              进入下一步：选择风格
-            </Button>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="style">
-          <StyleSection 
-            prompt={prompt}
-            setPrompt={setPrompt}
-            selectedStyle={selectedStyle}
-            setSelectedStyle={setSelectedStyle}
-            selectedSubStyle={selectedSubStyle}
-            handleSelectSubStyle={handleSelectSubStyle}
-            handleUploadImage={handleUploadImage}
-            styleCategories={styleCategories}
-          />
-          
-          <div className="mt-4 text-center">
-            <Button 
-              onClick={handleGenerateClick}
-              className="bg-primary hover:bg-primary/90"
-            >
-              进入下一步：生成记忆
-            </Button>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="generate">
-          <GenerateSection />
-        </TabsContent>
-      </Tabs>
-
-      <PaymentDialog 
-        open={showPaymentDialog}
-        onOpenChange={setShowPaymentDialog}
-        onConfirm={handlePaymentConfirm}
-      />
+      <PackageSelection />
     </div>
   );
 };
