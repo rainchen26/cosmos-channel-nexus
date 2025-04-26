@@ -9,7 +9,6 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@
 const Shop: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   
-  // Product categories with icons
   const categories = [
     { id: "all", name: "全部", icon: <Package className="mb-2 mx-auto" /> },
     { id: "smart-pet", name: "智能养宠装备", icon: <Medal className="mb-2 mx-auto" /> },
@@ -20,9 +19,7 @@ const Shop: React.FC = () => {
     { id: "charity", name: "公益联名系列", icon: <Book className="mb-2 mx-auto" /> }
   ];
 
-  // Products with all required details
   const products = [
-    // 智能养宠装备
     {
       id: 1,
       name: "AI镜像项圈",
@@ -77,7 +74,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
     },
     
-    // 情感消费线
     {
       id: 6,
       name: "全息投影亲子T恤",
@@ -110,7 +106,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/8b666a29-bc5f-4646-8542-37b358076f96.png"
     },
     
-    // 数字资产线
     {
       id: 9,
       name: "动态表情包订阅包",
@@ -134,7 +129,6 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/d20a8cf8-0348-4400-8e0b-e3d715deca9d.png"
     },
     
-    // 情感传承线
     {
       id: 11,
       name: "机械宠物复苏计划",
@@ -156,14 +150,69 @@ const Shop: React.FC = () => {
       priceRange: false,
       image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
+    
+    {
+      id: 13,
+      name: "萌新守护者套装",
+      category: "bundle",
+      subcategory: "入门套装",
+      description: "AI项圈基础款 + 量子猫垫 + 10枚卫生袋",
+      price: 699,
+      priceRange: false,
+      savings: 138,
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+    },
+    {
+      id: 14,
+      name: "次元亲子礼盒",
+      category: "bundle",
+      subcategory: "情感套装",
+      description: "全息T恤×2 + 表情包年费 + 萌爪充电器",
+      price: 999,
+      priceRange: false,
+      savings: 298,
+      image: "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png"
+    },
+    {
+      id: 15,
+      name: "元宇宙原住民包",
+      category: "bundle",
+      subcategory: "数字套装",
+      description: "虚拟土地×1 + NFT时装×3 + 肉垫星舰",
+      price: 1999,
+      priceRange: false,
+      savings: 500,
+      image: "/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
+    },
+    
+    {
+      id: 16,
+      name: "流浪星火粮包",
+      category: "charity",
+      subcategory: "流浪动物救助",
+      description: "每购买1份捐赠流浪动物3日口粮",
+      price: 59,
+      priceRange: false,
+      donation: 15,
+      image: "/lovable-uploads/dece4934-93f3-41c2-a501-04e43248c26a.png"
+    },
+    {
+      id: 17,
+      name: "云领养卫生袋",
+      category: "charity",
+      subcategory: "流浪动物救助",
+      description: "袋身印有待领养宠物信息 + 扫码一键云投喂",
+      price: 39,
+      priceRange: false,
+      donation: "每10包资助1次绝育手术",
+      image: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
+    }
   ];
 
-  // Filter products by active category
   const filteredProducts = activeCategory === 'all' 
     ? products 
     : products.filter(product => product.category === activeCategory);
 
-  // Featured bundles
   const bundles = [
     {
       id: 101,
@@ -186,10 +235,9 @@ const Shop: React.FC = () => {
       image: "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png"
     },
   ];
-  
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Chanel inspired */}
       <div className="relative h-[80vh] overflow-hidden bg-black">
         <img
           src="/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
@@ -211,9 +259,7 @@ const Shop: React.FC = () => {
         </div>
       </div>
 
-      {/* Main content */}
       <div className="container mx-auto px-4 py-16">
-        {/* Categories Navigation - Elegant Chanel style */}
         <div className="mb-16">
           <h2 className="text-2xl font-light text-center mb-10 tracking-wide">产品系列</h2>
           <div className="grid grid-cols-2 md:grid-cols-7 gap-3">
@@ -236,7 +282,6 @@ const Shop: React.FC = () => {
         
         <Separator className="my-16" />
 
-        {/* Featured Product Series - Chanel Inspired Grid */}
         <div className="mb-20">
           <h2 className="text-3xl font-light text-center mb-16 tracking-wide">{activeCategory === 'all' ? '精选商品' : categories.find(c => c.id === activeCategory)?.name}</h2>
           
@@ -299,13 +344,22 @@ const Shop: React.FC = () => {
                         <ChevronRight className="h-3 w-3 ml-1 transition-transform group-hover/btn:translate-x-1" />
                       </Button>
                     </div>
+                    {product.donation && (
+                      <div className="text-sm text-green-600 font-medium mt-2">
+                        捐赠: {product.donation}
+                      </div>
+                    )}
+                    {product.savings && (
+                      <div className="text-sm text-red-600 font-medium mt-2">
+                        省: ¥{product.savings}
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
           
-          {/* Pagination - Chanel style minimalist */}
           <div className="flex justify-center mt-16">
             <Pagination>
               <PaginationContent>
@@ -331,7 +385,6 @@ const Shop: React.FC = () => {
 
         <Separator className="my-20" />
         
-        {/* Featured Bundles Section - Luxury Style */}
         <div className="mb-24">
           <h2 className="text-3xl font-light text-center mb-6 tracking-wide">专属套装</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16">甄选组合，满足多样场景需求，为您的爱宠提供全方位呵护体验</p>
@@ -372,7 +425,6 @@ const Shop: React.FC = () => {
         </div>
       </div>
       
-      {/* Chanel-inspired Footer Banner */}
       <div className="bg-black text-white py-20 px-4">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-light mb-6 tracking-wider">萌爪印记</h2>
