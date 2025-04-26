@@ -15,31 +15,31 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
       <Card>
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
-            <User className="mr-2 text-primary" />
-            <h3 className="text-xl font-semibold">主人/仆人照片</h3>
+            <Dog className="mr-2 text-primary" />
+            <h3 className="text-xl font-semibold">宠物照片</h3>
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-              onClick={() => handleUploadImage('主人正面照')}>
+              onClick={() => handleUploadImage('宠物正面照')}>
               <Upload className="h-8 w-8 text-primary/70 mb-2" />
               <span className="text-sm mb-1">正面照</span>
               <div className="text-xs text-muted-foreground px-3 text-center">
                 <p>拍摄要求：</p>
-                <p>• 脸部清晰、光线充足</p>
+                <p>• 宠物清晰、光线充足</p>
                 <p>• 建议尺寸：512×512px</p>
-                <p>• 正面自然表情</p>
+                <p>• 正面拍摄</p>
               </div>
             </div>
-            {['左侧面照', '右侧面照', '背面照'].map((type, index) => (
+            {['左侧面照', '右侧面照', '互动照'].map((type, index) => (
               <div key={index}
                 className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
-                onClick={() => handleUploadImage(`主人${type}`)}>
+                onClick={() => handleUploadImage(`宠物${type}`)}>
                 <Upload className="h-8 w-8 text-primary/70 mb-2" />
                 <span className="text-sm">{type}</span>
                 <span className="text-xs text-muted-foreground mt-1">
-                  {type === '左侧面照' ? '左侧90度角拍摄' :
-                   type === '右侧面照' ? '右侧90度角拍摄' : '背对拍摄'}
+                  {type === '左侧面照' ? '左侧角度拍摄' :
+                   type === '右侧面照' ? '右侧角度拍摄' : '与玩具互动照'}
                 </span>
               </div>
             ))}
@@ -51,7 +51,7 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
             <Dog className="mr-2 text-primary" />
-            <h3 className="text-xl font-semibold">宠物照片</h3>
+            <h3 className="text-xl font-semibold">宠物照片样例</h3>
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-4">
