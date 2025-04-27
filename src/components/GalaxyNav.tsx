@@ -45,20 +45,6 @@ const GalaxyNav: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex-1 flex items-center justify-center">
             <div className="flex items-center space-x-4">
-              <Link to="/" className="flex items-center space-x-2 relative group">
-                <div className="relative">
-                  <img 
-                    src="/lovable-uploads/96ed9bde-2974-4813-bc82-186e8ffe9458.png" 
-                    alt="萌尾时空 Logo" 
-                    className="w-16 h-16 object-contain mix-blend-multiply animate-float"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent opacity-0 group-hover:opacity-100 animate-shimmer" />
-                  <div className="absolute top-1 left-2 w-3 h-3 origin-bottom animate-wiggle" />
-                  <div className="absolute top-1 right-2 w-3 h-3 origin-bottom animate-wiggle [animation-delay:0.1s]" />
-                  <div className="absolute bottom-2 right-0 w-4 h-4 origin-top animate-wag" />
-                </div>
-              </Link>
-              
               <div className="hidden md:flex items-center space-x-4">
                 {navItems.map((item) => (
                   <NavItem 
@@ -117,3 +103,4 @@ const GalaxyNav: React.FC = () => {
 };
 
 export default GalaxyNav;
+
