@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Navigation, Search, Settings } from "lucide-react";
+import { Navigation, Search, Settings, User } from "lucide-react";
 
 interface NavItemProps {
   to: string;
@@ -65,6 +64,11 @@ const GalaxyNav: React.FC = () => {
             <Button variant="ghost" size="icon" className="hidden md:flex">
               <Settings className="h-5 w-5 text-gray-600" />
             </Button>
+            <Link to="/member">
+              <Button variant="ghost" size="icon" className="hidden md:flex">
+                <User className="h-5 w-5 text-gray-600" />
+              </Button>
+            </Link>
             <Button 
               variant="ghost" 
               size="icon"
@@ -103,4 +107,3 @@ const GalaxyNav: React.FC = () => {
 };
 
 export default GalaxyNav;
-
