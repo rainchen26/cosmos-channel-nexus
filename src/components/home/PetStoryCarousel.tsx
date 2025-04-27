@@ -64,13 +64,13 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
       </h2>
       
       <div className="relative">
-        <div className="overflow-hidden pb-4 hide-scrollbar">
+        <div className="overflow-hidden pb-4">
           <Carousel 
             className="w-full max-w-7xl mx-auto cursor-grab active:cursor-grabbing" 
             opts={carouselOptions}
             setApi={setApi}
           >
-            <CarouselContent className="-ml-4 touch-pan-x">
+            <CarouselContent className="touch-pan-x">
               {stories.map((story) => (
                 <CarouselItem key={story.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3 select-none">
                   <Link to={story.link}>
