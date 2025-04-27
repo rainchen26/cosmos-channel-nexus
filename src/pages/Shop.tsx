@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -99,7 +100,7 @@ const Shop: React.FC = () => {
       name: "赛博机械翼NFT时装",
       category: "digital",
       subcategory: "NFT虚",
-      description: "提升社群互动收益 + 跨平台元宇宙通用",
+      description: "���升社群互动收益 + 跨平台元宇宙通用",
       price: 29,
       highPrice: 299,
       priceRange: true,
@@ -361,80 +362,84 @@ const Shop: React.FC = () => {
         <Separator className="my-16" />
 
         <div className="mb-20">
-          <h2 className="text-3xl font-light text-center mb-16 tracking-wide">{activeCategory === 'all' ? '' : categories.find(c => c.id === activeCategory)?.name}</h2>
+          <h2 className="text-3xl font-light text-center mb-16 tracking-wide">
+            {activeCategory === 'all' ? '' : categories.find(c => c.id === activeCategory)?.name}
+          </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="border-none shadow-none group cursor-pointer">
-                <CardContent className="p-0">
-                  <div className="relative aspect-square overflow-hidden mb-6">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {product.premium && (
-                      <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 text-xs uppercase tracking-wider">
-                        尊享系列
-                      </div>
-                    )}
-                  </div>
-                  <div className="px-2">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{product.subcategory}</p>
-                        <h3 className="text-lg font-light tracking-wide">{product.name}</h3>
-                      </div>
-                      <div className="text-right">
-                        {product.priceRange ? (
-                          <span className="text-sm font-light">
-                            ¥{product.price} - ¥{product.highPrice}
-                          </span>
-                        ) : (
-                          <span className="text-sm font-light">
-                            ¥{product.price}{product.subscription ? "/月" : ""}
-                          </span>
-                        )}
-                      </div>
+              <Link key={product.id} to={`/product/${product.id}`}>
+                <Card className="border-none shadow-none group cursor-pointer">
+                  <CardContent className="p-0">
+                    <div className="relative aspect-square overflow-hidden mb-6">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {product.premium && (
+                        <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 text-xs uppercase tracking-wider">
+                          尊享系列
+                        </div>
+                      )}
                     </div>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{product.description}</p>
-                    <div className="flex items-center justify-between">
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button variant="ghost" size="sm" className="text-xs px-0">
-                            查看细节
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-80">
-                          <div className="space-y-2">
-                            <h4 className="font-medium text-sm">{product.name}</h4>
-                            <p className="text-xs text-muted-foreground">{product.description}</p>
-                            <div className="pt-2">
-                              <Button size="sm" className="w-full mt-2">
-                                加入购物车
-                              </Button>
+                    <div className="px-2">
+                      <div className="flex items-start justify-between mb-2">
+                        <div>
+                          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{product.subcategory}</p>
+                          <h3 className="text-lg font-light tracking-wide">{product.name}</h3>
+                        </div>
+                        <div className="text-right">
+                          {product.priceRange ? (
+                            <span className="text-sm font-light">
+                              ¥{product.price} - ¥{product.highPrice}
+                            </span>
+                          ) : (
+                            <span className="text-sm font-light">
+                              ¥{product.price}{product.subscription ? "/月" : ""}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{product.description}</p>
+                      <div className="flex items-center justify-between">
+                        <Popover>
+                          <PopoverTrigger asChild>
+                            <Button variant="ghost" size="sm" className="text-xs px-0">
+                              查看细节
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-80">
+                            <div className="space-y-2">
+                              <h4 className="font-medium text-sm">{product.name}</h4>
+                              <p className="text-xs text-muted-foreground">{product.description}</p>
+                              <div className="pt-2">
+                                <Button size="sm" className="w-full mt-2">
+                                  加入购物车
+                                </Button>
+                              </div>
                             </div>
-                          </div>
-                        </PopoverContent>
-                      </Popover>
-                      <Button variant="ghost" size="sm" className="group/btn">
-                        立即购买
-                        <ChevronRight className="h-3 w-3 ml-1 transition-transform group-hover/btn:translate-x-1" />
-                      </Button>
+                          </PopoverContent>
+                        </Popover>
+                        <Button variant="ghost" size="sm" className="group/btn">
+                          立即购买
+                          <ChevronRight className="h-3 w-3 ml-1 transition-transform group-hover/btn:translate-x-1" />
+                        </Button>
+                      </div>
+                      {product.donation && (
+                        <div className="text-sm text-green-600 font-medium mt-2">
+                          捐赠: {product.donation}
+                        </div>
+                      )}
+                      {product.savings && (
+                        <div className="text-sm text-red-600 font-medium mt-2">
+                          省: ¥{product.savings}
+                        </div>
+                      )}
                     </div>
-                    {product.donation && (
-                      <div className="text-sm text-green-600 font-medium mt-2">
-                        捐赠: {product.donation}
-                      </div>
-                    )}
-                    {product.savings && (
-                      <div className="text-sm text-red-600 font-medium mt-2">
-                        省: ¥{product.savings}
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           
