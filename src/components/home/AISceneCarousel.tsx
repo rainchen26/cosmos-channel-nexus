@@ -60,7 +60,7 @@ const AISceneCarousel = ({ scenes, carouselOptions }: AISceneCarouselProps) => {
         <h2 className="text-4xl font-bold tracking-tight" style={{ color: '#7E69AB' }}>每一帧画面，都是AI留存的时光记忆</h2>
       </div>
       <div className="relative">
-        <div className="overflow-x-auto pb-4 hide-scrollbar">
+        <div className="overflow-hidden pb-4 hide-scrollbar">
           <Carousel 
             className="w-full max-w-7xl mx-auto cursor-grab active:cursor-grabbing" 
             opts={carouselOptions}

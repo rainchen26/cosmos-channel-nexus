@@ -64,7 +64,7 @@ const PetStoryCarousel = ({ stories, carouselOptions }: PetStoryCarouselProps) =
       </h2>
       
       <div className="relative">
-        <div className="overflow-x-auto pb-4 hide-scrollbar">
+        <div className="overflow-hidden pb-4 hide-scrollbar">
           <Carousel 
             className="w-full max-w-7xl mx-auto cursor-grab active:cursor-grabbing" 
             opts={carouselOptions}
