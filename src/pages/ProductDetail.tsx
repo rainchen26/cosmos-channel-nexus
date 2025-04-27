@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
@@ -317,7 +318,9 @@ const ProductDetail = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/shop">{categoryNames[product.category] || '商品'}</BreadcrumbLink>
+                <BreadcrumbLink href={`/shop?category=${product.category}`}>
+                  {categoryNames[product.category]}
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
