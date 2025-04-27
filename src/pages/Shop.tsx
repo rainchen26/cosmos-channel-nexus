@@ -346,6 +346,10 @@ const Shop: React.FC = () => {
     )].filter(Boolean);
   };
 
+  const getProductsByCategory = (categoryId: string) => {
+    return products.filter(product => product.category === categoryId);
+  };
+
   const filteredProducts = activeCategory === 'all' 
     ? products 
     : products.filter(product => product.category === activeCategory);
