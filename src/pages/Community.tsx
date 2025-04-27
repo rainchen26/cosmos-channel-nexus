@@ -103,7 +103,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
           <img 
             src={post.image} 
             alt={post.title}
-            className="object-cover w-full h-full rounded-t-lg"
+            className="object-cover w-full h-full"
           />
         </AspectRatio>
       </div>

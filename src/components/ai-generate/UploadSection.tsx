@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { User, Upload, Dog } from "lucide-react";
@@ -20,7 +19,7 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+            <div className="aspect-square bg-secondary border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
               onClick={() => handleUploadImage('宠物正面照')}>
               <Upload className="h-8 w-8 text-primary/70 mb-2" />
               <span className="text-sm mb-1">正面照</span>
@@ -33,7 +32,7 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
             </div>
             {['左侧面照', '右侧面照', '互动照'].map((type, index) => (
               <div key={index}
-                className="aspect-square bg-secondary rounded-md border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
+                className="aspect-square bg-secondary border border-dashed border-primary/30 flex flex-col items-center justify-center cursor-pointer hover:bg-secondary/80 transition-colors"
                 onClick={() => handleUploadImage(`宠物${type}`)}>
                 <Upload className="h-8 w-8 text-primary/70 mb-2" />
                 <span className="text-sm">{type}</span>
@@ -55,28 +54,28 @@ const UploadSection: React.FC<UploadSectionProps> = ({ handleUploadImage, handle
           </div>
           
           <div className="grid grid-cols-2 gap-3 mb-4">
-            <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+            <div className="aspect-square relative overflow-hidden bg-secondary flex items-center justify-center">
               <img 
                 src="/lovable-uploads/f40939d6-8524-4277-b73e-fb4386a3c01b.png"
                 alt="Sample pet photo 1"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
-            <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+            <div className="aspect-square relative overflow-hidden bg-secondary flex items-center justify-center">
               <img 
                 src="/lovable-uploads/73bf8d29-3014-4514-a435-68aa36417fff.png"
                 alt="Sample pet photo 2"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
-            <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+            <div className="aspect-square relative overflow-hidden bg-secondary flex items-center justify-center">
               <img 
                 src="/lovable-uploads/c4aef956-4bb3-411e-9342-ed8bf74afb37.png"
                 alt="Sample pet photo 3"
                 className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </div>
-            <div className="aspect-square relative overflow-hidden rounded-md bg-secondary flex items-center justify-center">
+            <div className="aspect-square relative overflow-hidden bg-secondary flex items-center justify-center">
               <img 
                 src="/lovable-uploads/7a074bbd-4858-4f6a-bfb9-b48a0bf1fb18.png"
                 alt="Sample pet photo 4"

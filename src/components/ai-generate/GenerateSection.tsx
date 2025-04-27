@@ -21,7 +21,7 @@ const GenerateSection: React.FC = () => {
           ].map((imageSrc, i) => (
             <div 
               key={i} 
-              className="aspect-square card flex items-center justify-center overflow-hidden"
+              className="aspect-square flex items-center justify-center overflow-hidden"
             >
               {i < 1 ? (
                 <img 
