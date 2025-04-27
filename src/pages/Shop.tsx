@@ -230,7 +230,7 @@ const Shop: React.FC = () => {
     },
     {
       id: 20,
-      name: "云领养卫生袋",
+      name: "��领养卫生袋",
       category: "charity",
       subcategory: "流浪动物救助",
       description: "袋身印有待领���宠物信息 + 扫码一键云投喂",
@@ -293,6 +293,49 @@ const Shop: React.FC = () => {
       priceRange: false,
       image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
     },
+  ];
+
+  const bundles = [
+    {
+      id: 101,
+      name: "萌新守护者套装",
+      category: "bundle",
+      description: "AI项圈基础款 + 量子猫垫 + 10枚卫生袋",
+      price: 699,
+      savings: 138,
+      scenario: "养宠入门必备",
+      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
+    },
+    {
+      id: 102,
+      name: "次元亲子礼盒",
+      category: "bundle",
+      description: "全息T恤×2 + 表情包年费 + 萌爪充电器",
+      price: 999,
+      savings: 298,
+      scenario: "家庭情感互动",
+      image: "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png"
+    },
+    {
+      id: 103,
+      name: "元宇宙原住民包",
+      category: "bundle",
+      description: "虚拟土地×1 + NFT时装×3 + 肉垫星舰",
+      price: 1999,
+      savings: 500,
+      scenario: "数字资产投资者",
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
+    },
+    {
+      id: 104,
+      name: "永恒记忆典藏箱",
+      category: "bundle",
+      description: "机械复苏计划 + 钛合金记忆碑 + 传承U盘",
+      price: 7999,
+      savings: 998,
+      scenario: "高端情感传承",
+      image: "/lovable-uploads/9737e3c3-2f40-4d72-b124-8baca9b0923c.png"
+    }
   ];
 
   const filteredProducts = activeCategory === 'all' 
