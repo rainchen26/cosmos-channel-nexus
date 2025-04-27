@@ -374,35 +374,30 @@ const Shop: React.FC = () => {
           <h2 className="text-2xl font-light text-center mb-10 tracking-wide">产品系列</h2>
           <div className="grid grid-cols-2 md:grid-cols-7 gap-3">
             {categories.map((category) => (
-              <DropdownMenu key={category.id}>
-                <DropdownMenuTrigger asChild>
-                  <Card 
-                    onClick={() => setActiveCategory(category.id)}
-                    className={`border-none shadow-none hover:bg-secondary/30 transition-colors cursor-pointer ${
-                      activeCategory === category.id ? "bg-secondary/40" : ""
-                    }`}
-                  >
-                    <CardContent className="p-4 text-center">
-                      {category.icon}
-                      <h3 className="text-sm font-light tracking-wide">{category.name}</h3>
-                    </CardContent>
-                  </Card>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56 bg-white" align="start">
-                  <DropdownMenuGroup>
-                    {getProductsByCategory(category.id).map((product) => (
-                      <DropdownMenuItem key={product.id} asChild>
-                        <Link 
-                          to={`/product/${product.id}`}
-                          className="cursor-pointer"
-                        >
-                          {product.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <div key={category.id} className="relative group">
+                <Card 
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`border-none shadow-none hover:bg-secondary/30 transition-colors cursor-pointer ${
+                    activeCategory === category.id ? "bg-secondary/40" : ""
+                  }`}
+                >
+                  <CardContent className="p-4 text-center">
+                    {category.icon}
+                    <h3 className="text-sm font-light tracking-wide">{category.name}</h3>
+                  </CardContent>
+                </Card>
+                <div className="hidden group-hover:block absolute z-50 left-0 w-56 mt-1 bg-white shadow-lg rounded-lg py-2">
+                  {getProductsByCategory(category.id).map((product) => (
+                    <Link 
+                      key={product.id}
+                      to={`/product/${product.id}`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/30 transition-colors"
+                    >
+                      {product.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
