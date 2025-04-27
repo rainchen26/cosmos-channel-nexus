@@ -6,6 +6,13 @@ import { Separator } from "@/components/ui/separator";
 import { ChevronRight, Star, Heart, Gift, Package, Archive, Medal, Book } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Shop: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -226,7 +233,7 @@ const Shop: React.FC = () => {
       name: "云领养卫生袋",
       category: "charity",
       subcategory: "流浪动物救助",
-      description: "袋身印有待领养宠物信息 + 扫码一键云投喂",
+      description: "袋身印有待领���宠物信息 + 扫码一键云投喂",
       price: 39,
       donation: "每10包资助1次绝育手术",
       image: "/lovable-uploads/16bf60b0-d62c-4637-9969-78f5e5d380c4.png"
@@ -292,28 +299,9 @@ const Shop: React.FC = () => {
     ? products 
     : products.filter(product => product.category === activeCategory);
 
-  const bundles = [
-    {
-      id: 101,
-      name: "萌新守护者套装",
-      category: "bundle",
-      description: "AI项圈基础款 + 量子猫垫 + 10枚卫生袋",
-      price: 699,
-      savings: 138,
-      scenario: "养宠入门必备",
-      image: "/lovable-uploads/dd570c0e-53db-4bf8-a147-d9ff2a22cae3.png"
-    },
-    {
-      id: 102,
-      name: "次元亲子礼盒",
-      category: "bundle",
-      description: "全息T恤×2 + 表情包年费 + 萌爪充电器",
-      price: 999,
-      savings: 298,
-      scenario: "家庭情感互动",
-      image: "/lovable-uploads/8a951067-2af8-4277-abe7-3bda9e356cc0.png"
-    },
-  ];
+  const getProductsByCategory = (categoryId: string) => {
+    return products.filter(product => product.category === categoryId);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -343,18 +331,35 @@ const Shop: React.FC = () => {
           <h2 className="text-2xl font-light text-center mb-10 tracking-wide">产品系列</h2>
           <div className="grid grid-cols-2 md:grid-cols-7 gap-3">
             {categories.map((category) => (
-              <Card 
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`border-none shadow-none hover:bg-secondary/30 transition-colors cursor-pointer ${
-                  activeCategory === category.id ? "bg-secondary/40" : ""
-                }`}
-              >
-                <CardContent className="p-4 text-center">
-                  {category.icon}
-                  <h3 className="text-sm font-light tracking-wide">{category.name}</h3>
-                </CardContent>
-              </Card>
+              <DropdownMenu key={category.id}>
+                <DropdownMenuTrigger asChild>
+                  <Card 
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`border-none shadow-none hover:bg-secondary/30 transition-colors cursor-pointer ${
+                      activeCategory === category.id ? "bg-secondary/40" : ""
+                    }`}
+                  >
+                    <CardContent className="p-4 text-center">
+                      {category.icon}
+                      <h3 className="text-sm font-light tracking-wide">{category.name}</h3>
+                    </CardContent>
+                  </Card>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 bg-white" align="start">
+                  <DropdownMenuGroup>
+                    {getProductsByCategory(category.id).map((product) => (
+                      <DropdownMenuItem key={product.id} asChild>
+                        <Link 
+                          to={`/product/${product.id}`}
+                          className="cursor-pointer"
+                        >
+                          {product.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
             ))}
           </div>
         </div>
