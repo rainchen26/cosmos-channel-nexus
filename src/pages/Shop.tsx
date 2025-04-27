@@ -338,13 +338,17 @@ const Shop: React.FC = () => {
     }
   ];
 
+  const getSubcategoriesByCategory = (categoryId: string) => {
+    return [...new Set(
+      products
+        .filter(product => product.category === categoryId)
+        .map(product => product.subcategory)
+    )].filter(Boolean);
+  };
+
   const filteredProducts = activeCategory === 'all' 
     ? products 
     : products.filter(product => product.category === activeCategory);
-
-  const getProductsByCategory = (categoryId: string) => {
-    return products.filter(product => product.category === categoryId);
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -386,16 +390,41 @@ const Shop: React.FC = () => {
                     <h3 className="text-sm font-light tracking-wide">{category.name}</h3>
                   </CardContent>
                 </Card>
-                <div className="hidden group-hover:block absolute z-50 left-0 w-56 mt-1 bg-white shadow-lg rounded-lg py-2">
-                  {getProductsByCategory(category.id).map((product) => (
-                    <Link 
-                      key={product.id}
-                      to={`/product/${product.id}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/30 transition-colors"
-                    >
-                      {product.name}
-                    </Link>
-                  ))}
+                <div className={`hidden group-hover:block absolute z-50 left-0 w-72 mt-1 bg-white shadow-lg rounded-lg py-2 ${
+                  category.id === 'all' ? 'w-96' : ''
+                }`}>
+                  {category.id === 'all' ? (
+                    <div className="grid grid-cols-2 gap-2 p-4">
+                      {categories.filter(c => c.id !== 'all').map((subCategory) => (
+                        <div key={subCategory.id} className="space-y-2">
+                          <h4 className="font-medium text-sm text-gray-900 pb-1 border-b">
+                            {subCategory.name}
+                          </h4>
+                          {getSubcategoriesByCategory(subCategory.id).map((subcategory) => (
+                            <Link
+                              key={`${subCategory.id}-${subcategory}`}
+                              to={`/shop?category=${subCategory.id}&subcategory=${subcategory}`}
+                              className="block px-3 py-1 text-sm text-gray-700 hover:bg-secondary/30 transition-colors"
+                            >
+                              {subcategory}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>
+                      {getProductsByCategory(category.id).map((product) => (
+                        <Link 
+                          key={product.id}
+                          to={`/product/${product.id}`}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-secondary/30 transition-colors"
+                        >
+                          {product.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
