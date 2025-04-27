@@ -292,7 +292,7 @@ const ProductDetail = () => {
   }
 
   const categoryNames: { [key: string]: string } = {
-    'smart-pet': 'AI智能',
+    'smart-pet': '智能设备',  // Changed from 'AI智能' to '智能设备'
     'emotional': '情感产品',
     'digital': '数字资产',
     'memory': '情感传承',
