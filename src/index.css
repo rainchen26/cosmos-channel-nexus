@@ -67,4 +67,14 @@
   .nebula-bg {
     @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-400 bg-opacity-10;
   }
+
+  /* Hide scrollbar but keep functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }
