@@ -1,30 +1,9 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Navigation, Search, Settings, User } from "lucide-react";
-
-interface NavItemProps {
-  to: string;
-  label: string;
-  isActive: boolean;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ to, label, isActive }) => {
-  return (
-    <Link 
-      to={to} 
-      className={cn(
-        "px-4 py-2 rounded-full transition-all duration-300",
-        isActive 
-          ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow" 
-          : "hover:bg-cosmic-highlight/10 text-gray-600 hover:text-cosmic-highlight"
-      )}
-    >
-      {label}
-    </Link>
-  );
-};
 
 const GalaxyNav: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,18 +21,29 @@ const GalaxyNav: React.FC = () => {
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex-1 flex items-center justify-center">
-            <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-4">
-                {navItems.map((item) => (
-                  <NavItem 
-                    key={item.path}
-                    to={item.path}
-                    label={item.label}
-                    isActive={pathname === item.path}
-                  />
-                ))}
-              </div>
+          <div className="flex items-center space-x-4">
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/lovable-uploads/6409303a-5e27-41a9-97ac-156c0742a982.png" 
+                alt="Taily Logo" 
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
+            <div className="hidden md:flex items-center space-x-4">
+              {navItems.map((item) => (
+                <Link 
+                  key={item.path}
+                  to={item.path}
+                  className={cn(
+                    "px-4 py-2 rounded-full transition-all duration-300",
+                    pathname === item.path 
+                      ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow" 
+                      : "hover:bg-cosmic-highlight/10 text-gray-600 hover:text-cosmic-highlight"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
           
