@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,7 +16,6 @@ const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   
-  // This would ideally come from a data source/API
   const products = [
     {
       id: 1,
@@ -292,8 +290,17 @@ const ProductDetail = () => {
     return <div className="min-h-screen flex items-center justify-center">Product not found</div>;
   }
 
+  const categoryNames: { [key: string]: string } = {
+    'smart-pet': 'AI智能',
+    'emotional': '情感产品',
+    'digital': '数字资产',
+    'memory': '情感传承',
+    'bundle': '产品组合',
+    'charity': '公益联名'
+  };
+
   const handleGoBack = () => {
-    navigate(-1); // This navigates back to the previous page
+    navigate(-1);
   };
 
   return (
@@ -310,7 +317,7 @@ const ProductDetail = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/shop">商品</BreadcrumbLink>
+                <BreadcrumbLink href="/shop">{categoryNames[product.category] || '商品'}</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
