@@ -24,7 +24,7 @@ const Shop: React.FC = () => {
     { id: "digital", name: "数字资产", icon: <Star className="mb-2 mx-auto" /> },
     { id: "memory", name: "情感传承", icon: <Archive className="mb-2 mx-auto" /> },
     { id: "bundle", name: "产品组合", icon: <Gift className="mb-2 mx-auto" /> },
-    { id: "charity", name: "公益联名", icon: <Book className="mb-2 mx-auto" }
+    { id: "charity", name: "公益联名", icon: <Book className="mb-2 mx-auto" /> }
   ];
 
   const products = [
