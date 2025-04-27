@@ -98,7 +98,7 @@ const Shop: React.FC = () => {
       id: 8,
       name: "赛博机械翼NFT时装",
       category: "digital",
-      subcategory: "NFT虚����",
+      subcategory: "NFT虚",
       description: "提升社群互动收益 + 跨平台元宇宙通用",
       price: 29,
       highPrice: 299,
@@ -361,7 +361,7 @@ const Shop: React.FC = () => {
         <Separator className="my-16" />
 
         <div className="mb-20">
-          <h2 className="text-3xl font-light text-center mb-16 tracking-wide">{activeCategory === 'all' ? '精选商品' : categories.find(c => c.id === activeCategory)?.name}</h2>
+          <h2 className="text-3xl font-light text-center mb-16 tracking-wide">{activeCategory === 'all' ? '' : categories.find(c => c.id === activeCategory)?.name}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
             {filteredProducts.map((product) => (
