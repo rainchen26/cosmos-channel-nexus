@@ -346,87 +346,6 @@ const Shop: React.FC = () => {
     return products.filter(product => product.category === categoryId);
   };
 
-  const renderAllCategories = () => {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {categories.filter(cat => cat.id !== 'all').map((category) => {
-          const categoryProducts = getProductsByCategory(category.id);
-          
-          return (
-            <div key={category.id} className="space-y-4">
-              <div className="flex items-center gap-2">
-                {category.icon}
-                <h3 className="text-xl font-light tracking-wide">{category.name}</h3>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {categoryProducts.map((product) => (
-                  <Link 
-                    key={product.id} 
-                    to={`/product/${product.id}`}
-                    className="block"
-                  >
-                    <Card className="border-none shadow-none group cursor-pointer h-full">
-                      <CardContent className="p-0">
-                        <div className="relative aspect-square overflow-hidden mb-2">
-                          <img
-                            src={product.image}
-                            alt={product.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                          {product.premium && (
-                            <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 text-xs uppercase tracking-wider">
-                              尊享系列
-                            </div>
-                          )}
-                        </div>
-                        <div className="px-2">
-                          <div className="flex items-start justify-between mb-2">
-                            <div>
-                              <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
-                                {product.subcategory}
-                              </p>
-                              <h3 className="text-base font-light tracking-wide">
-                                {product.name}
-                              </h3>
-                            </div>
-                            <div className="text-right">
-                              {product.priceRange ? (
-                                <span className="text-sm font-light">
-                                  ¥{product.price} - ¥{product.highPrice}
-                                </span>
-                              ) : (
-                                <span className="text-sm font-light">
-                                  ¥{product.price}{product.subscription ? "/月" : ""}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          <p className="text-sm text-muted-foreground line-clamp-2">
-                            {product.description}
-                          </p>
-                          {product.donation && (
-                            <div className="text-sm text-green-600 font-medium mt-2">
-                              捐赠: {product.donation}
-                            </div>
-                          )}
-                          {product.savings && (
-                            <div className="text-sm text-red-600 font-medium mt-2">
-                              省: ¥{product.savings}
-                            </div>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <div className="relative h-[80vh] overflow-hidden bg-black">
@@ -485,15 +404,11 @@ const Shop: React.FC = () => {
         
         <Separator className="my-16" />
 
-        <div className="space-y-16">
-          {activeCategory === 'all' ? (
-            renderAllCategories()
-          ) : (
-            <h2 className="text-3xl font-light text-center mb-16 tracking-wide">
-              {categories.find(c => c.id === activeCategory)?.name}
-            </h2>
-          )}
-        </div>
+        {activeCategory !== 'all' && (
+          <h2 className="text-3xl font-light text-center mb-16 tracking-wide">
+            {categories.find(c => c.id === activeCategory)?.name}
+          </h2>
+        )}
 
         <div className="space-y-16">
           {categories.map((category) => {
