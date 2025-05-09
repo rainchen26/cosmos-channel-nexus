@@ -20,7 +20,19 @@ const GalaxyNav: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between relative">
+        {/* Logo Section - Centered at the top */}
+        <div className="flex justify-center mb-2">
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/d6f604d8-ffb7-4527-871f-09ca83f596c9.png" 
+              alt="Taily Logo" 
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
+        </div>
+
+        {/* Navigation Section - Below the logo */}
+        <div className="flex items-center justify-between">
           {/* Mobile Menu Button (Left) */}
           <div className="block md:hidden">
             <Button 
@@ -30,17 +42,6 @@ const GalaxyNav: React.FC = () => {
             >
               <Navigation className="h-6 w-6" />
             </Button>
-          </div>
-
-          {/* Centered Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-            <Link to="/" className="flex items-center">
-              <img 
-                src="/lovable-uploads/d6f604d8-ffb7-4527-871f-09ca83f596c9.png" 
-                alt="Taily Logo" 
-                className="h-12 w-auto object-contain"
-              />
-            </Link>
           </div>
 
           {/* Desktop Navigation Links */}
