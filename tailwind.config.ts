@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -77,16 +78,26 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        cosmic: {
-          DEFAULT: '#0f172a',
-          'deep': '#020617',
-          'highlight': '#8b5cf6',
-          'accent': '#06b6d4',
-          'glow': '#38bdf8',
-          'nebula': '#c084fc',
-          'star': '#f8fafc'
+        silver: {
+          DEFAULT: '#9F9EA1',
+          50: '#FFFFFF',
+          100: '#F9F9F9',
+          200: '#E8E8E9',
+          300: '#D4D4D6',
+          400: '#C0BFC2',
+          500: '#9F9EA1',
+          600: '#7F7E82',
+          700: '#5F5F62',
+          800: '#404042',
+          900: '#202021',
+          'deep': '#F8F8FA',
+          'highlight': '#A0A0A8',
+          'accent': '#B8B8C0',
+          'glow': '#C0C0C8',
+          'nebula': '#D0D0D8',
+          'star': '#F8FAFC'
         },
-        'title-purple': '#7E69AB'
+        'title-silver': '#9F9EA1'
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -142,7 +153,7 @@ export default {
       },
       backgroundImage: {
         'star-field': 'url("/images/star-field.png")',
-        'nebula-gradient': 'linear-gradient(to right, #4338ca, #7e22ce, #a855f7)'
+        'silver-gradient': 'linear-gradient(to right, #e2e2e6, #f8f8fa, #ffffff)'
       }
     }
   },

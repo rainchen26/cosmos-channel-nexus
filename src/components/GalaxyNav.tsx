@@ -18,7 +18,7 @@ const GalaxyNav: React.FC = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <nav className="sticky top-0 z-50 w-full bg-silver-50 shadow-sm">
       <div className="container mx-auto px-4 py-3">
         {/* Logo Section - Centered at the top */}
         <div className="flex justify-center mb-2">
@@ -40,7 +40,7 @@ const GalaxyNav: React.FC = () => {
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <Navigation className="h-6 w-6" />
+              <Navigation className="h-6 w-6 text-silver-600" />
             </Button>
           </div>
 
@@ -53,8 +53,8 @@ const GalaxyNav: React.FC = () => {
                 className={cn(
                   "px-4 py-2 rounded-full transition-all duration-300",
                   pathname === item.path 
-                    ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow" 
-                    : "hover:bg-cosmic-highlight/10 text-gray-600 hover:text-cosmic-highlight"
+                    ? "bg-silver-200/70 text-silver-700 font-medium" 
+                    : "hover:bg-silver-100 text-silver-600 hover:text-silver-700"
                 )}
               >
                 {item.label}
@@ -65,14 +65,14 @@ const GalaxyNav: React.FC = () => {
           {/* Right Icons */}
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="icon" className="hidden md:flex">
-              <Search className="h-5 w-5 text-gray-600" />
+              <Search className="h-5 w-5 text-silver-600" />
             </Button>
             <Button variant="ghost" size="icon" className="hidden md:flex">
-              <Settings className="h-5 w-5 text-gray-600" />
+              <Settings className="h-5 w-5 text-silver-600" />
             </Button>
             <Link to="/member">
               <Button variant="ghost" size="icon" className="hidden md:flex">
-                <User className="h-5 w-5 text-gray-600" />
+                <User className="h-5 w-5 text-silver-600" />
               </Button>
             </Link>
           </div>
@@ -80,7 +80,7 @@ const GalaxyNav: React.FC = () => {
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="mt-4 pb-3 border-t border-gray-100 md:hidden">
+          <div className="mt-4 pb-3 border-t border-silver-200 md:hidden">
             <div className="flex flex-col space-y-3 pt-3">
               {navItems.map((item) => (
                 <Link 
@@ -90,8 +90,8 @@ const GalaxyNav: React.FC = () => {
                   className={cn(
                     "px-4 py-2 rounded-md",
                     pathname === item.path
-                      ? "bg-cosmic-highlight/20 text-cosmic-highlight text-glow"
-                      : "text-gray-600 hover:bg-cosmic-highlight/10 hover:text-cosmic-highlight"
+                      ? "bg-silver-200/70 text-silver-700 font-medium"
+                      : "text-silver-600 hover:bg-silver-100 hover:text-silver-700"
                   )}
                 >
                   {item.label}
