@@ -36,10 +36,6 @@ const SpaceTime: React.FC = () => {
           </div>
         </div>
       </div>
-      
-      <div className="text-center py-12">
-        <p className="text-silver-500 text-lg">请选择上方的导航选项查看内容</p>
-      </div>
     </div>
   );
 };
