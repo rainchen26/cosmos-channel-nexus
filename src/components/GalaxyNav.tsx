@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Navigation, Search, Settings, User } from "lucide-react";
 
 const GalaxyNav: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = window.location.pathname;
+  const { pathname } = useLocation();
 
   const navItems = [
-    { path: '/', label: '萌尾时空' },
+    { path: '/home', label: '萌尾时空' },
     { path: '/ai-generate', label: '萌爱镜像' },
     { path: '/shop', label: '萌趣定制' },
     { path: '/community', label: '萌迹共享' },

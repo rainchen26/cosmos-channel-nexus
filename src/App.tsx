@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GalaxyNav from './components/GalaxyNav';
 import Index from './pages/Index';
 import Home from './pages/Home';
+import SpaceTime from './pages/SpaceTime';
 import Shop from './pages/Shop';
 import Community from './pages/Community';
 import Member from './pages/Member';
@@ -16,7 +17,7 @@ function App() {
       <GalaxyNav />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<SpaceTime />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/community" element={<Community />} />
