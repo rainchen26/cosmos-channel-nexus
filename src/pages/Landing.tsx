@@ -1,11 +1,8 @@
-
 import React from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import AISceneCarousel from '@/components/home/AISceneCarousel';
 import PetStoryCarousel from '@/components/home/PetStoryCarousel';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 
 const Landing: React.FC = () => {
   const aiScenes = [
@@ -117,19 +114,6 @@ const Landing: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-20">
-      <section className="text-center">
-        <h1 className="text-5xl font-bold mb-6 tracking-tight text-silver-600">欢迎来到萌尾宇宙</h1>
-        <p className="text-xl mb-10 max-w-3xl mx-auto text-silver-500">探索AI创作的无限可能，让宠物们在数字世界中永存</p>
-        <div className="flex justify-center gap-4">
-          <Button asChild className="text-lg px-8 py-6 h-auto rounded-xl bg-silver-500 hover:bg-silver-600">
-            <Link to="/home">进入萌尾时空</Link>
-          </Button>
-          <Button asChild variant="outline" className="text-lg px-8 py-6 h-auto rounded-xl border-silver-300 text-silver-600">
-            <Link to="/ai-generate">开始创作</Link>
-          </Button>
-        </div>
-      </section>
-
       <HeroSection />
       <AISceneCarousel scenes={aiScenes} carouselOptions={carouselOptions} />
       <PetStoryCarousel stories={petStories} carouselOptions={carouselOptions} />
